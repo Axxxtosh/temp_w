@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/user"
+        title="Home" />
+    <tab
+        id="@+id/tab_news"
+        icon="@drawable/news"
+
+        title="News Feed" />
+   <!-- <tab
+        id="@+id/tab_nearby"
+        icon="@drawable/nearme"
+        title="Near Me" />-->
+
+    <tab
+        id="@+id/tab_profile"
+        icon="@drawable/user"
+        title="Account" />
+</tabs>

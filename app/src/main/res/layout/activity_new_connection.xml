@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.admin.worldvisioncable.NewConnectionActivity">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_cable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_home"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="9">
+
+                    <Button
+                        android:id="@+id/backAction"
+                        android:layout_width="35dp"
+                        android:gravity="left"
+                        android:layout_height="35dp"
+                        android:background="@drawable/back"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left"
+
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/yourlogo"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="left"
+                        android:src="@drawable/newlogo" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="9">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="NEW CONNECTION"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:gravity="center"
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Select Service Type *"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+                        <Spinner
+                            android:id="@+id/spn_chooseServices"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_spinner"
+                            android:cursorVisible="true"
+                            android:padding="10dp"
+
+                            android:layout_margin="7dp"
+                            android:singleLine="true"
+                            android:textIsSelectable="true"
+                            android:textSize="17dp" />
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enter Your Full Name *"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"
+                        android:padding="5dp"/>
+
+                    <EditText
+                        android:id="@+id/newConnection_fullname"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/border"
+                        android:padding="10dp"
+                        android:layout_margin="7dp"
+                        android:textSize="17dp" />
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Enter Your Email ID *"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/newConnection_emailid"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:layout_margin="7dp"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Enter Your Mobile No *"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/newConnection_mobileno"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:layout_margin="7dp"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Select City*"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <Spinner
+                            android:id="@+id/spn_chooseCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_spinner"
+                            android:cursorVisible="true"
+                            android:padding="10dp"
+                            android:layout_margin="7dp"
+                            android:singleLine="true"
+                            android:textIsSelectable="true"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Enter Your Address*"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/newConnection_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:inputType="text"
+                            android:singleLine="false"
+                            android:maxLines="4"
+                            android:layout_margin="7dp"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Enter Your Pincode*"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/newConnection_pincode"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:layout_margin="7dp"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Enter Your Message*"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/newConnection_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:inputType="text"
+
+                            android:layout_margin="7dp"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+                        <Button
+                            android:id="@+id/sendRequest"
+                            android:layout_margin="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="20dp"
+                            android:textColor="@color/white"
+                            android:text="Send Request"
+                            android:background="@drawable/buttonround"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.admin.worldvisioncable.NewConnectionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+       <!-- <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="9">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Complaints"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:gravity="center"
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"/>
+        </LinearLayout>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/complaints_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/border"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:padding="10dp"
+                            android:layout_margin="7dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Email ID"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/complaints_emailid"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/border"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:padding="10dp"
+                            android:layout_margin="7dp"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile No *"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/complaints_mobileno"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:layout_margin="7dp"
+                            android:inputType="number"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:singleLine="true"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nature Of Complaint *"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <Spinner
+                            android:id="@+id/spn_natureofcomplaints"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_spinner"
+                            android:cursorVisible="true"
+                            android:padding="10dp"
+                            android:layout_margin="7dp"
+                            android:singleLine="true"
+                            android:textIsSelectable="true"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Technician"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/complaints_technician"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:layout_margin="7dp"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Description *"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/complaints_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:inputType="text"
+                            android:singleLine="false"
+                            android:maxLines="4"
+                            android:layout_margin="7dp"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+                        <Button
+                            android:id="@+id/complaints_submit"
+                            android:layout_margin="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="20dp"
+                            android:textColor="@color/white"
+                            android:text="Submit"
+                            android:background="@drawable/buttonround"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

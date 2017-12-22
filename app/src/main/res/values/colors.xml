@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FAFAFA</color>
+    <color name="colorPrimaryDark">#1182C8</color>
+    <color name="colorAccent">#1182C8</color>
+
+    <color name="grey">#3C393A</color>
+    <color name="violet">#7871B6</color>
+
+    <color name="white_greyish">#B2B2B2</color>
+    <color name="dark_red">#c8000d</color>
+    <color name="dark_blue">#052B6E</color>
+    <color name="transparent">#00000000</color>
+    <!-- card colors -->
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow_1">#d4d4d4</color>
+    <color name="card_shadow_2">#dddddd</color>
+    <color name="card_detailing">#eee</color>
+    <color name="spots_dialog_color">@android:color/holo_red_light</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="login_btn_color">#A37B46</color>
+    <color name="text_heading_color">#FFB340</color>
+    <color name="plan_bg">#F7F3F0</color>
+
+    <color name="dot_sel">#804000</color>
+    <color name="dot_desel">#F5F5F5</color>
+    <color name="upload_img_bg">#ECE6E0</color>
+
+    <color name="disable_button">#AAAAAA</color>
+    <color name="detail_page">#F6F2EF</color>
+    <color name="pDetails">#AFABAC</color>
+    <color name="light_gray">#f5f5f7</color>
+    <color name="slide_color">#ececee</color>
+    <color name="vas_item_color">#787878</color>
+    <color name="expandable">#F2EFEB</color>
+
+    <color name="divider">#1F000000</color>
+
+    <color name="ButtonColor">#FFB340</color>
+    <color name="divider_color_light">#fafafa</color>
+
+
+    <!--Filter-->
+
+    <!--list_filter_group-->
+    <color name="parent">#FFB340</color>
+    <color name="childText">#000000</color>
+    <!--activity_product_Filters-->
+    <color name="BtnForeground">#ffffff</color>
+    <color name="BtnBackground">#FFB340</color>
+
+    <color name="profile_selected">#FFB340</color>
+    <color name="light_black">#555555</color>
+
+    <color name="Gray">#808080</color>
+    <color name="postad">#CF3702</color>
+</resources>

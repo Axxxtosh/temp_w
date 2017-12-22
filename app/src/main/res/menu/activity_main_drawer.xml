@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_nav_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_userAccount"
+            android:icon="@drawable/ic_nav_account"
+            android:title="Account" />
+        <item
+            android:id="@+id/nav_InternetPacks"
+            android:icon="@drawable/ic_nav_inrernet"
+            android:title="Internet Packs" />
+        <item
+            android:id="@+id/nav_CableTvPacks"
+            android:icon="@drawable/ic_nav_tv"
+            android:title="Cable Tv Packs" />
+
+      <!--  <item
+            android:id="@+id/nav_newConnection"
+            android:icon="@drawable/buysell"
+            android:title="New Connection" />
+
+        <item
+            android:id="@+id/nav_paybill"
+            android:icon="@drawable/classifiedads"
+            android:title="Pay Bill" />-->
+
+       <!-- <item
+            android:id="@+id/nav_bookTicket"
+            android:icon="@drawable/bookticket_nav"
+            android:title="Book Ticket" />-->
+        <item
+            android:id="@+id/nav_ViewBills"
+            android:icon="@drawable/ic_nav_bills"
+            android:title="View Bills" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_nav_logout"
+            android:title="Logout" />
+
+
+    </group>
+
+    <item android:title="Communication">
+        <menu>
+           <!-- <item
+                android:id="@+id/nav_refer"
+                android:icon="@drawable/account_nav"
+                android:title="Refer and Earnings" />
+            <item
+            android:id="@+id/nav_aboutus"
+            android:icon="@drawable/aboutus_nav"
+            android:title="About Us" />-->
+            <item
+                android:id="@+id/nav_complaints"
+                android:title="Complaints"
+                android:icon="@drawable/ic_nav_contact"/>
+
+          <!--  <item
+                android:id="@+id/nav_enquiry"
+                android:title="Enquiry"
+                android:icon="@drawable/buysell"/>-->
+
+            <item
+                android:id="@+id/nav_contactus"
+                android:icon="@drawable/ic_nav_cont"
+                android:title="Contact Us" />
+
+        </menu>
+    </item>
+
+</menu>
