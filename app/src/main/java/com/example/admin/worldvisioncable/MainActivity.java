@@ -21,11 +21,14 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 
 import com.example.admin.worldvisioncable.Session.UserSessionManager;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 
 public class MainActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener{
@@ -113,10 +116,24 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                 startActivity(i);
             }
         });
+        //Firebase
+        subscribeToPushService();
 
 
 
 
+    }
+    private void subscribeToPushService() {
+        FirebaseMessaging.getInstance();
+
+        Log.d("AndroidBash", "Subscribed");
+        Toast.makeText(MainActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
+
+        String token = FirebaseInstanceId.getInstance().getToken();
+
+        // Log and toast
+        Log.d("AndroidBash", token);
+        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onWindowFocusChanged (boolean hasFocus) {

@@ -28,6 +28,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label,android:theme">
+
+        <service
+            android:name=".PushNotitfication.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name=".PushNotitfication.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+
+
         <activity android:name=".SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

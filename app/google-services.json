@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "856926154314",
+    "firebase_url": "https://wordvisoncable-customer.firebaseio.com",
+    "project_id": "wordvisoncable-customer",
+    "storage_bucket": "wordvisoncable-customer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856926154314:android:9d80569be370cd79",
+        "android_client_info": {
+          "package_name": "com.example.admin.worldvisioncable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856926154314-3tbjvlfpnmia1djuebmjai364522bgv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuWut_PJwF-j4c97T2Y2c3T0F-Z7_XKwQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -15,9 +15,12 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.admin.worldvisioncable.Models.UsedObject;
 import com.example.admin.worldvisioncable.Session.UserSessionManager;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
 
@@ -39,6 +42,8 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
+
 
         cn=(ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -104,6 +109,7 @@ public class SplashScreen extends AppCompatActivity {
 
 
     }
+
 
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION);
