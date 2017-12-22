@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tra_id"
-        android:text="Ashshshshs"/>
+        android:text="Payment Status"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
