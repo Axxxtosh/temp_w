@@ -34,12 +34,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tra_number"
-        android:text="Ashshshshs"/>
+        android:text="Ashutosh"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/amount"
-        android:text="Ashshshshs"/>
+        android:text="Ashutosh"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
