@@ -92,6 +92,7 @@
 
             <Button
                 android:id="@+id/forgetPassword"
+                android:fontFamily="@font/roboto_light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
