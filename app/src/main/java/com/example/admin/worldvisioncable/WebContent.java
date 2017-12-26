@@ -20,6 +20,10 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.Arrays;
+
+import dmax.dialog.SpotsDialog;
+
 public class WebContent extends AppCompatActivity {
 
     private static final String TAG = "WebContent";
@@ -28,6 +32,7 @@ public class WebContent extends AppCompatActivity {
     public static final String KEY_ATOM2REQUEST = "Atom2Request";
     String Atom2Request;
     Intent intent;
+    private SpotsDialog home_dialog;
     boolean loadingFinished = true;
     boolean redirect = false;
     Button backPayment,closeView;
@@ -125,18 +130,22 @@ public class WebContent extends AppCompatActivity {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap facIcon) {
             loadingFinished = false;
-            //SHOW LOADING IF IT ISNT ALREADY VISIBLE
+            /*home_dialog = new SpotsDialog(view.getContext(), R.style.Custom);
+            home_dialog.getWindow().setBackgroundDrawableResource(
+                    R.color.transparent);
+            home_dialog.show();*/
             Log.w(TAG, "Loading");
         }
 
         @Override
         public void onPageFinished(WebView view, String url) {
+
             if (!redirect) {
                 loadingFinished = true;
             }
 
             if (loadingFinished && !redirect) {
-                //HIDE LOADING IT HAS FINISHED
+
                 Log.w(TAG, "Finish Loading");
 
             } else {
@@ -156,6 +165,22 @@ public class WebContent extends AppCompatActivity {
             returnIntent.putExtra("Result", reponseText);
             setResult(RESULT_OK, returnIntent);
             Toast.makeText(mContext, "in Web content", Toast.LENGTH_SHORT).show();
+            Log.d("Payment",reponseText);
+            //Response From Payment gateway
+            String[] parts = reponseText.split(",");
+
+            Log.d("Payment", Arrays.toString(parts));
+
+            if(parts[6].equals("F")){
+                Toast.makeText(mContext, "Payment Failure", Toast.LENGTH_SHORT).show();
+
+            }else if(parts[6].equals("C")){
+                Toast.makeText(mContext, "Canceled by user", Toast.LENGTH_SHORT).show();
+
+            }else if(parts[6].equals("OK")){
+                Toast.makeText(mContext, "Payment Success", Toast.LENGTH_SHORT).show();
+
+            }
 
 
             //finish();
