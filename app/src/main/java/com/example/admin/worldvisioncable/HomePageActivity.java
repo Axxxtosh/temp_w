@@ -250,6 +250,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         else {
 
             if (doubleBackToExitPressedOnce) {
+                finish();
                 super.onBackPressed();
                 return;
             }

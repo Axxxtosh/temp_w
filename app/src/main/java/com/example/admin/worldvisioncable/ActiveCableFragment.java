@@ -213,11 +213,11 @@ public class ActiveCableFragment extends SampleFragment {
 
             decoView.executeReset();
             decoView.addEvent(new DecoEvent.Builder(DecoEvent.EventType.EVENT_SHOW, true)
-                    .setDelay(100)
-                    .setDuration(100)
+                    .setDelay(200)
+                    .setDuration(200)
                     .build());
 
-            decoView.addEvent(new DecoEvent.Builder(wheel).setIndex(mSeries1Index).setDelay(200).build());
+            decoView.addEvent(new DecoEvent.Builder(wheel).setIndex(mSeries1Index).setDelay(100).build());
         }
 
 
