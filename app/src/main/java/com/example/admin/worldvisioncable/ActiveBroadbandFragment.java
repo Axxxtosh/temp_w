@@ -295,6 +295,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         wheel=days;
                         calculateAngle(wheel);
                         setupEvents();
+                        home_dialog.dismiss();
 
 
                     } catch (ParseException e) {
@@ -503,7 +504,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
 
 
             container.addView(itemView);
-            home_dialog.dismiss();
+
             return itemView;
         }
 

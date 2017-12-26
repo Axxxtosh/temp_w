@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -69,6 +70,9 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
         }
 
     }
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -86,12 +90,12 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
 
         for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
-            TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+            TextView tv = this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
             tv.setTextColor(Color.parseColor("#dddddd"));
             tv.setGravity(Gravity.CENTER);
         }
 
-        TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title); //Unselected Tabs
+        TextView tv = this.mTabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title); //Unselected Tabs
         tv.setTextColor(Color.parseColor("#ffffff"));
         tv.setGravity(Gravity.CENTER);
         return v;
@@ -109,7 +113,7 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
 
         this.mPagerAdapter  = new Pager(super.getActivity().getSupportFragmentManager(), fragments);
         //
-        this.mViewPager = (ViewPager)v.findViewById(R.id.viewpager);
+        this.mViewPager = v.findViewById(R.id.viewpager);
         this.mViewPager.setAdapter(this.mPagerAdapter);
         this.mViewPager.setOnPageChangeListener(this);
     }
@@ -118,7 +122,7 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
      * Initialise the Tab Host
      */
     private void initialiseTabHost(Bundle args) {
-        mTabHost = (TabHost)v.findViewById(android.R.id.tabhost);
+        mTabHost = v.findViewById(android.R.id.tabhost);
         mTabHost.setup();
         TabInfo tabInfo = null;
 
@@ -155,13 +159,13 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
 
         for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
-            TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+            TextView tv = this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
             tv.setTextColor(Color.parseColor("#dddddd"));
             tv.setGravity(Gravity.CENTER);
         }
 
         // this.mTabHost.getTabWidget().getChildAt(this.mTabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#20A0E1")); // selected
-        TextView tv = (TextView) this.mTabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
+        TextView tv = this.mTabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
         tv.setTextColor(Color.parseColor("#ffffff"));
         tv.setGravity(Gravity.CENTER);
 
