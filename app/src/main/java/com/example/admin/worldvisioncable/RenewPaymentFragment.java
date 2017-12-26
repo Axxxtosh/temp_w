@@ -57,20 +57,20 @@ public class RenewPaymentFragment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_renew_payment);
 
-        username=(TextView)findViewById(R.id.username);
-        accountid=(TextView)findViewById(R.id.accountid);
-        billno=(TextView)findViewById(R.id.billno);
-        renewpackname=(TextView)findViewById(R.id.renewplanname);
-        renewvalidity=(TextView)findViewById(R.id.renewvalidity);
-        renewduedate=(TextView)findViewById(R.id.renewDuedate);
-        previous_due=(TextView)findViewById(R.id.previous_due_amount);
-        current_invoice=(TextView)findViewById(R.id.current_due_amount);
-        totalpayment=(TextView)findViewById(R.id.total_due_amount);
+        username= findViewById(R.id.username);
+        accountid= findViewById(R.id.accountid);
+        billno= findViewById(R.id.billno);
+        renewpackname= findViewById(R.id.renewplanname);
+        renewvalidity= findViewById(R.id.renewvalidity);
+        renewduedate= findViewById(R.id.renewDuedate);
+        previous_due= findViewById(R.id.previous_due_amount);
+        current_invoice= findViewById(R.id.current_due_amount);
+        totalpayment= findViewById(R.id.total_due_amount);
 
         username.setText(UsedObject.getUserUID());
         accountid.setText(UsedObject.getUserUID());
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_home);
+        Toolbar toolbar = findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Renew Plan");
         toolbar.setTitleTextColor(getResources().getColor(R.color.grey));
@@ -101,7 +101,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 R.color.transparent);
 
-        paymentCallAction=(Button)findViewById(R.id.paymentCallAction);
+        paymentCallAction= findViewById(R.id.paymentCallAction);
 
         paymentCallAction.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -258,7 +258,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
                     Log.d("XML URL", xmlURL);
                     Log.d("XML TRANS TYPE", xmlttype);
                     Log.d("tempTxnId : ", xmltempTxnId);
-                    Log.d("param : token     :", xmltoken);
+                    Log.d("param :token     :", xmltoken);
                     Log.d("param :txnStage  : ", xmltxnStage);
                 }
             }
