@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             @Override
             public void onClick(View view) {
                 //contactus.setAnimation(AnimationUtils.loadAnimation(view.getContext(),R.anim.zoom_in));
-                Intent i=new Intent(MainActivity.this,PaymentStatus.class);
+                Intent i = new Intent(MainActivity.this, ContactUsActivity.class);
                 startActivity(i);
             }
         });

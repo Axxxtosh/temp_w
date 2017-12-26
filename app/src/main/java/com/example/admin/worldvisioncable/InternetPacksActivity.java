@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TabHost;
@@ -76,16 +77,7 @@ public class InternetPacksActivity extends AppCompatActivity implements TabHost.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_internet_packs);
 
-        login=(Button)findViewById(R.id.login);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("Login","Clicked");
 
-                Intent i=new Intent(InternetPacksActivity.this,LoginActivity.class);
-                startActivity(i);
-            }
-        });
 
 // Initialise the TabHost
         this.initialiseTabHost(savedInstanceState);
@@ -95,8 +87,16 @@ public class InternetPacksActivity extends AppCompatActivity implements TabHost.
         // Intialise ViewPager
         this.intialiseViewPager();
 
-        TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title); //Unselected Tabs
-        tv.setTextColor(Color.parseColor("#ffffff"));
+        for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
+            //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
+            TextView tv = this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+            tv.setTextColor(Color.parseColor("#ffffff"));
+            tv.setGravity(Gravity.CENTER);
+        }
+
+        TextView tv = this.mTabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title); //Unselected Tabs
+        tv.setTextColor(Color.parseColor("#ffff4444"));
+        tv.setGravity(Gravity.CENTER);
 
 
     }
@@ -166,12 +166,12 @@ public class InternetPacksActivity extends AppCompatActivity implements TabHost.
         for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
             TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
-            tv.setTextColor(Color.parseColor("#000000"));
+            tv.setTextColor(Color.parseColor("#ffffff"));
         }
 
        // this.mTabHost.getTabWidget().getChildAt(this.mTabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#20A0E1")); // selected
         TextView tv = (TextView) this.mTabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
-        tv.setTextColor(Color.parseColor("#ffffff"));
+        tv.setTextColor(Color.parseColor("#ffff4444"));
 
 
     }
