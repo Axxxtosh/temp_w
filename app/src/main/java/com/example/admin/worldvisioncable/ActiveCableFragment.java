@@ -75,6 +75,8 @@ public class ActiveCableFragment extends SampleFragment {
     Button btnRenewBroadband,changePlan;
     int wheel=0;
 
+    private static final String TAG ="Active Cable Fragment";
+
     TextView txtPackageName,txtPrice,txtProvider,txtValidity,txtDue_date,daysRemaining;
 
     String PlanName,PackageId,due_date,Package_name,
@@ -206,7 +208,7 @@ public class ActiveCableFragment extends SampleFragment {
     protected void setupEvents() {
         final DecoView decoView = getDecoView();
         if (decoView == null || decoView.isEmpty()) {
-            //throw new IllegalStateException("Unable to add events to empty DecoView");
+            //  throw new IllegalStateException("Unable to add events to empty DecoView");
         }else {
 
             decoView.executeReset();
@@ -240,7 +242,7 @@ public class ActiveCableFragment extends SampleFragment {
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
-
+                Log.d(TAG,result);
                 if(response.equalsIgnoreCase("200"))
 
                 {

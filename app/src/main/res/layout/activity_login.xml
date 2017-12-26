@@ -99,11 +99,12 @@
 
             <Button
                 android:id="@+id/btnLogin"
+                android:fontFamily="@font/roboto_light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:textColor="@color/white"
-                android:background="@drawable/buttonround"
+                android:background="@drawable/btn_renew"
                 android:text="Login"/>
 
         </LinearLayout>

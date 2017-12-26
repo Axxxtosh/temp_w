@@ -197,8 +197,8 @@ public class RenewPaymentFragment extends AppCompatActivity {
             String CurrDateTime = sdf.format(new Date()).toString();
            // vVenderURL = "https://paynetzuat.atomtech.in/paynetz/epi/fts?login=mt=1&14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&atxncurr=INR&txnscamt=0&clientcode=bGlzYXMwMDk0MA==&txnid=wv_123456789&date=27/11/2017&custacc=123456789&udf1=Customer&udf2=rajtufan@gmail.com&udf3=8485835654&udf4=pune&ru=http://example.webservice/response.aspx?";
 
-           // String TotalPrice=UsedObject.getCurBBPlanPrice();
-            String TotalPrice="51";
+           String TotalPrice=UsedObject.getCurBBPlanPrice();
+            //TotalPrice="51";
             long time= System.currentTimeMillis();
             String TaxId="WVC"+String.valueOf(time);
             String username= UsedObject.getUserName();
@@ -215,7 +215,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
             //vVenderURL = "https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt="+TotalPrice+"&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"";
 
             //vVenderURL = "https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt=51&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"&udf9={\"+user_id\":\"+3119\",\"package_type\":\"1\",\"package_id\":\"11\"}";
-            vVenderURL="https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt=51&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"&udf9=user_id:3119;package_type:1;package_id:"+packageid;
+            vVenderURL="https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt="+TotalPrice+"&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"&udf9=:"+userid+";package_type:1;package_id:"+packageid;
 
 
             Log.d("Vvendor URL", vVenderURL);
@@ -227,8 +227,8 @@ public class RenewPaymentFragment extends AppCompatActivity {
             String xml = parser.getXmlFromUrl(vVenderURL);     // getting XML
             Document doc = parser.getDomElement(xml);         // getting DOM element
             NodeList nList = doc.getElementsByTagName("RESPONSE");
-            String xmlURL = "";
-            String xmlttype = "";
+            String xmlURL ="";
+            String xmlttype ="";
             String xmltoken="";
             String xmltxnStage="";
             String xmltempTxnId="";

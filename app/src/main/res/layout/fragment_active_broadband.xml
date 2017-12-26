@@ -67,11 +67,13 @@
                             <Button
                                 android:id="@+id/renewBroadbandplan"
                                 android:layout_width="120dp"
-                                android:layout_height="30dp"
+                                android:layout_height="35dp"
+                                android:fontFamily="@font/roboto_light"
+                                android:layout_margin="4dp"
                                 android:text="Renew Pack"
                                 android:textColor="@color/white"
                                 android:gravity="center"
-                                android:background="@drawable/button"/>
+                                android:background="@drawable/btn_renew"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -117,6 +119,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:minLines="2"
+                                        android:fontFamily="@font/roboto_light"
                                         android:text="31 Days"
                                         android:textColor="@color/dark_red"
                                         android:textSize="30dp"
@@ -165,6 +168,7 @@
                                 android:id="@+id/daysRemaining"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
                                 android:text="21 Days Remaining for Next Bill"
                                 android:textColor="@color/dark_red"
                                 android:textSize="17dp"
@@ -214,11 +218,13 @@
                             <Button
                                 android:id="@+id/recommendedPlans"
                                 android:layout_width="120dp"
-                                android:layout_height="30dp"
+                                android:layout_height="35dp"
                                 android:text="Change Plan"
+                                android:fontFamily="@font/roboto_light"
+                                android:layout_margin="4dp"
                                 android:textColor="@color/white"
                                 android:gravity="center"
-                                android:background="@drawable/button"/>
+                                android:background="@drawable/btn_renew"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -234,6 +240,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Plan Name"
+                                android:fontFamily="@font/roboto_light"
                                 android:textSize="20dp"
                                 android:textColor="@color/black"
                                 android:padding="3dp"
@@ -242,6 +249,7 @@
                                 android:id="@+id/planname"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
                                 android:text="100 Mbps Speed 300 GB FUP 2 Mbps"
                                 android:textSize="16dp"
                                 android:padding="3dp"
@@ -267,6 +275,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:textColor="@color/black"
+                                    android:fontFamily="@font/roboto_light"
                                     android:text="Price"
                                     android:textSize="20dp"
                                     android:padding="3dp"
@@ -299,6 +308,7 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="@color/black"
                                     android:text="Provider"
+                                    android:fontFamily="@font/roboto_light"
                                     android:textSize="20dp"
                                     android:padding="3dp"
                                     android:gravity="center"/>
@@ -330,6 +340,7 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="@color/black"
                                     android:text="Validity"
+                                    android:fontFamily="@font/roboto_light"
                                     android:textSize="20dp"
                                     android:padding="3dp"
                                     android:gravity="center"/>
