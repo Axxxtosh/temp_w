@@ -257,7 +257,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
                     }
                     Log.d("XML URL", xmlURL);
                     Log.d("XML TRANS TYPE", xmlttype);
-                    Log.d("tempTxnId : ", xmltempTxnId);
+                    Log.d("tempTxnId :", xmltempTxnId);
                     Log.d("param :token     :", xmltoken);
                     Log.d("param :txnStage  : ", xmltxnStage);
                 }
@@ -275,7 +275,8 @@ public class RenewPaymentFragment extends AppCompatActivity {
                 dialog.dismiss();
                 Intent intent = new Intent(RenewPaymentFragment.this, WebContent.class);
                 intent.putExtra("Keyatomrequest", result);
-                startActivityForResult(intent, 1);
+                startActivity(intent);
+                finish();
             }
 
         }
@@ -293,7 +294,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
 
 
     }
-    @Override
+    /*@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
@@ -309,7 +310,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
 
             Log.d("Payment", Arrays.toString(parts));
 
-           /* Intent intent = new Intent(RenewPaymentFragment.this,PaymentStatus.class);
+           *//* Intent intent = new Intent(RenewPaymentFragment.this,PaymentStatus.class);
             intent.putExtra("transaction_number",parts[0]);
             intent.putExtra("transaction_id",parts[1]);
             intent.putExtra("amount",parts[2]);
@@ -317,7 +318,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
             intent.putExtra("package_name",parts[13]);
 
             startActivity(intent);
-            finish();*/
+            finish();*//*
 
 
 
@@ -328,7 +329,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show();
             }
 
-            /*
+            *//*
             * Transaction number-44271173,
             * Transaction id-WVC1513769980709,
             * Amount 51.00,
@@ -353,8 +354,8 @@ public class RenewPaymentFragment extends AppCompatActivity {
             *
             *
             *
-            * */
+            * *//*
 
-    }}
+    }}*/
 
 }

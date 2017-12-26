@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
@@ -17,6 +18,7 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class WebContent extends AppCompatActivity {
 
@@ -29,6 +31,7 @@ public class WebContent extends AppCompatActivity {
     boolean loadingFinished = true;
     boolean redirect = false;
     Button backPayment,closeView;
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,7 @@ public class WebContent extends AppCompatActivity {
 
         mContext = this;
 
-        closeView=(Button)findViewById(R.id.close_payment);
+        closeView= findViewById(R.id.close_payment);
         closeView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,7 +89,7 @@ public class WebContent extends AppCompatActivity {
         if (extras != null)
             Atom2Request = extras.getString("Keyatomrequest");
         Log.d("ATOM2Request webview", Atom2Request);
-        WebView webView = (WebView) findViewById(R.id.webView);
+        WebView webView = findViewById(R.id.webView);
         webView.setWebViewClient(new MyWebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
@@ -152,11 +155,32 @@ public class WebContent extends AppCompatActivity {
             Intent returnIntent = new Intent();
             returnIntent.putExtra("Result", reponseText);
             setResult(RESULT_OK, returnIntent);
+            Toast.makeText(mContext, "in Web content", Toast.LENGTH_SHORT).show();
 
 
             //finish();
 
         }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 
 }

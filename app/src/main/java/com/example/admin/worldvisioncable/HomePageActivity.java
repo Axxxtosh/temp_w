@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -32,6 +33,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
     UserSessionManager sessionManager;
 
     View navHeader;
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +42,12 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
 
         sessionManager = new UserSessionManager(HomePageActivity.this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar_homepage);
+        toolbar = findViewById(R.id.toolbar_homepage);
 
 
         setSupportActionBar(toolbar);
 
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navHeader = navigationView.getHeaderView(0);
 
         if(sessionManager.getPaybillLoginStatus().equalsIgnoreCase("Y"))
@@ -64,7 +66,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         }
 
 
-        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
 
         //drawer.setHomeAsUpIndicator(drawable);
@@ -89,21 +91,12 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
 
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -181,12 +174,12 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
 
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 
@@ -216,5 +209,33 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
             alertbox.show();
         }
         return super.onKeyDown(keyCode, event);
+    }*/
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        }
+
+        else {
+
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce=false;
+                }
+            }, 2000);
+
+        }
+
+
     }
 }
