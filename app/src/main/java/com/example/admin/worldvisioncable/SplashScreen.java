@@ -29,7 +29,7 @@ import static android.content.DialogInterface.BUTTON_POSITIVE;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private final int SPLASH_DISPLAY_LENGTH = 3500;
+    private final int SPLASH_DISPLAY_LENGTH = 1500;
     private static final int PERMISSION_REQUEST_CODE = 200;
 
     UserSessionManager session;

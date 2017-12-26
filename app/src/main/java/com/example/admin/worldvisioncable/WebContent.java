@@ -130,10 +130,8 @@ public class WebContent extends AppCompatActivity {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap facIcon) {
             loadingFinished = false;
-            /*home_dialog = new SpotsDialog(view.getContext(), R.style.Custom);
-            home_dialog.getWindow().setBackgroundDrawableResource(
-                    R.color.transparent);
-            home_dialog.show();*/
+
+            
             Log.w(TAG, "Loading");
         }
 

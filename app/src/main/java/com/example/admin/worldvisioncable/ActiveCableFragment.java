@@ -93,14 +93,14 @@ public class ActiveCableFragment extends SampleFragment {
         // Inflate the layout for this fragment
         v= inflater.inflate(R.layout.fragment_active_broadband, container, false);
 
-        txtDue_date=(TextView)v.findViewById(R.id.due_date);
-        txtPackageName=(TextView)v.findViewById(R.id.planname);
-        txtPrice=(TextView)v.findViewById(R.id.price);
-        txtProvider=(TextView)v.findViewById(R.id.provider);
-        txtValidity=(TextView)v.findViewById(R.id.validity);
-        changePlan=(Button)v.findViewById(R.id.recommendedPlans);
-        daysRemaining=(TextView)v.findViewById(R.id.daysRemaining);
-        btnRenewBroadband=(Button)v.findViewById(R.id.renewBroadbandplan);
+        txtDue_date= v.findViewById(R.id.due_date);
+        txtPackageName= v.findViewById(R.id.planname);
+        txtPrice= v.findViewById(R.id.price);
+        txtProvider= v.findViewById(R.id.provider);
+        txtValidity= v.findViewById(R.id.validity);
+        changePlan= v.findViewById(R.id.recommendedPlans);
+        daysRemaining= v.findViewById(R.id.daysRemaining);
+        btnRenewBroadband= v.findViewById(R.id.renewBroadbandplan);
 
         btnRenewBroadband.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,10 +126,10 @@ public class ActiveCableFragment extends SampleFragment {
 
 
 
-        view_pager_slider = (ViewPager) v.findViewById(R.id.view_pager_slider);
+        view_pager_slider = v.findViewById(R.id.view_pager_slider);
 
-        dataLayout=(LinearLayout)v.findViewById(R.id.dataLayout);
-        dataUsage=(TextView)v.findViewById(R.id.dataUsed);
+        dataLayout= v.findViewById(R.id.dataLayout);
+        dataUsage= v.findViewById(R.id.dataUsed);
 
         dataLayout.setVisibility(View.GONE);
 
@@ -207,15 +207,16 @@ public class ActiveCableFragment extends SampleFragment {
         final DecoView decoView = getDecoView();
         if (decoView == null || decoView.isEmpty()) {
             //throw new IllegalStateException("Unable to add events to empty DecoView");
+        }else {
+
+            decoView.executeReset();
+            decoView.addEvent(new DecoEvent.Builder(DecoEvent.EventType.EVENT_SHOW, true)
+                    .setDelay(100)
+                    .setDuration(100)
+                    .build());
+
+            decoView.addEvent(new DecoEvent.Builder(wheel).setIndex(mSeries1Index).setDelay(200).build());
         }
-
-        decoView.executeReset();
-        decoView.addEvent(new DecoEvent.Builder(DecoEvent.EventType.EVENT_SHOW, true)
-                .setDelay(100)
-                .setDuration(100)
-                .build());
-
-        decoView.addEvent(new DecoEvent.Builder(wheel).setIndex(mSeries1Index).setDelay(200).build());
 
 
 

@@ -28,23 +28,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label,android:theme">
-
-        <service
-            android:name=".PushNotitfication.MyFirebaseMessagingService">
+        <service android:name=".PushNotitfication.MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service
-            android:name=".PushNotitfication.MyFirebaseInstanceIDService">
+        <service android:name=".PushNotitfication.MyFirebaseInstanceIDService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
-
-
-        <activity android:name=".SplashScreen" >
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,9 +48,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ChangePlan.BroadbandPlanChangeActivity"
             android:screenOrientation="portrait" />
@@ -73,6 +66,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".HomePageActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name=".WebContent"
@@ -89,17 +83,15 @@
         <activity android:name=".CablePlansActivity" />
         <activity
             android:name="com.atom.mobilepaymentsdk.PayActivity"
-            android:label="@string/app_name"></activity>
-        <activity android:name=".PaymentStatus"></activity>
-
-        <activity android:name=".ContactUsActivity"
-            android:screenOrientation="portrait" >
-
-        </activity>
-        <activity android:name=".EditUserProfile"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:label="@string/app_name" />
+        <activity android:name=".PaymentStatus" />
+        <activity
+            android:name=".ContactUsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".EditUserProfile"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ViewOffers"></activity>
     </application>
 
 </manifest>

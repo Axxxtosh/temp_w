@@ -56,15 +56,15 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v=inflater.inflate(R.layout.fragment_profile, container, false);
-        TextView tv_userName = (TextView) v.findViewById(R.id.user_name);
-        TextView tv_userMail = (TextView) v.findViewById(R.id.user_mail);
-        TextView tv_userMobile = (TextView) v.findViewById(R.id.user_mobile);
-        TextView tv_userID = (TextView) v.findViewById(R.id.user_id);
-        TextView tv_cardNo= (TextView) v.findViewById(R.id.user_card_no);
-        TextView tv_userAddress = (TextView) v.findViewById(R.id.user_address);
-        logout=(LinearLayout)v.findViewById(R.id.prof_logout);
-        userImage=(TextView) v.findViewById(R.id.user_image);
-        btn_user_edit=(Button)v.findViewById(R.id.btn_user_edit);
+        TextView tv_userName = v.findViewById(R.id.user_name);
+        TextView tv_userMail = v.findViewById(R.id.user_mail);
+        TextView tv_userMobile = v.findViewById(R.id.user_mobile);
+        TextView tv_userID = v.findViewById(R.id.user_id);
+        TextView tv_cardNo= v.findViewById(R.id.user_card_no);
+        TextView tv_userAddress = v.findViewById(R.id.user_address);
+        logout= v.findViewById(R.id.prof_logout);
+        userImage= v.findViewById(R.id.user_image);
+        btn_user_edit= v.findViewById(R.id.btn_user_edit);
 
         sessionManager = new UserSessionManager(getActivity());
 
@@ -120,5 +120,6 @@ public class ProfileFragment extends Fragment {
         userAddress=data[0]+data[1]+",\n"+data[2]+",\n"+prefs.getString(KEY_CITYNAME,"")+","+
         prefs.getString(KEY_COUNTRYNAME,"");
     }
+
 
 }

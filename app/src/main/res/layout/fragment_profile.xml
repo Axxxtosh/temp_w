@@ -191,9 +191,9 @@
             android:layout_height="50dp"
             android:clickable="true"
             android:orientation="horizontal"
-            android:layout_margin="5dp"
+
             android:gravity="center"
-            android:background="@drawable/buttonround">
+            android:background="@color/colorPrimaryDark">
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"

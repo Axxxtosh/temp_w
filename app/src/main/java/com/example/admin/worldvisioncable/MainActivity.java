@@ -54,13 +54,13 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
         sessionManager = new UserSessionManager(MainActivity.this);
       //  mSlider = (SliderLayout)findViewById(R.id.slider_home);
-        hathway = (CardView) findViewById(R.id.hathway);
-        cabletv = (CardView) findViewById(R.id.cabletv);
-        newConnection = (CardView) findViewById(R.id.newConnection);
-        contactus=(CardView) findViewById(R.id.contact_us);
-        viewoffers = (Button) findViewById(R.id.view_plans);
+        hathway = findViewById(R.id.hathway);
+        cabletv = findViewById(R.id.cabletv);
+        newConnection = findViewById(R.id.newConnection);
+        contactus= findViewById(R.id.contact_us);
+        viewoffers = findViewById(R.id.view_plans);
 
-        login=(CardView) findViewById(R.id.login);
+        login= findViewById(R.id.login);
 
         animation1 = AnimationUtils.loadAnimation(this, R.anim.swing_up_right);
         animation2 = AnimationUtils.loadAnimation(this, R.anim.swing_up_left);
@@ -116,6 +116,16 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                 startActivity(i);
             }
         });
+        viewoffers.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                //cabletv.setAnimation(AnimationUtils.loadAnimation(view.getContext(),R.anim.zoom_in));
+                Intent i=new Intent(MainActivity.this,ViewOffers.class);
+                startActivity(i);
+            }
+        });
+
         //Firebase
         subscribeToPushService();
 
