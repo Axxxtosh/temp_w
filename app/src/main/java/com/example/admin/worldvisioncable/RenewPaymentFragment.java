@@ -259,7 +259,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
                     Log.d("XML TRANS TYPE", xmlttype);
                     Log.d("tempTxnId : ", xmltempTxnId);
                     Log.d("param : token     :", xmltoken);
-                    Log.d("param : txnStage  : ", xmltxnStage);
+                    Log.d("param :txnStage  : ", xmltxnStage);
                 }
             }
 
