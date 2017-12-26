@@ -309,7 +309,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
 
             Log.d("Payment", Arrays.toString(parts));
 
-            Intent intent = new Intent(RenewPaymentFragment.this,PaymentStatus.class);
+           /* Intent intent = new Intent(RenewPaymentFragment.this,PaymentStatus.class);
             intent.putExtra("transaction_number",parts[0]);
             intent.putExtra("transaction_id",parts[1]);
             intent.putExtra("amount",parts[2]);
@@ -317,7 +317,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
             intent.putExtra("package_name",parts[13]);
 
             startActivity(intent);
-            finish();
+            finish();*/
 
 
 
@@ -325,7 +325,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
             Toast.makeText(this, ""+data, Toast.LENGTH_SHORT).show();
         }
             if (resultCode == Activity.RESULT_CANCELED) {
-                //Write your code if there's no result
+                Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show();
             }
 
             /*

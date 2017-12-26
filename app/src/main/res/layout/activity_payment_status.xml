@@ -29,32 +29,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tra_id"
-        android:text="Payment Status"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tra_number"
-        android:text="Ashutosh"/>
+        android:layout_margin="10dp"
+        android:minLines="2"
+        android:textSize="20sp"
+        android:text="Payment Successful"/>
+   <!--
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/amount"
-        android:text="Ashutosh"/>
+        android:text="Paid"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/date_time"
-        android:text="Ashshshshs"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/package_name"
-        android:text="Ashshshshs"/>
+        android:id="@+id/tra_number"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:text="Amount"/>-->
+
 
     <Button
         android:id="@+id/close_button"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
         android:layout_height="wrap_content"
+        android:background="@drawable/buttonround"
         android:text="close"/>
 
 

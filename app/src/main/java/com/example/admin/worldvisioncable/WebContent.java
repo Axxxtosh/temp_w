@@ -1,12 +1,14 @@
 package com.example.admin.worldvisioncable;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -26,7 +28,7 @@ public class WebContent extends AppCompatActivity {
     Intent intent;
     boolean loadingFinished = true;
     boolean redirect = false;
-    Button backPayment;
+    Button backPayment,closeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +37,51 @@ public class WebContent extends AppCompatActivity {
 
         mContext = this;
 
+        closeView=(Button)findViewById(R.id.close_payment);
+        closeView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(view.getContext());
+                builder1.setMessage("Are you sure you want to exit?");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                finish();
+                                Intent i=new Intent(WebContent.this,HomePageActivity.class);
+                startActivity(i);
+
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+            }
+        });
+
+/*
         backPayment=(Button)findViewById(R.id.backPayment);
         backPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
+                Intent i=new Intent(WebContent.this,HomePageActivity.class);
+                startActivity(i);
+                finish();
             }
-        });
+        });*/
         Bundle extras = getIntent().getExtras();
         if (extras != null)
             Atom2Request = extras.getString("Keyatomrequest");
@@ -95,6 +135,7 @@ public class WebContent extends AppCompatActivity {
             if (loadingFinished && !redirect) {
                 //HIDE LOADING IT HAS FINISHED
                 Log.w(TAG, "Finish Loading");
+
             } else {
                 redirect = false;
             }
@@ -111,7 +152,9 @@ public class WebContent extends AppCompatActivity {
             Intent returnIntent = new Intent();
             returnIntent.putExtra("Result", reponseText);
             setResult(RESULT_OK, returnIntent);
-            finish();
+
+
+            //finish();
 
         }
     }

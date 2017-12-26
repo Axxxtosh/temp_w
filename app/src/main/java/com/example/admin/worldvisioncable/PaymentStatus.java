@@ -21,9 +21,6 @@ public class PaymentStatus extends AppCompatActivity {
         setContentView(R.layout.activity_payment_status);
 
         tv_tra_id=(TextView)findViewById(R.id.tra_id);
-        tv_tra_number=(TextView)findViewById(R.id.tra_number);
-        tv_amount=(TextView)findViewById(R.id.amount);
-        tv_datetime=(TextView)findViewById(R.id.date_time);
         tv_package_name=(TextView)findViewById(R.id.package_name);
         close=(Button) findViewById(R.id.close_button);
 
@@ -36,11 +33,7 @@ public class PaymentStatus extends AppCompatActivity {
             package_name = extras.getString("package_name");
             //The key argument here must match that used in the other activity
 
-            tv_tra_id.setText(tra_id);
-            tv_tra_number.setText(tra_number);
-            tv_amount.setText(amount);
-            tv_datetime.setText(datetime);
-            tv_package_name.setText(package_name);
+
         }
         //Check
         checkView = (ImageView) findViewById(R.id.check);

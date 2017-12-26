@@ -119,13 +119,6 @@ public class ActiveBroadbandFragment extends SampleFragment {
                 Intent i=new Intent(getActivity(),RenewPaymentFragment.class);
                 startActivity(i);
 
-
-              /*  RenewPaymentFragment renewPaymentFragment = new RenewPaymentFragment();
-                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                // ft.addToBackStack(null);
-                ft.setCustomAnimations(R.anim.enter_left, R.anim.exit_right, R.anim.enter_right, R.anim.exit_left);
-                ft.replace(R.id.content_main, renewPaymentFragment, "Renew Fragment");
-                ft.commit();*/
             }
         });
 
@@ -142,13 +135,14 @@ public class ActiveBroadbandFragment extends SampleFragment {
         home_dialog.getWindow().setBackgroundDrawableResource(
                 R.color.transparent);
         home_dialog.show();
+
+
         al_slider = new ArrayList<>();
         String SLIDER_URL = "https://www.worldvisioncable.in/api/slider-api.php";
         new SliderTask().execute(SLIDER_URL);
 
         Log.d("User Id","S"+ UsedObject.getId());
-      //  String finalURL = "https://www.worldvisioncable.in/api/account/active_plan_broadband.php?userid="+ UsedObject.getId();
-        //new ActiveBroadBandTask().execute("2635");
+
 
         new ActiveBroadBandTask().execute(UsedObject.getId());
 
@@ -216,11 +210,11 @@ public class ActiveBroadbandFragment extends SampleFragment {
 
         decoView.executeReset();
         decoView.addEvent(new DecoEvent.Builder(DecoEvent.EventType.EVENT_SHOW, true)
-                .setDelay(1000)
-                .setDuration(2000)
+                .setDelay(200)
+                .setDuration(200)
                 .build());
 
-        decoView.addEvent(new DecoEvent.Builder(wheel).setIndex(mSeries1Index).setDelay(3300).build());
+        decoView.addEvent(new DecoEvent.Builder(wheel).setIndex(mSeries1Index).setDelay(100).build());
 
 
 

@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.admin.worldvisioncable.ChangePlan.ActiveCableTVChangeActivity;
 import com.example.admin.worldvisioncable.ChangePlan.BroadbandPlanChangeActivity;
 import com.example.admin.worldvisioncable.Models.SliderDataModel;
 import com.example.admin.worldvisioncable.Models.UsedObject;
@@ -155,7 +156,7 @@ public class ActiveCableFragment extends SampleFragment {
         changePlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getActivity(),BroadbandPlanChangeActivity.class);
+                Intent i=new Intent(getActivity(),ActiveCableTVChangeActivity.class);
                 startActivity(i);
             }
         });
@@ -205,16 +206,16 @@ public class ActiveCableFragment extends SampleFragment {
     protected void setupEvents() {
         final DecoView decoView = getDecoView();
         if (decoView == null || decoView.isEmpty()) {
-            throw new IllegalStateException("Unable to add events to empty DecoView");
+            //throw new IllegalStateException("Unable to add events to empty DecoView");
         }
 
         decoView.executeReset();
         decoView.addEvent(new DecoEvent.Builder(DecoEvent.EventType.EVENT_SHOW, true)
-                .setDelay(1000)
-                .setDuration(2000)
+                .setDelay(100)
+                .setDuration(100)
                 .build());
 
-        decoView.addEvent(new DecoEvent.Builder(wheel).setIndex(mSeries1Index).setDelay(3300).build());
+        decoView.addEvent(new DecoEvent.Builder(wheel).setIndex(mSeries1Index).setDelay(200).build());
 
 
 
