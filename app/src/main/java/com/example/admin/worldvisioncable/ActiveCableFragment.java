@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.admin.worldvisioncable.ChangePlan.ActiveCableTVChangeActivity;
 import com.example.admin.worldvisioncable.ChangePlan.BroadbandPlanChangeActivity;
@@ -297,6 +298,7 @@ public class ActiveCableFragment extends SampleFragment {
                         wheel=days;
                         calculateAngle(wheel);
                         setupEvents();
+                        home_dialog.dismiss();
 
 
                     } catch (ParseException e) {
@@ -352,8 +354,10 @@ public class ActiveCableFragment extends SampleFragment {
             HttpEntity httpEntity=httpResponse.getEntity();
             s= readResponseLogin(httpResponse);
 
+        } catch (Exception exception) {
+            home_dialog.dismiss();
+            Toast.makeText(getActivity(), "Something went wrong!", Toast.LENGTH_SHORT).show();
         }
-        catch(Exception exception)  {}
         return s;
     }
 
@@ -475,22 +479,8 @@ public class ActiveCableFragment extends SampleFragment {
             final Context context = getActivity();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View itemView = inflater.inflate(R.layout.echomepage_slider_items, container, false);
-            //  final ImageView imageView = new ImageView(context);
-
 
             ImageView imageView =    itemView.findViewById(R.id.view_image_homepage);
-
-
-
-         /* Bitmap mbitmap = ((BitmapDrawable) getResources().getDrawable(Integer.parseInt(al_sliderImages.get(position).getSliderImage()))).getBitmap();
-
-            Bitmap imageRounded = Bitmap.createBitmap(imageView.getWidth(), imageView.getHeight(), imageView.getConfig());
-
-            Canvas canvas = new Canvas(imageRounded);
-            Paint mpaint = new Paint();
-            mpaint.setAntiAlias(true);
-            mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-            canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), 20, 20, mpaint);// Round Image Corner 100 100 100 100*/
             final int padding = 15;
             imageView.setPadding(padding, padding, padding, padding);
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -506,7 +496,6 @@ public class ActiveCableFragment extends SampleFragment {
 
 
             container.addView(itemView);
-            home_dialog.dismiss();
             return itemView;
         }
 

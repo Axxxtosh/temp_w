@@ -131,10 +131,10 @@ public class ActiveBroadbandFragment extends SampleFragment {
 
         dataLayout.setVisibility(View.GONE);
 
-        home_dialog = new SpotsDialog(getActivity(), R.style.Custom);
+        /*home_dialog = new SpotsDialog(getActivity(), R.style.Custom);
         home_dialog.getWindow().setBackgroundDrawableResource(
                 R.color.transparent);
-        home_dialog.show();
+        home_dialog.show();*/
 
 
         al_slider = new ArrayList<>();
@@ -295,7 +295,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         wheel=days;
                         calculateAngle(wheel);
                         setupEvents();
-                        home_dialog.dismiss();
+                        /*home_dialog.dismiss();*/
 
 
                     } catch (ParseException e) {

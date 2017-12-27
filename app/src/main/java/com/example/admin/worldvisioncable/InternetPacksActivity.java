@@ -114,7 +114,7 @@ public class InternetPacksActivity extends AppCompatActivity implements TabHost.
         List<Fragment> fragments = new Vector<Fragment>();
        // fragments.add(Fragment.instantiate(this, HathwayNetworkFragment.class.getName()));
         fragments.add(Fragment.instantiate(this, ENETFragment.class.getName()));
-        fragments.add(Fragment.instantiate(this, MetroNetFragment.class.getName()));
+        /*fragments.add(Fragment.instantiate(this, MetroNetFragment.class.getName()));*/
         fragments.add(Fragment.instantiate(this, TTNNetFragment.class.getName()));
         this.mPagerAdapter  = new Pager(super.getSupportFragmentManager(), fragments);
         //
@@ -137,8 +137,8 @@ public class InternetPacksActivity extends AppCompatActivity implements TabHost.
         InternetPacksActivity.AddTab(this, this.mTabHost, this.mTabHost.newTabSpec("ENET Network").setIndicator("ENET Network"), ( tabInfo = new TabInfo("ENET Network", ENETFragment.class, args)));
         this.mapTabInfo.put(tabInfo.tag, tabInfo);
 
-        InternetPacksActivity.AddTab(this, this.mTabHost, this.mTabHost.newTabSpec("Metro Net Network").setIndicator("Metro Net Network"), ( tabInfo = new TabInfo("Metro Net Network", MetroNetFragment.class, args)));
-        this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        /*InternetPacksActivity.AddTab(this, this.mTabHost, this.mTabHost.newTabSpec("Metro Net Network").setIndicator("Metro Net Network"), ( tabInfo = new TabInfo("Metro Net Network", MetroNetFragment.class, args)));
+        this.mapTabInfo.put(tabInfo.tag, tabInfo);*/
 
         InternetPacksActivity.AddTab(this, this.mTabHost, this.mTabHost.newTabSpec("TTN Network").setIndicator("TTN Network"), ( tabInfo = new TabInfo("TTN Network", TTNNetFragment.class, args)));
         this.mapTabInfo.put(tabInfo.tag, tabInfo);

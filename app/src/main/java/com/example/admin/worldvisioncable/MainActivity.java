@@ -127,24 +127,13 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         });
 
         //Firebase
-        subscribeToPushService();
-
-
-
-
-    }
-    private void subscribeToPushService() {
         FirebaseMessaging.getInstance();
 
-        Log.d("AndroidBash", "Subscribed");
-        Toast.makeText(MainActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
 
-        String token = FirebaseInstanceId.getInstance().getToken();
 
-        // Log and toast
-        Log.d("AndroidBash", token);
-        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
+
     }
+
     @Override
     public void onWindowFocusChanged (boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);

@@ -23,11 +23,6 @@ import java.util.Vector;
 public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeListener, ViewPager.OnPageChangeListener{
 
     View v;
-    //This is our tablayout
-    private TabLayout tabLayout;
-
-    //This is our viewPager
-    private ViewPager viewPager;
 
     private TabHost mTabHost;
     private ViewPager mViewPager;
@@ -108,8 +103,9 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
 
         List<Fragment> fragments = new Vector<Fragment>();
         // fragments.add(Fragment.instantiate(this, HathwayNetworkFragment.class.getName()));
-        fragments.add(Fragment.instantiate(getActivity(), ActiveBroadbandFragment.class.getName()));
         fragments.add(Fragment.instantiate(getActivity(), ActiveCableFragment.class.getName()));
+        fragments.add(Fragment.instantiate(getActivity(), ActiveBroadbandFragment.class.getName()));
+
 
         this.mPagerAdapter  = new Pager(super.getActivity().getSupportFragmentManager(), fragments);
         //
@@ -129,11 +125,11 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
         /*InternetPacksActivity.AddTab(this, this.mTabHost, this.mTabHost.newTabSpec("Hathway Network").setIndicator("Hathway Network"), ( tabInfo = new TabInfo("Hathway Network", HathwayNetworkFragment.class, args)));
         this.mapTabInfo.put(tabInfo.tag, tabInfo);*/
 
+        NewHomeFragment.AddTab(this, this.mTabHost, this.mTabHost.newTabSpec("Active Cable TV Plan").setIndicator("Active Cable TV Plan"), (tabInfo = new TabInfo("Active Cable TV Plan", ActiveCableFragment.class, args)));
+        this.mapTabInfo.put(tabInfo.tag, tabInfo);
         NewHomeFragment.AddTab(this, this.mTabHost, this.mTabHost.newTabSpec("Active Broadband Plan").setIndicator("Active Broadband Plan"), ( tabInfo = new TabInfo("Active Broadband Plan", ActiveBroadbandFragment.class, args)));
         this.mapTabInfo.put(tabInfo.tag, tabInfo);
 
-        NewHomeFragment.AddTab(this, this.mTabHost, this.mTabHost.newTabSpec("Active Cable TV Plan").setIndicator("Active Cable TV Plan"), ( tabInfo = new TabInfo("Active Cable TV Plan", ActiveCableFragment.class, args)));
-        this.mapTabInfo.put(tabInfo.tag, tabInfo);
 
 
         // Default to first tab
