@@ -3,13 +3,17 @@ package com.example.admin.worldvisioncable;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -159,8 +163,28 @@ public class ActiveCableFragment extends SampleFragment {
         changePlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getActivity(),ActiveCableTVChangeActivity.class);
-                startActivity(i);
+                /*Intent i=new Intent(getActivity(),ActiveCableTVChangeActivity.class);
+                startActivity(i);*/
+                //Dialog for cable plans
+                AlertDialog.Builder builder;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    builder = new AlertDialog.Builder(getActivity(), android.R.style.Theme_Material_Dialog_Alert);
+                } else {
+                    builder = new AlertDialog.Builder(getActivity());
+                }
+               /* final TextView number = new TextView(getActivity());
+                Linkify.addLinks(number, Linkify.PHONE_NUMBERS);
+                number.setLinksClickable(true);*/
+                builder.setTitle("To Change Plan")
+                        .setMessage("To change existing plan, Please call us at 080-25534744 or Mail us at info@worldvision.com")
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // continue with delete
+                            }
+                        })
+
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
             }
         });
 
@@ -238,8 +262,6 @@ public class ActiveCableFragment extends SampleFragment {
         @Override
         protected void onPostExecute(String result) {
 
-            //Toast.makeText(getApplicationContext(), "Result:"+result, Toast.LENGTH_SHORT).show();
-
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
@@ -251,39 +273,23 @@ public class ActiveCableFragment extends SampleFragment {
                     PackageId = jsonObject.getString("packageId");
                     due_date = jsonObject.getString("due_date");
                     Package_name = jsonObject.getString("Package_name");
-                    //Network_id = jsonObject.getString("Network_id");
                     Provider_name = jsonObject.getString("Provider_name");
-                    //Speed = jsonObject.getString("Speed");
-                    //Data_transfer = jsonObject.getString("Data_Transfer");
-                    //After_FUp = jsonObject.getString("After_Fup");
                     Tarrif = jsonObject.getString("price");
-                    //GST = jsonObject.getString("GST");
-                    //Total = jsonObject.getString("Total");
                     Validity = jsonObject.getString("Validity");
-
                     txtPackageName.setText(Package_name);
                     txtDue_date.setText("Due Date :"+due_date);
                     txtPrice.setText("Rs."+Tarrif);
                     txtValidity.setText(Validity);
                     txtProvider.setText(Provider_name);
-
-                    final String DATE_FORMAT = "yyyy-MM-dd";  //or use "M/d/yyyy"
-
-
+                    final String DATE_FORMAT = "yyyy-MM-dd";
                     Calendar c = Calendar.getInstance();
                     System.out.println("Current time => " + c.getTime());
-
-
-
-
                     SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH);
                     Date startDate, endDate;
                     Calendar calc = Calendar.getInstance();
                     System.out.println("Current time => " + calc.getTime());
-
                     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                     String formattedDate = df.format(c.getTime());
-                    long numberOfDays = 0;
                     try {
                         startDate = dateFormat.parse(due_date);
                         endDate = dateFormat.parse(formattedDate);
