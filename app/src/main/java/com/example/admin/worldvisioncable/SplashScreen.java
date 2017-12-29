@@ -47,7 +47,9 @@ public class SplashScreen extends AppCompatActivity {
 
         cn=(ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        nf=cn.getActiveNetworkInfo();
+        if (cn != null) {
+            nf = cn.getActiveNetworkInfo();
+        }
         if (!checkPermission()) {
 
             requestPermission();

@@ -60,7 +60,7 @@ public class ENETFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
 
     public ENETFragment() {
-        // Required empty public constructor
+        // Required empty public constructorss
     }
 
 
