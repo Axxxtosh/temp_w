@@ -98,7 +98,7 @@ public class ActiveCableFragment extends SampleFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v= inflater.inflate(R.layout.fragment_active_broadband, container, false);
+        v = inflater.inflate(R.layout.fragment_new, container, false);
 
         txtDue_date= v.findViewById(R.id.due_date);
         txtPackageName= v.findViewById(R.id.planname);
@@ -146,7 +146,7 @@ public class ActiveCableFragment extends SampleFragment {
         home_dialog.show();
         al_slider = new ArrayList<>();
         String SLIDER_URL = "https://www.worldvisioncable.in/api/slider-api.php";
-        new SliderTask().execute(SLIDER_URL);
+        // new SliderTask().execute(SLIDER_URL);
 
         Log.d("User Id","S"+ UsedObject.getId());
         //  String finalURL = "https://www.worldvisioncable.in/api/account/active_plan_broadband.php?userid="+ UsedObject.getId();
@@ -155,10 +155,10 @@ public class ActiveCableFragment extends SampleFragment {
         new ActiveBroadBandTask().execute(UsedObject.getId());
 
         sliderAdaper = new ImagePageAdapter(al_slider);
-        view_pager_slider.setClipToPadding(false);
+       /* view_pager_slider.setClipToPadding(false);
         view_pager_slider.setPadding(40,0,40,0);
         view_pager_slider.setOffscreenPageLimit(15);
-        view_pager_slider.setAdapter(sliderAdaper);
+        view_pager_slider.setAdapter(sliderAdaper);*/
 
         changePlan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -447,7 +447,7 @@ public class ActiveCableFragment extends SampleFragment {
                     sliderAdaper.notifyDataSetChanged();
 
                 }
-                view_pager_slider.setAdapter(sliderAdaper);
+//                view_pager_slider.setAdapter(sliderAdaper);
 
 
             } catch (JSONException e) {

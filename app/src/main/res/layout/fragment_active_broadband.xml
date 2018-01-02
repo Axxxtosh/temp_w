@@ -36,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:layout_marginTop="10dp"
+
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="1dp"
@@ -239,7 +239,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Plan Name"
                                 android:fontFamily="@font/roboto_light"
-                                android:textSize="20dp"
+                                android:textSize="12dp"
                                 android:textColor="@color/black"
                                 android:padding="3dp"
                                 android:gravity="center"/>
@@ -249,7 +249,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
                                 android:text="100 Mbps Speed 300 GB FUP 2 Mbps"
-                                android:textSize="16dp"
+                                android:textSize="20sp"
                                 android:padding="3dp"
                                 android:gravity="center"/>
                         </LinearLayout>
