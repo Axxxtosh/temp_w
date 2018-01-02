@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.admin.worldvisioncable.ActiveBroadbandFragment">
 
 
@@ -10,20 +9,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="4"
+        android:background="@drawable/bg_new"
 
-        android:foregroundTint="@color/grey"
 
-        android:background="@color/grey"
+
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="1dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="1dp">
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -32,19 +31,19 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/solid_circle">
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:background="@drawable/solid_circle"
+                    android:orientation="vertical">
 
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <com.hookedonplay.decoviewlib.DecoView
+                            android:id="@+id/dynamicArcView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/dynamicArcView"
                             android:layout_margin="8dp">
 
 
@@ -63,13 +62,13 @@
                                 android:id="@+id/dataUsed"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:minLines="2"
-                                android:textStyle="bold"
                                 android:fontFamily="@font/roboto_light"
+                                android:gravity="center"
+                                android:minLines="2"
                                 android:text="31 Days"
                                 android:textColor="#ff1744"
                                 android:textSize="30dp"
-                                android:gravity="center" />
+                                android:textStyle="bold" />
 
 
                         </LinearLayout>
@@ -117,19 +116,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
+                        android:gravity="center"
                         android:text="21 Days Remaining for Next Bill"
                         android:textColor="#f44336"
-                        android:textSize="17dp"
-                        android:gravity="center" />
+                        android:textSize="17dp" />
 
                     <TextView
                         android:id="@+id/due_date"
-                        android:textColor="#fff59d"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:text="Due Date : 20/11/2017"
-                        android:textSize="17dp"
-                        android:gravity="center" />
+                        android:textColor="#fff59d"
+                        android:textSize="17dp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -137,62 +136,43 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
 
-            android:orientation="horizontal"
-            android:weightSum="10">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:layout_marginLeft="5dp"
-                android:layout_weight="5">
+                android:layout_weight="10"
+                android:gravity="center">
 
                 <Button
                     android:id="@+id/renewBroadbandplan"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:background="@drawable/btn_renew"
+                    android:padding="8dp"
                     android:fontFamily="@font/roboto_light"
+                    android:gravity="center"
                     android:text="Renew Pack"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:background="#8BC34A" />
+                    android:textColor="@color/white" />
 
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_marginRight="5dp"
-                android:layout_weight="5">
-
-                <Button
-                    android:id="@+id/recommendedPlans"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Change Plan"
-                    android:fontFamily="@font/roboto_light"
-
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:background="#7C4DFF" />
-            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
 
             <LinearLayout
@@ -208,25 +188,26 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Plan Name"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/roboto_light"
-                        android:textSize="18sp"
-                        android:textColor="#fafafa"
+                        android:gravity="center"
                         android:padding="3dp"
-                        android:gravity="center" />
+                        android:text="Plan Name"
+                        android:textColor="#fafafa"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/planname"
-                        android:textColor="#fafafa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
                         android:fontFamily="@font/roboto_light"
-                        android:text="100 Mbps Speed 300 GB FUP 2 Mbps"
-                        tools:ignore="HardcodedText"
-                        android:textSize="30sp"
+                        android:gravity="center"
                         android:padding="3dp"
-                        android:gravity="center" />
+                        android:text="100 Mbps Speed 300 GB FUP 2 Mbps"
+                        android:textColor="#fafafa"
+                        android:textSize="30sp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <View
@@ -251,30 +232,30 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#fafafa"
                             android:fontFamily="@font/roboto_light"
-                            android:text="Price"
-                            android:textSize="20dp"
+                            android:gravity="center"
                             android:padding="3dp"
-                            android:gravity="center" />
+                            android:text="Price"
+                            android:textColor="#fafafa"
+                            android:textSize="20dp" />
 
                         <TextView
                             android:id="@+id/price"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#fafafa"
-                            android:text="Rs. 6500 "
-                            android:textSize="16dp"
+                            android:gravity="center"
                             android:padding="3dp"
-                            android:gravity="center" />
+                            android:text="Rs. 6500 "
+                            android:textColor="#fafafa"
+                            android:textSize="16dp" />
 
                     </LinearLayout>
 
                     <View
                         android:layout_width="1dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
                         android:layout_marginBottom="6dp"
+                        android:layout_marginTop="6dp"
                         android:background="#ff1744" />
 
                     <LinearLayout
@@ -286,31 +267,31 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#fafafa"
-                            android:text="Provider"
                             android:fontFamily="@font/roboto_light"
-                            android:textSize="20dp"
+                            android:gravity="center"
                             android:padding="3dp"
-                            android:gravity="center" />
+                            android:text="Provider"
+                            android:textColor="#fafafa"
+                            android:textSize="20dp" />
 
                         <TextView
                             android:id="@+id/provider"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#fafafa"
+                            android:gravity="center"
 
-                            android:text="Metro Net Network"
-                            android:textSize="16dp"
                             android:padding="3dp"
-                            android:gravity="center" />
+                            android:text="Metro Net Network"
+                            android:textColor="#fafafa"
+                            android:textSize="16dp" />
 
                     </LinearLayout>
 
                     <View
                         android:layout_width="1dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
                         android:layout_marginBottom="6dp"
+                        android:layout_marginTop="6dp"
                         android:background="#ff1744" />
 
                     <LinearLayout
@@ -322,23 +303,23 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#fafafa"
-                            android:text="Validity"
                             android:fontFamily="@font/roboto_light"
-                            android:textSize="20dp"
+                            android:gravity="center"
                             android:padding="3dp"
-                            android:gravity="center" />
+                            android:text="Validity"
+                            android:textColor="#fafafa"
+                            android:textSize="20dp" />
 
                         <TextView
                             android:id="@+id/validity"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#fafafa"
+                            android:gravity="center"
 
-                            android:text="6 months"
-                            android:textSize="16dp"
                             android:padding="3dp"
-                            android:gravity="center" />
+                            android:text="6 months"
+                            android:textColor="#fafafa"
+                            android:textSize="16dp" />
 
                     </LinearLayout>
 
@@ -348,6 +329,26 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:layout_weight="5">
+
+            <Button
+                android:id="@+id/recommendedPlans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Plan"
+                android:fontFamily="@font/roboto_light"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:background="@drawable/btn_renew" />
+        </LinearLayout>
+
     </LinearLayout>
+
 
 </LinearLayout>
