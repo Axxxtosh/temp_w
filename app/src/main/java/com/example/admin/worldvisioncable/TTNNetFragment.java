@@ -185,7 +185,7 @@ public class TTNNetFragment extends Fragment {
             holder.txtFUP.setText("After FUP   :   "+internetPacksModel.getAfter_Fup());
             holder.txtTarrif.setText("Rs."+internetPacksModel.getTraiff());
             holder.txtGST.setText("Rs. "+internetPacksModel.getGST());
-            holder.txtTarrif.setText("Rs. "+internetPacksModel.getTotal());
+            holder.txtTotal.setText("Rs. " + internetPacksModel.getTotal());
 
 
 
