@@ -138,7 +138,7 @@ public class ActiveCableFragment extends SampleFragment {
         dataLayout= v.findViewById(R.id.dataLayout);
         dataUsage= v.findViewById(R.id.dataUsed);
 
-        dataLayout.setVisibility(View.GONE);
+        //  dataLayout.setVisibility(View.GONE);
 
         home_dialog = new SpotsDialog(getActivity(), R.style.Custom);
         home_dialog.getWindow().setBackgroundDrawableResource(
@@ -299,7 +299,7 @@ public class ActiveCableFragment extends SampleFragment {
                         Log.d("Days Remaining","D"+days);
 
                         daysRemaining.setText(days+ "Days Remaining for Next Bill");
-                        dataLayout.setVisibility(View.VISIBLE);
+                        // dataLayout.setVisibility(View.VISIBLE);
                         dataUsage.setText(String.valueOf(30-days)+"\nDays");
                         wheel=days;
                         calculateAngle(wheel);
