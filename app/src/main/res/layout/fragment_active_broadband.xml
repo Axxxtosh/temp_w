@@ -1,367 +1,339 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.admin.worldvisioncable.ActiveBroadbandFragment">
-    <ScrollView
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:weightSum="15.2"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 1.Usage ring-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="1dp"
+        android:layout_weight="3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="10"
+            android:gravity="center"
             android:orientation="vertical">
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="6">
-
-
-                    <android.support.v4.view.ViewPager
-                        android:id="@+id/view_pager_slider"
-                        android:layout_width="match_parent"
-                        android:background="@color/light_gray"
-                        android:layout_height="150dp" />
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="4"
-                android:background="@color/light_gray"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:background="@drawable/solid_circle"
                 android:orientation="vertical">
-                <LinearLayout
+
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:layout_height="match_parent">
 
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="1dp"
-                    android:background="@drawable/bg_card_offer">
-                    <LinearLayout
+                    <com.hookedonplay.decoviewlib.DecoView
+                        android:id="@+id/dynamicArcView"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="10"
-                        android:gravity="right">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="left"
-                            android:layout_marginLeft="5dp"
-                            android:layout_weight="5">
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp">
 
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="right"
-                            android:layout_marginRight="5dp"
-                            android:layout_weight="5">
-                            <Button
-                                android:id="@+id/renewBroadbandplan"
-                                android:layout_width="120dp"
-                                android:layout_height="35dp"
-                                android:fontFamily="@font/roboto_light"
-                                android:layout_margin="4dp"
-                                android:text="Renew Pack"
-                                android:textColor="@color/white"
-                                android:gravity="center"
-                                android:background="@drawable/btn_renew"/>
-                        </LinearLayout>
 
-                    </LinearLayout>
+                    </com.hookedonplay.decoviewlib.DecoView>
+
                     <LinearLayout
+
+                        android:id="@+id/dataLayout"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
-                            android:orientation="vertical"
-                            android:background="@drawable/solid_circle">
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-                                <com.hookedonplay.decoviewlib.DecoView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:id="@+id/dynamicArcView"
-                                    android:layout_margin="8dp">
 
-
-                                </com.hookedonplay.decoviewlib.DecoView>
-                                <LinearLayout
-                                    android:id="@+id/dataLayout"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-                                    <!--<TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Data"
-
-                                        android:textSize="18dp"
-
-                                        android:gravity="center"/>-->
-
-                                    <TextView
-                                        android:id="@+id/dataUsed"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:minLines="2"
-                                        android:fontFamily="@font/roboto_light"
-                                        android:text="31 Days"
-                                        android:textColor="@color/dark_red"
-                                        android:textSize="30dp"
-                                        android:gravity="center"/>
-
-
-                                </LinearLayout>
-
-                            </FrameLayout>
-
-
-
-                            <!-- <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:text="Data"
-
-                                 android:textSize="20dp"
-                                 android:layout_marginTop="20dp"
-                                 android:gravity="center"/>
-
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:text="6.25"
-                                 android:textColor="@color/dark_red"
-                                 android:textSize="35dp"
-
-
-                                 android:gravity="center"/>
-
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:text="of 20GB left"
-
-                                 android:textSize="17dp"
-                                 android:gravity="center"/>-->
-                        </LinearLayout>
-                        <LinearLayout
+                        <TextView
+                            android:id="@+id/dataUsed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:orientation="vertical">
-                            <TextView
-                                android:id="@+id/daysRemaining"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="21 Days Remaining for Next Bill"
-                                android:textColor="@color/dark_red"
-                                android:textSize="17dp"
-                                android:gravity="center"/>
-                            <TextView
-                                android:id="@+id/due_date"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Due Date : 20/11/2017"
-                                android:textSize="17dp"
-                                android:gravity="center"/>
-                        </LinearLayout>
+                            android:fontFamily="@font/roboto_light"
+                            android:gravity="center"
+                            android:minLines="2"
+                            android:text="31 Days"
+                            android:textColor="#ff1744"
+                            android:textSize="30dp"
+                            android:textStyle="bold" />
+
+
                     </LinearLayout>
-                </LinearLayout>
+
+                </FrameLayout>
+
+
+                <!-- <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:text="Data"
+
+                     android:textSize="20dp"
+                     android:layout_marginTop="20dp"
+                     android:gravity="center"/>
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:text="6.25"
+                     android:textColor="@color/dark_red"
+                     android:textSize="35dp"
+
+
+                     android:gravity="center"/>
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:text="of 20GB left"
+
+                     android:textSize="17dp"
+                     android:gravity="center"/>-->
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/daysRemaining"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="21 Days Remaining for Next Bill"
+                    android:textColor="#ffebee"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/due_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Due Date : 20/11/2017"
+                    android:textColor="#fff59d"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--3.Button Renew-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_weight="4.6"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/renewBroadbandplan"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_renew"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Renew Pack"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+
+    <!--2.Plan details-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3.3"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="Plan Name"
+                    android:textColor="#fafafa"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/planname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="100 Mbps Speed 300 GB FUP 2 Mbps"
+                    android:textColor="#fafafa"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#ff1744" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:weightSum="9">
 
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Price"
+                        android:textColor="#fafafa"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Rs. 6500 "
+                        android:textColor="#fafafa"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_card_offer"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="#ff1744" />
 
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
 
-                    <LinearLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="10"
-                        android:gravity="right">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="left"
-                            android:layout_marginLeft="5dp"
-                            android:layout_weight="5">
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Provider"
+                        android:textColor="#fafafa"
+                        android:textSize="20sp" />
 
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="right"
-                            android:layout_marginRight="5dp"
-                            android:layout_weight="5">
-                            <Button
-                                android:id="@+id/recommendedPlans"
-                                android:layout_width="120dp"
-                                android:layout_height="35dp"
-                                android:text="Change Plan"
-                                android:fontFamily="@font/roboto_light"
-                                android:layout_margin="4dp"
-                                android:textColor="@color/white"
-                                android:gravity="center"
-                                android:background="@drawable/btn_renew"/>
-                        </LinearLayout>
-
-                    </LinearLayout>
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/provider"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Plan Name"
-                                android:fontFamily="@font/roboto_light"
-                                android:textSize="12dp"
-                                android:textColor="@color/black"
-                                android:padding="3dp"
-                                android:gravity="center"/>
-                            <TextView
-                                android:id="@+id/planname"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="100 Mbps Speed 300 GB FUP 2 Mbps"
-                                android:textSize="20sp"
-                                android:padding="3dp"
-                                android:gravity="center"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_width="wrap_content"
-                            android:layout_height="1dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:background="@color/grey"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:orientation="horizontal"
-                            android:weightSum="9">
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="3"
-                                android:orientation="vertical">
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="@color/black"
-                                    android:fontFamily="@font/roboto_light"
-                                    android:text="Price"
-                                    android:textSize="20dp"
-                                    android:padding="3dp"
-                                    android:gravity="center"/>
-                                <TextView
-                                    android:id="@+id/price"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                        android:gravity="center"
 
-                                    android:text="Rs. 6500 "
-                                    android:textSize="16dp"
-                                    android:padding="3dp"
-                                    android:gravity="center"/>
+                        android:padding="3dp"
+                        android:text="Metro Net Network"
+                        android:textColor="#fafafa"
+                        android:textSize="16sp" />
 
-                            </LinearLayout>
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
-                                android:layout_marginBottom="6dp"
-                                android:background="@color/grey"/>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="3"
-                                android:orientation="vertical">
+                </LinearLayout>
 
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="@color/black"
-                                    android:text="Provider"
-                                    android:fontFamily="@font/roboto_light"
-                                    android:textSize="20dp"
-                                    android:padding="3dp"
-                                    android:gravity="center"/>
-                                <TextView
-                                    android:id="@+id/provider"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="#ff1744" />
 
-                                    android:text="Metro Net Network"
-                                    android:textSize="16dp"
-                                    android:padding="3dp"
-                                    android:gravity="center"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
 
-                            </LinearLayout>
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
-                                android:layout_marginBottom="6dp"
-                                android:background="@color/grey"/>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="3"
-                                android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Validity"
+                        android:textColor="#fafafa"
+                        android:textSize="20sp" />
 
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="@color/black"
-                                    android:text="Validity"
-                                    android:fontFamily="@font/roboto_light"
-                                    android:textSize="20dp"
-                                    android:padding="3dp"
-                                    android:gravity="center"/>
-                                <TextView
-                                    android:id="@+id/validity"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/validity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
 
-                                    android:text="6 months"
-                                    android:textSize="16dp"
-                                    android:padding="3dp"
-                                    android:gravity="center"/>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
+                        android:padding="3dp"
+                        android:text="6 months"
+                        android:textColor="#fafafa"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
+
+
+    <!--1.//change buton-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_weight="4.4"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/recommendedPlans"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_renew"
+            android:fontFamily="@font/roboto_light"
+            android:text="Change Plan"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
 </LinearLayout>
+
+
+

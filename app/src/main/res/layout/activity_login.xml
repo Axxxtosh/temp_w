@@ -54,7 +54,7 @@
                     android:layout_height="match_parent"
                     android:text="World Vision Cable"
                     android:layout_weight="1.7"
-                    android:textSize="35sp"
+                    android:textSize="@dimen/login_title"
                     android:fontFamily="@font/roboto_black_italic"
                     android:gravity="center"
                     android:textColor="@color/dark_red"/>

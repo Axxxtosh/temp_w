@@ -147,10 +147,10 @@ public class ActiveBroadbandFragment extends SampleFragment {
         new ActiveBroadBandTask().execute(UsedObject.getId());
 
         sliderAdaper = new ImagePageAdapter(al_slider);
-        view_pager_slider.setClipToPadding(false);
+        /*view_pager_slider.setClipToPadding(false);
         view_pager_slider.setPadding(40,0,40,0);
         view_pager_slider.setOffscreenPageLimit(15);
-        view_pager_slider.setAdapter(sliderAdaper);
+        view_pager_slider.setAdapter(sliderAdaper);*/
 
         changePlan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -288,14 +288,29 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         int days = daysBetween(endDate,startDate);
 
                         Log.d("Days Remaining","D"+days);
+                        if (days < 0) {
 
-                        daysRemaining.setText(days+ "Days Remaining for Next Bill");
-                        dataLayout.setVisibility(View.VISIBLE);
-                        dataUsage.setText(String.valueOf(30-days)+"\nDays");
+
+                            daysRemaining.setText("Your plan has been expired");
+
+
+                        } else {
+                            daysRemaining.setText(days + "Days Remaining for Next Bill");
+                        }
+                        // dataLayout.setVisibility(View.VISIBLE);
+
+                        if (days < 0) {
+
+
+                            dataUsage.setText("Expired");
+
+                        } else {
+                            dataUsage.setText(String.valueOf(30 - days) + "\nDays");
+                        }
                         wheel=days;
                         calculateAngle(wheel);
                         setupEvents();
-                        /*home_dialog.dismiss();*/
+
 
 
                     } catch (ParseException e) {
@@ -435,7 +450,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
                     sliderAdaper.notifyDataSetChanged();
 
                 }
-                view_pager_slider.setAdapter(sliderAdaper);
+                //view_pager_slider.setAdapter(sliderAdaper);
 
 
             } catch (JSONException e) {

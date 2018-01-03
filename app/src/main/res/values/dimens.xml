@@ -6,4 +6,17 @@
 
     <dimen name="marginTopVal">25dp</dimen>
     <dimen name="image_border_curvature">25dp</dimen>
+
+    //For Login Page
+    <dimen name="login_title">30sp</dimen>
+
+    //For Home Page
+    <dimen name="main_new">27sp</dimen>
+    <dimen name="main_cable">27sp</dimen>
+    <dimen name="main_internet">27sp</dimen>
+    <dimen name="main_contact">27sp</dimen>
+    <dimen name="main_login">27sp</dimen>
+    <dimen name="main_offers">27sp</dimen>
+
+
 </resources>
