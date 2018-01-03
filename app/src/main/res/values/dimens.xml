@@ -11,7 +11,7 @@
     <dimen name="login_title">30sp</dimen>
 
     //For Home Page
-    <dimen name="main_button_text">27sp</dimen>
+    <dimen name="main_button_text">22sp</dimen>
 
 
     //Contactus toolbar
