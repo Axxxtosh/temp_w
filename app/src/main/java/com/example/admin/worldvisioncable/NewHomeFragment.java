@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -102,6 +105,22 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
     private void intialiseViewPager() {
 
         List<Fragment> fragments = new Vector<Fragment>();
+      /*  //resume if instance is exist
+        FragmentManager manager = getActivity() .getSupportFragmentManager ();
+        manager.findFragmentByTag ( tag );
+        FragmentTransaction ft = manager.beginTransaction ();
+
+        if (manager.findFragmentByTag ( tag ) == null) { // No fragment in backStack with same tag..
+            ft.add ( fragmentHolderLayoutId, fragment, tag );
+            ft.addToBackStack ( tag );
+            ft.commit ();
+        }
+        else {
+            ft.show ( manager.findFragmentByTag ( tag ) ).commit ();
+        }
+
+        //*/
+
         // fragments.add(Fragment.instantiate(this, HathwayNetworkFragment.class.getName()));
         fragments.add(Fragment.instantiate(getActivity(), ActiveCableFragment.class.getName()));
         fragments.add(Fragment.instantiate(getActivity(), ActiveBroadbandFragment.class.getName()));
