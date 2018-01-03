@@ -276,14 +276,14 @@ public class ActiveCableFragment extends SampleFragment {
                         if (days < 0) {
                             daysRemaining.setText("Your plan has been expired");
                             dataUsage.setText("Expired");
-                            dataLayout.setVisibility(View.VISIBLE);
+                            // dataLayout.setVisibility(View.VISIBLE);
 
 
                         } else {
 
                             daysRemaining.setText(days + "Days Remaining for Next Bill");
                             dataUsage.setText(String.valueOf(30 - days) + "\nDays");
-                            dataLayout.setVisibility(View.VISIBLE);
+                            // dataLayout.setVisibility(View.VISIBLE);
                         }
 
 

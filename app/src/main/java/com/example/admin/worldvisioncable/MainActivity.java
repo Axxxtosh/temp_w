@@ -147,20 +147,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         viewoffers.startAnimation(animation3);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menuwithout_drawer, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     @Override
     public void onSliderClick(BaseSliderView slider) {

@@ -19,8 +19,13 @@
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:padding="0dp"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        android:background="@color/black"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 

@@ -7,6 +7,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
@@ -43,7 +44,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
 
         toolbar = findViewById(R.id.toolbar_homepage);
         toolbar.setTitle("World Vision Cable");
-        toolbar.setTitleTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
 
 
 
@@ -61,6 +62,8 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
             ft.commit();
         }
         else {
+
+
             NewHomeFragment categoryFragment = new NewHomeFragment();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.add(R.id.content_main, categoryFragment,"HomeFragment");
@@ -76,11 +79,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
-        toggle.setDrawerIndicatorEnabled(false);
-        Drawable mdrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_ham_blue, getApplicationContext().getTheme());
-        mdrawable.setColorFilter(new
-                PorterDuffColorFilter(getResources().getColor(R.color.dark_blue), PorterDuff.Mode.SRC_IN));
-        toggle.setHomeAsUpIndicator(mdrawable);
+
         toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,30 +98,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         navigationView.setNavigationItemSelectedListener(this);
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.toolbar_menu, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.menu_home:
 
-                NewHomeFragment newHomeFragment = new NewHomeFragment();
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                // ft.addToBackStack(null);
-                ft.setCustomAnimations(R.anim.enter_left, R.anim.exit_right, R.anim.enter_right, R.anim.exit_left);
-                ft.replace(R.id.content_main, newHomeFragment, "homefragment");
-                ft.commit();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
 
 
@@ -136,13 +112,16 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         //bottomBar.setVisibility(View.GONE);
         if (id == R.id.nav_home) {
 
-            NewHomeFragment homeFragment = new NewHomeFragment();
+            NewHomeFragment newHomeFragment = new NewHomeFragment();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             // ft.addToBackStack(null);
             ft.setCustomAnimations(R.anim.enter_left, R.anim.exit_right, R.anim.enter_right, R.anim.exit_left);
-            ft.replace(R.id.content_main, homeFragment, "HomeFragment");
+            ft.replace(R.id.content_main, newHomeFragment, "HomeFragment");
             ft.commit();
+
         }
+
+
         if(id==R.id.nav_complaints)
         {
             CustomerSupport complaintsFragment = new CustomerSupport();

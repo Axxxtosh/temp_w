@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -129,12 +131,12 @@ public class ActiveBroadbandFragment extends SampleFragment {
         dataLayout= v.findViewById(R.id.dataLayout);
         dataUsage= v.findViewById(R.id.dataUsed);
 
-        dataLayout.setVisibility(View.GONE);
+        // dataLayout.setVisibility(View.GONE);
 
-        /*home_dialog = new SpotsDialog(getActivity(), R.style.Custom);
+        home_dialog = new SpotsDialog(getActivity(), R.style.Custom);
         home_dialog.getWindow().setBackgroundDrawableResource(
                 R.color.transparent);
-        home_dialog.show();*/
+        home_dialog.show();
 
 
         al_slider = new ArrayList<>();
@@ -292,24 +294,29 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         if (days < 0) {
                             daysRemaining.setText("Your plan has been expired");
                             dataUsage.setText("Expired");
-                            dataLayout.setVisibility(View.VISIBLE);
+                            //dataLayout.setVisibility(View.VISIBLE);
+                            //
+
 
 
                         } else {
 
                             daysRemaining.setText(days + "Days Remaining for Next Bill");
                             dataUsage.setText(String.valueOf(30 - days) + "\nDays");
-                            dataLayout.setVisibility(View.VISIBLE);
+                            //  dataLayout.setVisibility(View.VISIBLE);
                         }
 
                         wheel=days;
                         calculateAngle(wheel);
                         setupEvents();
+                        home_dialog.dismiss();
+
 
 
 
                     } catch (ParseException e) {
                         e.printStackTrace();
+                        home_dialog.dismiss();
                     }
 
 
@@ -317,6 +324,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
             }
              catch(JSONException e){
                     e.printStackTrace();
+                 home_dialog.dismiss();
                 }
 
             }

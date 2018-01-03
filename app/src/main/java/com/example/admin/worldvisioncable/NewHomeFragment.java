@@ -89,12 +89,12 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
         for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
             TextView tv = this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
-            tv.setTextColor(Color.parseColor("#4d4d4d"));
+            tv.setTextColor(Color.parseColor("#bdbdbd"));
             tv.setGravity(Gravity.CENTER);
         }
 
         TextView tv = this.mTabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title); //Unselected Tabs
-        tv.setTextColor(Color.parseColor("#ffffff"));
+        tv.setTextColor(Color.parseColor("#f44336"));
         tv.setGravity(Gravity.CENTER);
         return v;
     }
@@ -105,19 +105,7 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
     private void intialiseViewPager() {
 
         List<Fragment> fragments = new Vector<Fragment>();
-      /*  //resume if instance is exist
-        FragmentManager manager = getActivity() .getSupportFragmentManager ();
-        manager.findFragmentByTag ( tag );
-        FragmentTransaction ft = manager.beginTransaction ();
 
-        if (manager.findFragmentByTag ( tag ) == null) { // No fragment in backStack with same tag..
-            ft.add ( fragmentHolderLayoutId, fragment, tag );
-            ft.addToBackStack ( tag );
-            ft.commit ();
-        }
-        else {
-            ft.show ( manager.findFragmentByTag ( tag ) ).commit ();
-        }
 
         //*/
 
@@ -175,13 +163,13 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
         for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
             TextView tv = this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
-            tv.setTextColor(Color.parseColor("#4d4d4d"));
+            tv.setTextColor(Color.parseColor("#bdbdbd"));
             tv.setGravity(Gravity.CENTER);
         }
 
         // this.mTabHost.getTabWidget().getChildAt(this.mTabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#20A0E1")); // selected
         TextView tv = this.mTabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
-        tv.setTextColor(Color.parseColor("#ffffff"));
+        tv.setTextColor(Color.parseColor("#f44336"));
         tv.setGravity(Gravity.CENTER);
 
 

@@ -19,7 +19,7 @@
             android:layout_margin="0dp"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/white">
+            android:background="#FFF44336">
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
