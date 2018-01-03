@@ -288,25 +288,20 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         int days = daysBetween(endDate,startDate);
 
                         Log.d("Days Remaining","D"+days);
+
                         if (days < 0) {
-
-
                             daysRemaining.setText("Your plan has been expired");
-
-
-                        } else {
-                            daysRemaining.setText(days + "Days Remaining for Next Bill");
-                        }
-                        // dataLayout.setVisibility(View.VISIBLE);
-
-                        if (days < 0) {
-
-
                             dataUsage.setText("Expired");
+                            dataLayout.setVisibility(View.VISIBLE);
+
 
                         } else {
+
+                            daysRemaining.setText(days + "Days Remaining for Next Bill");
                             dataUsage.setText(String.valueOf(30 - days) + "\nDays");
+                            dataLayout.setVisibility(View.VISIBLE);
                         }
+
                         wheel=days;
                         calculateAngle(wheel);
                         setupEvents();

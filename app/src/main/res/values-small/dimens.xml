@@ -1,0 +1,24 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="search_layout">18dp</dimen>
+    <dimen name="search_heading_text">17sp</dimen>
+    <dimen name="my_account_padding">18dp</dimen>
+
+    <dimen name="marginTopVal">25dp</dimen>
+    <dimen name="image_border_curvature">25dp</dimen>
+
+    //For Login Page
+    <dimen name="login_title">30sp</dimen>
+
+    //For Home Page
+    <dimen name="main_button_text">17sp</dimen>
+
+
+    //Contactus toolbar
+    <dimen name="contact_title">15sp</dimen>
+
+    //Payment history
+    <dimen name="pay_text">12sp</dimen>
+
+
+</resources>

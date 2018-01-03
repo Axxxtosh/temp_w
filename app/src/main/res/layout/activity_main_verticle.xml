@@ -79,7 +79,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/main_internet"
+                            android:textSize="@dimen/main_button_text"
                             android:fontFamily="@font/roboto_light"
                             android:text="Internet Packs"
                             android:textColor="#292E49"
