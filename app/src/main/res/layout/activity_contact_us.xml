@@ -38,7 +38,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_gravity="center_vertical"
                     android:text="World Vision Cable"
-                    android:textSize="25sp"
+                    android:textSize="@dimen/contact_title"
                     android:textColor="@color/colorPrimaryDark" />
                 </LinearLayout>
 

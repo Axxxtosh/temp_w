@@ -79,7 +79,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp"
+                            android:textSize="@dimen/main_internet"
                             android:fontFamily="@font/roboto_light"
                             android:text="Internet Packs"
                             android:textColor="#292E49"
@@ -124,7 +124,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity=""
-                            android:textSize="20sp"
+                            android:textSize="@dimen/main_button_text"
                             android:fontFamily="@font/roboto_light"
                             android:text="Cable TV Packs"
                             android:textColor="#292E49"
@@ -171,7 +171,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textSize="25sp"
+                        android:textSize="@dimen/main_button_text"
                         android:minLines="2"
                         android:padding="10dp"
                         android:fontFamily="@font/roboto_light"
@@ -193,7 +193,7 @@
                 android:padding="4dp"
                 android:fontFamily="@font/roboto_light"
                 android:text="View Offers"
-                android:textSize="20sp"
+                android:textSize="@dimen/main_button_text"
                 android:elevation="4dp"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
@@ -238,7 +238,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/main_button_text"
                         android:fontFamily="@font/roboto_light"
                         android:text="Contact Us"
                         android:textColor="#292E49"
@@ -274,7 +274,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/main_button_text"
                         android:text="Login"
                         android:fontFamily="@font/roboto_light"
                         android:textColor="#292E49"
