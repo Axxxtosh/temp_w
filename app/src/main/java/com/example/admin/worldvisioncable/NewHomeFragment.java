@@ -90,11 +90,13 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
             TextView tv = this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
             tv.setTextColor(Color.parseColor("#bdbdbd"));
+            tv.setTextSize(12);
             tv.setGravity(Gravity.CENTER);
         }
 
         TextView tv = this.mTabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title); //Unselected Tabs
         tv.setTextColor(Color.parseColor("#f44336"));
+        tv.setTextSize(12);
         tv.setGravity(Gravity.CENTER);
         return v;
     }
@@ -164,12 +166,14 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
             TextView tv = this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
             tv.setTextColor(Color.parseColor("#bdbdbd"));
+            tv.setTextSize(12);
             tv.setGravity(Gravity.CENTER);
         }
 
         // this.mTabHost.getTabWidget().getChildAt(this.mTabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#20A0E1")); // selected
         TextView tv = this.mTabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
         tv.setTextColor(Color.parseColor("#f44336"));
+        tv.setTextSize(12);
         tv.setGravity(Gravity.CENTER);
 
 

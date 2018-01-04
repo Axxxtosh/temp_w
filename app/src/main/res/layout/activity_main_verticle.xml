@@ -197,6 +197,7 @@
                 android:padding="4dp"
                 android:fontFamily="@font/roboto_light"
                 android:text="View Offers"
+                android:textAllCaps="false"
                 android:textSize="@dimen/main_button_text"
                 android:elevation="4dp"
                 android:textColor="@color/white"

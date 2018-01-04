@@ -14,5 +14,8 @@
 
     //Payment history
 
+    <dimen name="btn_text">15sp</dimen>
+    <dimen name="days">18sp</dimen>
+    <dimen name="text1">15sp</dimen>
 
 </resources>

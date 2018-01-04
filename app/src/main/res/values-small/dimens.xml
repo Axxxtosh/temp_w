@@ -3,16 +3,22 @@
     <dimen name="image_border_curvature">25dp</dimen>
 
     //For Login Page
-    <dimen name="login_title">30sp</dimen>
+    <dimen name="login_title">20sp</dimen>
 
     //For Home Page
-    <dimen name="main_button_text">17sp</dimen>
+    <dimen name="main_button_text">10sp</dimen>
 
 
     //Contactus toolbar
     <dimen name="contact_title">15sp</dimen>
 
     //Payment history
+
+    <dimen name="btn_text">10sp</dimen>
+    <dimen name="days">12sp</dimen>
+    <dimen name="text1">12sp</dimen>
+
+    <dimen name="tab_title">10sp</dimen>
 
 
 </resources>
