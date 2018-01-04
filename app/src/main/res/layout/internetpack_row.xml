@@ -16,6 +16,7 @@
         android:layout_height="170dp"
         android:layout_gravity="center"
         android:layout_margin="5dp"
+        card_view:cardBackgroundColor="@color/grey"
         card_view:cardCornerRadius="8dp"
         card_view:contentPadding="5dp">
 
@@ -35,7 +36,7 @@
                     android:layout_height="match_parent"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:text="1 MBPS 30GB FUP 256 Kbps (validity 30 days) "/>
             </LinearLayout>
             <LinearLayout
@@ -43,7 +44,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:weightSum="10"
-                android:background="@color/light_gray"
                 android:orientation="vertical">
 
 
@@ -51,7 +51,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:background="@color/white"
                     android:layout_weight="6.5"
                     android:weightSum="10">
                     <LinearLayout
@@ -73,6 +72,7 @@
                                 android:id="@+id/txtSpeed"
                                 android:layout_width="match_parent"
                                 android:layout_height="30dp"
+                                android:textColor="@color/white"
                                 android:layout_marginLeft="10dp"
                                 android:textSize="13dp"
                                 android:text="Speed : 10 Mbps"/>
@@ -88,6 +88,7 @@
                                 android:background="@drawable/icon"/>-->
                             <TextView
                                 android:id="@+id/txtFUP"
+                                android:textColor="@color/white"
                                 android:layout_width="match_parent"
                                 android:layout_height="30dp"
                                 android:textSize="13dp"
@@ -117,6 +118,7 @@
                             <TextView
                                 android:id="@+id/txtDataTransfer"
                                 android:layout_width="match_parent"
+                                android:textColor="@color/white"
                                 android:layout_height="30dp"
                                 android:textSize="13dp"
                                 android:layout_marginLeft="10dp"
@@ -135,6 +137,7 @@
                                 android:id="@+id/txtValidity"
                                 android:layout_width="match_parent"
                                 android:layout_height="30dp"
+                                android:textColor="@color/white"
                                 android:textSize="13dp"
                                 android:layout_marginLeft="10dp"
                                 android:text="Validity : 30 Days"/>
@@ -155,8 +158,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="3.5"
-                        android:orientation="horizontal"
-                        android:background="@color/white">
+                        android:orientation="horizontal">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -169,14 +172,14 @@
                                 android:text="TARRIF         :"
                                 android:textSize="13dp"
                                 android:gravity="right"
-                                android:textColor="@color/black"/>
+                                android:textColor="@color/white" />
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="GST (18%)   :"
                                 android:textSize="13dp"
                                 android:gravity="right"
-                                android:textColor="@color/black"/>
+                                android:textColor="@color/white" />
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -190,7 +193,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Rs. 699"
                                 android:textSize="13dp"
-                                android:textColor="@color/black"/>
+                                android:textColor="@color/white" />
                             <TextView
                                 android:id="@+id/txtGSTAmt"
                                 android:layout_width="match_parent"
@@ -198,7 +201,7 @@
                                 android:text="Rs. 129"
                                 android:textSize="13dp"
 
-                                android:textColor="@color/black"/>
+                                android:textColor="@color/white" />
                         </LinearLayout>
 
 
@@ -209,8 +212,7 @@
                         android:layout_weight="3.5"
                         android:layout_marginTop="3dp"
                         android:weightSum="10"
-                        android:orientation="vertical"
-                        android:background="@color/white">
+                        android:orientation="vertical">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -226,7 +228,7 @@
                                     android:text="TOTAL          :"
                                     android:textSize="13dp"
                                     android:gravity="right"
-                                    android:textColor="@color/dark_red"/>
+                                    android:textColor="@color/spots_dialog_color" />
 
                             </LinearLayout>
                             <LinearLayout
@@ -240,7 +242,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Rs. 825"
                                     android:textSize="13dp"
-                                    android:textColor="@color/dark_red"/>
+                                    android:textColor="@color/spots_dialog_color" />
 
                             </LinearLayout>
                         </LinearLayout>
