@@ -126,11 +126,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             }
         });
 
-        //Firebase
-        FirebaseMessaging.getInstance();
-
-
-
 
     }
 

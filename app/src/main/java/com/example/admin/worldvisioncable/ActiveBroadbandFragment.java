@@ -65,7 +65,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
     View v;
     private SpotsDialog home_dialog;
     private int mSeries1Index;
-    LinearLayout dataLayout, mainLayout;
+    LinearLayout dataLayout;
     TextView dataUsage;
     Button btnRenewBroadband,changePlan;
     int wheel=0;
@@ -73,7 +73,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
     TextView txtPackageName,txtPrice,txtProvider,txtValidity,txtDue_date,daysRemaining;
 
     String PackageId, due_date, Package_name,
-            Network_id,Provider_name,Location,Speed,Data_transfer,
+            Network_id, Provider_name, Speed, Data_transfer,
             After_FUp,Tarrif,GST,Total,Validity;
 
 
@@ -177,19 +177,19 @@ public class ActiveBroadbandFragment extends SampleFragment {
         decoView.addSeries(new SeriesItem.Builder(Color.argb(255, 64, 255, 64), Color.argb(255, 255, 0, 0))
                 .setRange(0, seriesMax, seriesMax)
                 .setInitialVisibility(false)
-                .setLineWidth(getDimension(10f))
+                .setLineWidth(getDimension(15f))
                 .build());
 
         decoView.addSeries(new SeriesItem.Builder(Color.argb(255, 0, 0, 0))
                 .setRange(0, seriesMax, seriesMax)
                 .setInitialVisibility(false)
-                .setLineWidth(getDimension(10f))
+                .setLineWidth(getDimension(15f))
                 .build());
 
         SeriesItem seriesItem1 = new SeriesItem.Builder(Color.argb(255, 64, 255, 64), Color.argb(255, 255, 0, 0))
                 .setRange(0, seriesMax, 0)
                 .setInitialVisibility(false)
-                .setLineWidth(getDimension(10f))
+                .setLineWidth(getDimension(15f))
                 .setCapRounded(true)
                 .setShowPointWhenEmpty(true)
                 .build();
@@ -286,6 +286,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         int days = daysBetween(endDate,startDate);
 
                         Log.d("Days Remaining","D"+days);
+
 
                         if (days < 0) {
                             daysRemaining.setText("Your plan has been expired");
