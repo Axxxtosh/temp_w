@@ -96,12 +96,12 @@ public class CableMainFragment extends Fragment implements TabHost.OnTabChangeLi
         for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
             TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
-            tv.setTextColor(Color.parseColor("#dddddd"));
+            tv.setTextColor(Color.parseColor("#bdbdbd"));
             tv.setGravity(Gravity.CENTER);
         }
 
         TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title); //Unselected Tabs
-        tv.setTextColor(Color.parseColor("#ffffff"));
+        tv.setTextColor(Color.parseColor("#f44336"));
         tv.setGravity(Gravity.CENTER);
         return v;
     }
@@ -162,13 +162,13 @@ public class CableMainFragment extends Fragment implements TabHost.OnTabChangeLi
         for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
             TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
-            tv.setTextColor(Color.parseColor("#dddddd"));
+            tv.setTextColor(Color.parseColor("#bdbdbd"));
             tv.setGravity(Gravity.CENTER);
         }
 
         // this.mTabHost.getTabWidget().getChildAt(this.mTabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#20A0E1")); // selected
         TextView tv = (TextView) this.mTabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
-        tv.setTextColor(Color.parseColor("#ffffff"));
+        tv.setTextColor(Color.parseColor("#f44336"));
         tv.setGravity(Gravity.CENTER);
 
 

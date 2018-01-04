@@ -33,10 +33,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Hindi General Entertainment"
-                    android:textColor="@color/black"
+                    android:textColor="#f44336"
                     android:gravity="left|center"
                     android:textSize="17dp"
-                    android:textStyle="bold"
+
                     android:layout_marginLeft="10dp"
                     />
             </LinearLayout>
@@ -50,7 +50,7 @@
                     android:layout_height="40dp"
                     android:background="@null"
                     android:text="More"
-                    android:textColor="@color/colorAccent"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
             </LinearLayout>
 
