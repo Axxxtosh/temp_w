@@ -96,7 +96,7 @@ public class UserSessionManager {
 
         // commit changes
         editor.commit();
-        Toast.makeText(_context,"Logged In",Toast.LENGTH_SHORT).show();
+        Toast.makeText(_context, "Welcome " + username, Toast.LENGTH_SHORT).show();
 
         //Toast.makeText(this,"Commited",Toast.LENGTH_SHORT).show();
     }

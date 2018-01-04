@@ -14,13 +14,14 @@ public class ContactUsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_home);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_homepage);
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.grey));
         final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
-        getSupportActionBar().setTitle("aasasas");
+        getSupportActionBar().setTitle("Contact us");
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
 
         // add back arrow to toolbar
         if (getSupportActionBar() != null){

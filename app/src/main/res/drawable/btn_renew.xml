@@ -4,14 +4,14 @@
         <shape android:shape="rectangle"  >
             <corners android:radius="40dip" />
 
-            <gradient android:angle="-180" android:startColor="@color/black" android:endColor="@color/colorAccent"  />
+            <gradient android:angle="-180" android:startColor="#cc6b64" android:endColor="#4b1410" />
         </shape>
     </item>
     <item android:state_focused="true">
         <shape android:shape="rectangle"  >
             <corners android:radius="40dip" />
 
-            <solid android:color="@color/colorAccent"/>
+            <solid android:color="#81241d" />
         </shape>
     </item>
     <item >

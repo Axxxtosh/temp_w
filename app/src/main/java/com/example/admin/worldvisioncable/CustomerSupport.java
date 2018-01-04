@@ -94,7 +94,7 @@ public class CustomerSupport extends Fragment implements TabHost.OnTabChangeList
         for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
             TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
-            tv.setTextColor(Color.parseColor("#dddddd"));
+            tv.setTextColor(Color.parseColor("#bdbdbd"));
             tv.setGravity(Gravity.CENTER);
         }
 
@@ -160,7 +160,7 @@ public class CustomerSupport extends Fragment implements TabHost.OnTabChangeList
         for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
             TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
-            tv.setTextColor(Color.parseColor("#dddddd"));
+            tv.setTextColor(Color.parseColor("#bdbdbd"));
             tv.setGravity(Gravity.CENTER);
         }
 

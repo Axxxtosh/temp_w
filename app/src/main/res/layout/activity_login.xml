@@ -80,7 +80,9 @@
                 android:layout_margin="20dp"
                 android:paddingLeft="20dp"
                 android:inputType="text"
-                android:background="@drawable/border"/>
+                android:textColorHint="@color/grey_light"
+                android:textColor="@color/white"
+                android:background="@color/grey" />
 
             <EditText
                 android:id="@+id/edt_password"
@@ -90,7 +92,9 @@
                 android:layout_margin="20dp"
                 android:paddingLeft="20dp"
                 android:inputType="textPassword"
-                android:background="@drawable/border"/>
+                android:textColorHint="@color/grey_light"
+                android:textColor="@color/white"
+                android:background="@color/grey" />
 
             <Button
                 android:id="@+id/forgetPassword"

@@ -4,20 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_vertical"
-    android:layout_gravity="center"
+    android:gravity="center"
+    android:paddingBottom="100dp"
     android:background="@drawable/grad_tool">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|center_vertical"
+
         android:src="@drawable/logo_plain"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_black_italic"
-        android:layout_gravity="center_horizontal|center_vertical"
         android:text="World Vision Cable"
         android:textColor="@color/white"
         android:textSize="40sp" />

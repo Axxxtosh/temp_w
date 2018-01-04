@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#FAFAFA</color>
-    <color name="colorPrimaryDark">#1182C8</color>
+    <color name="colorPrimaryDark">#bf342a</color>
     <color name="colorAccent">#16a2f9</color>
 
     <color name="grey">#3C393A</color>
+    <color name="grey_light">#787878</color>
 
 
     <color name="white_greyish">#B2B2B2</color>
@@ -13,7 +14,7 @@
     <color name="dark_blue">#052B6E</color>
     <color name="transparent">#00000000</color>
     <!-- card colors -->
-    <color name="spots_dialog_color">@android:color/holo_red_light</color>
+    <color name="spots_dialog_color">#d7473d</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 
