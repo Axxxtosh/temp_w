@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+
+    android:background="@drawable/grad_tool"
     android:orientation="vertical"
 
 
@@ -33,6 +34,7 @@
                     android:layout_height="40dp"
                     android:layout_margin="10dp"
                     android:gravity="top"
+                    android:backgroundTint="@color/white"
                     android:background="@drawable/ic_close_black_32dp_2x"/>
             </LinearLayout>
             <LinearLayout
@@ -57,7 +59,7 @@
                     android:textSize="@dimen/login_title"
                     android:fontFamily="@font/roboto_black_italic"
                     android:gravity="center"
-                    android:textColor="@color/dark_red"/>
+                    android:textColor="@color/white" />
 
 
             </LinearLayout>
