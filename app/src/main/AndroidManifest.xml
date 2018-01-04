@@ -23,7 +23,7 @@
         android:allowBackup="true"
         android:icon="@drawable/wvclogo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/wvclogo"
+        android:roundIcon="@mipmap/ic_launcher"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
