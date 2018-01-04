@@ -51,6 +51,9 @@ dependencies {
     implementation 'com.facebook.stetho:stetho:1.5.0'
     implementation 'com.android.support:support-v4:27.0.2'
 
+    //Toasty
+    compile 'com.github.GrenderG:Toasty:1.2.8'
+
     //FireBase
 
 }

@@ -1,7 +1,5 @@
 <resources>
 
-    <dimen name="image_border_curvature">25dp</dimen>
-
     //For Login Page
     <dimen name="login_title">30sp</dimen>
 
@@ -10,7 +8,6 @@
 
 
     //Contactus toolbar
-    <dimen name="contact_title">25sp</dimen>
 
     //Payment history
 

@@ -1,7 +1,6 @@
 package com.example.admin.worldvisioncable;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -25,7 +24,7 @@ import org.w3c.dom.NodeList;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
+
 import java.util.Date;
 
 import dmax.dialog.SpotsDialog;

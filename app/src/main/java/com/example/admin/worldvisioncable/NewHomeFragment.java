@@ -2,15 +2,13 @@ package com.example.admin.worldvisioncable;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.net.Uri;
+
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
+
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -179,9 +177,7 @@ public class NewHomeFragment extends Fragment  implements TabHost.OnTabChangeLis
 
     }
 
-    /* (non-Javadoc)
-     * @see android.support.v4.view.ViewPager.OnPageChangeListener#onPageScrolled(int, float, int)
-     */
+
     @Override
     public void onPageScrolled(int position, float positionOffset,
                                int positionOffsetPixels) {

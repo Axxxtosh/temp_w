@@ -16,6 +16,8 @@ import com.example.admin.worldvisioncable.Models.UsedObject;
 
 import java.util.HashMap;
 
+import es.dmoral.toasty.Toasty;
+
 public class UserSessionManager {
 
  // Shared Preferences reference
@@ -96,7 +98,8 @@ public class UserSessionManager {
 
         // commit changes
         editor.commit();
-        Toast.makeText(_context, "Welcome " + username, Toast.LENGTH_SHORT).show();
+
+        Toasty.success(_context, "Welcome " + username, Toast.LENGTH_SHORT, true).show();
 
         //Toast.makeText(this,"Commited",Toast.LENGTH_SHORT).show();
     }

@@ -1,21 +1,21 @@
 package com.example.admin.worldvisioncable;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
+
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
+
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+
+
 import android.widget.ImageView;
 
 import com.example.admin.worldvisioncable.Models.SliderDataModel;

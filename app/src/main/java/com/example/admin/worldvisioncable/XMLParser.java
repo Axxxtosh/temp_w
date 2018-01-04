@@ -1,6 +1,6 @@
 package com.example.admin.worldvisioncable;
 
-import android.os.StrictMode;
+
 import android.util.Log;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -15,7 +15,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import java.io.IOException;
-import java.io.InputStream;
+
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import javax.xml.parsers.DocumentBuilder;

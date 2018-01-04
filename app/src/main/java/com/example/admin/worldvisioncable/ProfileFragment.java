@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.example.admin.worldvisioncable.Session.UserSessionManager;
 
-import org.w3c.dom.Text;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.example.admin.worldvisioncable.Session.UserSessionManager.KEY_ADDRESS;
@@ -23,7 +22,7 @@ import static com.example.admin.worldvisioncable.Session.UserSessionManager.KEY_
 import static com.example.admin.worldvisioncable.Session.UserSessionManager.KEY_CITYNAME;
 import static com.example.admin.worldvisioncable.Session.UserSessionManager.KEY_COUNTRYNAME;
 import static com.example.admin.worldvisioncable.Session.UserSessionManager.KEY_EMAIL;
-import static com.example.admin.worldvisioncable.Session.UserSessionManager.KEY_ID;
+
 import static com.example.admin.worldvisioncable.Session.UserSessionManager.KEY_MOBILE;
 import static com.example.admin.worldvisioncable.Session.UserSessionManager.KEY_USERID;
 import static com.example.admin.worldvisioncable.Session.UserSessionManager.KEY_USERNAME;

@@ -1,14 +1,11 @@
 package com.example.admin.worldvisioncable;
 
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
+
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -24,7 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.NetworkImageView;
+
 import com.android.volley.toolbox.Volley;
 import com.example.admin.worldvisioncable.Models.InternetPacksModel;
 
