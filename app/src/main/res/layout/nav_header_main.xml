@@ -10,6 +10,11 @@
     android:orientation="vertical"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:src="@drawable/logo_plain" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="80dp"

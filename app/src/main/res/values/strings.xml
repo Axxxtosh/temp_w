@@ -1,16 +1,12 @@
 <resources>
     <string name="app_name">WorldVisionCable</string>
-    <string name="app_title">World Vision Cable</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_web_content">WebContent</string>
-    <string name="title_activity_payment_status">PaymentStatus</string>
 
     <!-- API List -->
-    <string name="api_login">https://www.worldvisioncable.in/api/login_api.php</string>
     <!-- Method POST 1. username 2.password-->
 
 

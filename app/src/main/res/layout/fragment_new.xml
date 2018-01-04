@@ -1,11 +1,17 @@
-<LinearLayout android:id="@+id/main_layout"
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bg"
-    android:orientation="vertical"
-    android:weightSum="15.2"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        android:weightSum="15.2">
 
     <!-- 1.Usage ring-->
     <LinearLayout
@@ -310,6 +316,7 @@
             android:fontFamily="@font/roboto_light"
             android:text="Change Plan"
             android:textColor="@color/white" />
+    </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

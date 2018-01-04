@@ -13,25 +13,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.Toast;
 
-
-import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 
 import com.example.admin.worldvisioncable.Session.UserSessionManager;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.messaging.FirebaseMessaging;
 
 
-public class MainActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener{
+public class MainActivity extends AppCompatActivity {
 
 
     CardView hathway,cabletv,newConnection,login,contactus;
@@ -143,8 +137,4 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     }
 
 
-    @Override
-    public void onSliderClick(BaseSliderView slider) {
-
-    }
 }

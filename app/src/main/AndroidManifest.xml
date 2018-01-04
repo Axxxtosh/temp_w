@@ -80,9 +80,7 @@
         <activity
             android:name=".CablePlansActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="com.atom.mobilepaymentsdk.PayActivity"
-            android:screenOrientation="portrait" />
+
         <activity
             android:name=".PaymentStatus"
             android:screenOrientation="portrait" />
