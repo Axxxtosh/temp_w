@@ -12,8 +12,6 @@ public class MyApplication extends Application {
 
         Stetho.initializeWithDefaults(this);
 
-        //Firebase registration
-        //FirebaseApp.initializeApp(this);
 
     }
 }

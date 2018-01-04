@@ -15,9 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.atom.mobilepaymentsdk.PayActivity;
 import com.example.admin.worldvisioncable.Models.UsedObject;
 
 import org.w3c.dom.Document;
