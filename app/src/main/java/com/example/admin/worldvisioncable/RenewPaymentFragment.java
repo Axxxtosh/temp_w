@@ -73,9 +73,9 @@ public class RenewPaymentFragment extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Renew Plan");
-        toolbar.setTitleTextColor(getResources().getColor(R.color.grey));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
-        upArrow.setColorFilter(getResources().getColor(R.color.grey), PorterDuff.Mode.SRC_ATOP);
+        upArrow.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_IN);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
 
         // add back arrow to toolbar

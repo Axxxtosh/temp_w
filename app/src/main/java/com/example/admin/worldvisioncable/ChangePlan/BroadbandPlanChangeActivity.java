@@ -89,11 +89,25 @@ public class BroadbandPlanChangeActivity extends AppCompatActivity implements Ta
         upArrow.setColorFilter(getResources().getColor(R.color.grey), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
 
+
         // add back arrow to toolbar
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
+        if (savedInstanceState != null) {
+            mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab")); //set the tab as per the saved state
+        }
+        for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
+            //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
+            TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+            tv.setTextColor(Color.parseColor("#bdbdbd"));
+        }
+
+        // this.mTabHost.getTabWidget().getChildAt(this.mTabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#20A0E1")); // selected
+        TextView tv = (TextView) this.mTabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
+        tv.setTextColor(Color.parseColor("#f44336"));
 
 
 
@@ -106,8 +120,7 @@ public class BroadbandPlanChangeActivity extends AppCompatActivity implements Ta
         // Intialise ViewPager
         this.intialiseViewPager();
 
-        TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title); //Unselected Tabs
-        tv.setTextColor(Color.parseColor("#ffffff"));
+
 
 
     }
@@ -186,12 +199,12 @@ public class BroadbandPlanChangeActivity extends AppCompatActivity implements Ta
         for (int i = 0; i < this.mTabHost.getTabWidget().getChildCount(); i++) {
             //this.mTabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#20A0E1")); // unselected
             TextView tv = (TextView) this.mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
-            tv.setTextColor(Color.parseColor("#000000"));
+            tv.setTextColor(Color.parseColor("#bdbdbd"));
         }
 
        // this.mTabHost.getTabWidget().getChildAt(this.mTabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#20A0E1")); // selected
         TextView tv = (TextView) this.mTabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
-        tv.setTextColor(Color.parseColor("#ffffff"));
+        tv.setTextColor(Color.parseColor("#f44336"));
 
 
     }
