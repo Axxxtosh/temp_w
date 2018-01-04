@@ -1,8 +1,7 @@
 package com.example.admin.worldvisioncable;
 
 
-import android.annotation.SuppressLint;
-import android.content.Context;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,28 +9,25 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+
+
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
+
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.admin.worldvisioncable.ChangePlan.BroadbandPlanChangeActivity;
-import com.example.admin.worldvisioncable.Models.SliderDataModel;
+
 import com.example.admin.worldvisioncable.Models.UsedObject;
 import com.example.admin.worldvisioncable.libraries.SampleFragment;
 import com.hookedonplay.decoviewlib.DecoView;
 import com.hookedonplay.decoviewlib.charts.SeriesItem;
 import com.hookedonplay.decoviewlib.events.DecoEvent;
-import com.squareup.picasso.Picasso;
+
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -41,17 +37,15 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.IOException;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -69,19 +63,16 @@ import dmax.dialog.SpotsDialog;
 public class ActiveBroadbandFragment extends SampleFragment {
 
     View v;
-    ViewPager view_pager_slider;
-    ArrayList<SliderDataModel> al_slider;
-    ImagePageAdapter sliderAdaper;
     private SpotsDialog home_dialog;
     private int mSeries1Index;
-    LinearLayout dataLayout;
+    LinearLayout dataLayout, mainLayout;
     TextView dataUsage;
     Button btnRenewBroadband,changePlan;
     int wheel=0;
 
     TextView txtPackageName,txtPrice,txtProvider,txtValidity,txtDue_date,daysRemaining;
 
-    String PlanName,PackageId,due_date,Package_name,
+    String PackageId, due_date, Package_name,
             Network_id,Provider_name,Location,Speed,Data_transfer,
             After_FUp,Tarrif,GST,Total,Validity;
 
@@ -128,11 +119,9 @@ public class ActiveBroadbandFragment extends SampleFragment {
         });
 
 
-
-        view_pager_slider = v.findViewById(R.id.view_pager_slider);
-
         dataLayout= v.findViewById(R.id.dataLayout);
         dataUsage= v.findViewById(R.id.dataUsed);
+
 
         // dataLayout.setVisibility(View.GONE);
 
@@ -141,21 +130,10 @@ public class ActiveBroadbandFragment extends SampleFragment {
                 R.color.transparent);
         home_dialog.show();
 
-
-        al_slider = new ArrayList<>();
-        String SLIDER_URL = "https://www.worldvisioncable.in/api/slider-api.php";
-        new SliderTask().execute(SLIDER_URL);
-
         Log.d("User Id","S"+ UsedObject.getId());
-
 
         new ActiveBroadBandTask().execute(UsedObject.getId());
 
-        sliderAdaper = new ImagePageAdapter(al_slider);
-        /*view_pager_slider.setClipToPadding(false);
-        view_pager_slider.setPadding(40,0,40,0);
-        view_pager_slider.setOffscreenPageLimit(15);
-        view_pager_slider.setAdapter(sliderAdaper);*/
 
         changePlan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -192,7 +170,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
             return;
         }
         decoView.deleteAll();
-        decoView.configureAngles( 280, 0);
+        decoView.configureAngles(280, -10);
 
         final float seriesMax = 80f;
         //final float seriesMin = 50f;
@@ -312,16 +290,13 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         if (days < 0) {
                             daysRemaining.setText("Your plan has been expired");
                             dataUsage.setText("Expired");
-                            //dataLayout.setVisibility(View.VISIBLE);
-                            //
-
 
 
                         } else {
 
                             daysRemaining.setText(days + "Days Remaining for Next Bill");
                             dataUsage.setText(String.valueOf(30 - days) + "\nDays");
-                            //  dataLayout.setVisibility(View.VISIBLE);
+
                         }
 
                         wheel=days;
@@ -330,11 +305,10 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         home_dialog.dismiss();
 
 
-
-
                     } catch (ParseException e) {
                         e.printStackTrace();
                         home_dialog.dismiss();
+
                     }
 
 
@@ -343,7 +317,8 @@ public class ActiveBroadbandFragment extends SampleFragment {
              catch(JSONException e){
                     e.printStackTrace();
                  home_dialog.dismiss();
-                }
+
+             }
 
             }
         }
@@ -412,144 +387,5 @@ public class ActiveBroadbandFragment extends SampleFragment {
 
     }
 
-
-    @SuppressLint("StaticFieldLeak")
-    private class SliderTask extends AsyncTask<String,Void,String>
-    {
-        @Override
-        protected String doInBackground(String... strings) {
-
-            try {
-                URL myURL = new URL(strings[0]);
-                HttpURLConnection connection = (HttpURLConnection) myURL.openConnection();
-                connection.connect();
-
-                InputStream is = connection.getInputStream();
-                InputStreamReader isr = new InputStreamReader(is);
-                BufferedReader br = new BufferedReader(isr);
-
-                StringBuilder sb = new StringBuilder();
-                String str = br.readLine();
-
-                while (str != null)
-                {
-                    sb.append(str);
-                    str = br.readLine();
-                }
-
-                Log.d("SliderData",sb.toString());
-                return sb.toString();
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-
-            try {
-                JSONObject mainObject = new JSONObject(s);
-                JSONArray mainArray= mainObject.getJSONArray("result");
-
-                for (int i = 0; i < mainArray.length(); i++)
-                {
-                   // JSONObject childObject = mainArray.getJSONObject(i);
-                    String sliderImage = mainArray.getString(i);
-                   /* String sliderID = childObject.getString("id");
-                    String sliderName = childObject.getString("name");*/
-
-
-                    SliderDataModel sliderModel = new SliderDataModel(sliderImage,"","");
-
-                    al_slider.add(sliderModel);
-                    sliderAdaper.notifyDataSetChanged();
-
-                }
-                //view_pager_slider.setAdapter(sliderAdaper);
-
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-        }
-    }
-
-    private class ImagePageAdapter extends PagerAdapter {
-
-
-        //private final int[] mImages = new int[] {R.mipmap.slider_two_cloth,R.mipmap.slider_new_oneo,R.mipmap.shopping3,R.mipmap.slider_clothing,R.mipmap.slider_new_oneo};
-
-        ArrayList<SliderDataModel> al_sliderImages;
-
-        public ImagePageAdapter(ArrayList<SliderDataModel> al_sliderImages) {
-            this.al_sliderImages = al_sliderImages;
-        }
-
-        @Override
-        public int getCount() {
-            return this.al_sliderImages.size();
-        }
-
-
-        @Override
-        public void destroyItem(final ViewGroup container, final int position, final Object object) {
-            View view = (View) object;
-            container.removeView(view);
-        }
-
-        @Override
-        public Object instantiateItem(final ViewGroup container, final int position) {
-            final Context context = getActivity();
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View itemView = inflater.inflate(R.layout.echomepage_slider_items, container, false);
-            //  final ImageView imageView = new ImageView(context);
-
-
-            ImageView imageView =    itemView.findViewById(R.id.view_image_homepage);
-
-
-
-         /* Bitmap mbitmap = ((BitmapDrawable) getResources().getDrawable(Integer.parseInt(al_sliderImages.get(position).getSliderImage()))).getBitmap();
-
-            Bitmap imageRounded = Bitmap.createBitmap(imageView.getWidth(), imageView.getHeight(), imageView.getConfig());
-
-            Canvas canvas = new Canvas(imageRounded);
-            Paint mpaint = new Paint();
-            mpaint.setAntiAlias(true);
-            mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-            canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), 20, 20, mpaint);// Round Image Corner 100 100 100 100*/
-            final int padding = 15;
-            imageView.setPadding(padding, padding, padding, padding);
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-//
-            //imageView.setImageBitmap(imageRounded);
-
-            Picasso.with(context.getApplicationContext())
-                    .load(al_sliderImages.get(position).getSliderImage())
-                    .placeholder(R.color.white) // optional
-                    .error(R.color.white)         // optional
-                    .into(imageView);
-            //  imageView.setImageResource(this.mImages[position]);
-
-
-            container.addView(itemView);
-
-            return itemView;
-        }
-
-        @Override
-        public boolean isViewFromObject(final View view, final Object object) {
-            return view ==  object ;
-        }
-
-
-    }
 
 }

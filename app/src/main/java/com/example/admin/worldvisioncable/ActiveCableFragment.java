@@ -67,7 +67,8 @@ public class ActiveCableFragment extends SampleFragment {
 
     private SpotsDialog home_dialog;
     private int mSeries1Index;
-    LinearLayout dataLayout;
+    LinearLayout dataLayout, mainLayout;
+    ;
     TextView dataUsage;
     Button btnRenewBroadband,changePlan;
     int wheel=0;
@@ -126,6 +127,9 @@ public class ActiveCableFragment extends SampleFragment {
 
         dataLayout= v.findViewById(R.id.dataLayout);
         dataUsage= v.findViewById(R.id.dataUsed);
+        mainLayout = v.findViewById(R.id.main_layout);
+
+        mainLayout.setVisibility(View.GONE);
 
         //  dataLayout.setVisibility(View.GONE);
 
@@ -174,7 +178,7 @@ public class ActiveCableFragment extends SampleFragment {
             return;
         }
         decoView.deleteAll();
-        decoView.configureAngles( 280, 0);
+        decoView.configureAngles(280, -10);
 
         final float seriesMax = 80f;
         //final float seriesMin = 50f;
@@ -291,10 +295,13 @@ public class ActiveCableFragment extends SampleFragment {
                         calculateAngle(wheel);
                         setupEvents();
                         home_dialog.dismiss();
+                        mainLayout.setVisibility(View.VISIBLE);
 
 
                     } catch (ParseException e) {
                         e.printStackTrace();
+                        home_dialog.dismiss();
+                        mainLayout.setVisibility(View.VISIBLE);
                     }
 
 
@@ -302,6 +309,7 @@ public class ActiveCableFragment extends SampleFragment {
             }
             catch(JSONException e){
                 e.printStackTrace();
+                home_dialog.dismiss();
                 Log.d("activecable","JSOn error");
             }
 
