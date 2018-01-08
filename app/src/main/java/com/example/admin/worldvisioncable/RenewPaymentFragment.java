@@ -207,8 +207,6 @@ public class RenewPaymentFragment extends AppCompatActivity {
             Log.d(TAG+"userid",userid);
 
 
-            String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-
             //vVenderURL = "https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt="+TotalPrice+"&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"";
 
             //vVenderURL = "https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt=51&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"&udf9={\"+user_id\":\"+3119\",\"package_type\":\"1\",\"package_id\":\"11\"}";
@@ -217,8 +215,6 @@ public class RenewPaymentFragment extends AppCompatActivity {
 
             Log.d("Vvendor URL", vVenderURL);
 
-
-            //URL vVenderURL = new URL(params[0]);'
 
             XMLParser parser = new XMLParser();
             String xml = parser.getXmlFromUrl(vVenderURL);     // getting XML

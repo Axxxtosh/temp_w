@@ -2,7 +2,7 @@ package com.example.admin.worldvisioncable;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
+
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,7 +38,7 @@ import dmax.dialog.SpotsDialog;
 
 public class NewConnectionActivity extends AppCompatActivity {
 
-    Button sendRequest;
+    Button sendRequest, back;
     private SpotsDialog loaddialog;
     ArrayList<String> services,city;
     Spinner selectService,selectCity;
@@ -64,9 +64,7 @@ public class NewConnectionActivity extends AppCompatActivity {
                 R.color.transparent);
 
 
-
-
-
+        back = (Button) findViewById(R.id.backAction);
         selectService=(Spinner)findViewById(R.id.spn_chooseServices);
         selectCity=(Spinner)findViewById(R.id.spn_chooseCity);
         edt_fullname=(EditText)findViewById(R.id.newConnection_fullname);
@@ -93,6 +91,12 @@ public class NewConnectionActivity extends AppCompatActivity {
         city.add("Bangalore");
         city.add("Others");
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
        selectService.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,services));
        selectCity.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,city));
@@ -223,7 +227,6 @@ public class NewConnectionActivity extends AppCompatActivity {
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         //do things
-                                        startActivity(new Intent(NewConnectionActivity.this,MainActivity.class));
                                         finish();
                                     }
                                 });

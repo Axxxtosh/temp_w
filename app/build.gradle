@@ -54,7 +54,7 @@ dependencies {
     //Toasty
     compile 'com.github.GrenderG:Toasty:1.2.8'
 
-    //FireBase
+
 
 }
-apply plugin: 'com.google.gms.google-services'
+
