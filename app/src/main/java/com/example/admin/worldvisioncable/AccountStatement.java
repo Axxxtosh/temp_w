@@ -112,6 +112,7 @@ public class AccountStatement extends Fragment {
                 home_dialog.dismiss();
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
             }
+            home_dialog.dismiss();
 
         }
     }

@@ -16,7 +16,7 @@
             android:id="@+id/toolbar_home"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary">
+            android:background="@color/spots_dialog_color">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -33,6 +33,7 @@
                         android:layout_width="35dp"
                         android:gravity="left"
                         android:layout_height="35dp"
+                        android:backgroundTint="@color/white"
                         android:background="@drawable/back"/>
                 </LinearLayout>
                 <LinearLayout
@@ -46,7 +47,7 @@
                         android:id="@+id/yourlogo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/white"
                         android:textSize="20sp"
                         android:text="World Vision Cable" />
                 </LinearLayout>
@@ -70,7 +71,7 @@
                 android:textStyle="bold"
                 android:textSize="17dp"
                 android:gravity="center"
-                android:background="@color/colorAccent"
+                android:background="@color/grey"
                 android:textColor="@color/white"/>
         </LinearLayout>
         <LinearLayout
@@ -80,6 +81,7 @@
             android:layout_weight="1">
             <ScrollView
                 android:layout_width="match_parent"
+                android:background="@drawable/grad_tool"
                 android:layout_height="match_parent">
 
                 <LinearLayout
@@ -95,14 +97,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Select Service Type *"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textSize="17dp"
                             android:padding="5dp"/>
                         <Spinner
                             android:id="@+id/spn_chooseServices"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@drawable/bg_spinner"
+                            android:background="@color/grey"
                             android:cursorVisible="true"
                             android:padding="10dp"
 
@@ -123,7 +125,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Enter Your Full Name *"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="17dp"
                         android:padding="5dp"/>
 
@@ -131,7 +133,8 @@
                         android:id="@+id/newConnection_fullname"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:background="@drawable/border"
+                        android:textColor="@color/white"
+                        android:background="@color/grey"
                         android:padding="10dp"
                         android:layout_margin="7dp"
                         android:textSize="17dp" />
@@ -145,7 +148,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Enter Your Email ID *"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textSize="17dp"
                             android:padding="5dp"/>
 
@@ -153,8 +156,9 @@
                             android:id="@+id/newConnection_emailid"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@drawable/border"
+                            android:background="@color/grey"
                             android:padding="10dp"
+                            android:textColor="@color/white"
                             android:layout_margin="7dp"
                             android:inputType="textEmailAddress"
                             android:singleLine="true"
@@ -169,7 +173,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Enter Your Mobile No *"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textSize="17dp"
                             android:padding="5dp"/>
 
@@ -177,7 +181,8 @@
                             android:id="@+id/newConnection_mobileno"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@drawable/border"
+                            android:textColor="@color/white"
+                            android:background="@color/grey"
                             android:padding="10dp"
                             android:layout_margin="7dp"
                             android:inputType="number"
@@ -193,7 +198,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Select City*"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textSize="17dp"
                             android:padding="5dp"/>
 
@@ -201,7 +206,8 @@
                             android:id="@+id/spn_chooseCity"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@drawable/bg_spinner"
+
+                            android:background="@color/white_greyish"
                             android:cursorVisible="true"
                             android:padding="10dp"
                             android:layout_margin="7dp"
@@ -219,7 +225,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Enter Your Address*"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textSize="17dp"
                             android:padding="5dp"/>
 
@@ -227,7 +233,9 @@
                             android:id="@+id/newConnection_address"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
-                            android:background="@drawable/border"
+
+                            android:background="@color/grey"
+                            android:textColor="@color/white"
                             android:padding="10dp"
                             android:inputType="text"
                             android:singleLine="false"
@@ -245,7 +253,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Enter Your Pincode*"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textSize="17dp"
                             android:padding="5dp"/>
 
@@ -253,7 +261,8 @@
                             android:id="@+id/newConnection_pincode"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@drawable/border"
+                            android:background="@color/grey"
+                            android:textColor="@color/white"
                             android:padding="10dp"
                             android:inputType="number"
                             android:singleLine="true"
@@ -270,7 +279,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Enter Your Message*"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textSize="17dp"
                             android:padding="5dp"/>
 
@@ -281,6 +290,7 @@
                             android:background="@drawable/border"
                             android:padding="10dp"
                             android:inputType="text"
+                            android:textColor="@color/white"
 
                             android:layout_margin="7dp"
                             android:textSize="17dp" />

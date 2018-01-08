@@ -68,8 +68,8 @@ public class ActiveCableFragment extends SampleFragment {
     private SpotsDialog home_dialog;
     private int mSeries1Index;
     LinearLayout dataLayout, mainLayout;
-    ;
-    TextView dataUsage;
+
+    TextView dataUsage, error;
     Button btnRenewBroadband,changePlan;
     int wheel=0;
 
@@ -101,17 +101,19 @@ public class ActiveCableFragment extends SampleFragment {
         changePlan= v.findViewById(R.id.recommendedPlans);
         daysRemaining= v.findViewById(R.id.daysRemaining);
         btnRenewBroadband= v.findViewById(R.id.renewBroadbandplan);
+        error = v.findViewById(R.id.error);
 
         btnRenewBroadband.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 UsedObject.setCurBBPlanDueDate(due_date);
+                UsedObject.setCurCTPlanDueDate(due_date);
                 UsedObject.setCurBBPlanName(Package_name);
                 UsedObject.setCurBBPlanPrice(Tarrif);
                 UsedObject.setCurBBPlanValidity(Validity);
                 UsedObject.setCurBBPlanProvider(Provider_name);
-                UsedObject.setCurBBPlanId(PackageId);
+                UsedObject.setCurBBPlanId("2");
 
                 Log.d("Renew Pack name","S"+ UsedObject.getCurBBPlanName());
 
@@ -244,6 +246,10 @@ public class ActiveCableFragment extends SampleFragment {
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
                 Log.d(TAG,result);
+                if (response.equalsIgnoreCase("202")) {
+
+                    error.setVisibility(View.VISIBLE);
+                }
                 if(response.equalsIgnoreCase("200"))
 
                 {
@@ -312,8 +318,10 @@ public class ActiveCableFragment extends SampleFragment {
                 home_dialog.dismiss();
                 Log.d("activecable","JSOn error");
             }
+            home_dialog.dismiss();
 
         }
+
     }
 
     private void calculateAngle(int angel) {

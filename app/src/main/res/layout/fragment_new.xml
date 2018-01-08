@@ -1,9 +1,24 @@
-<LinearLayout
+<LinearLayout android:id="@+id/broadband_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/bg"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+
+        android:textAlignment="center"
+        android:layout_margin="30dp"
+        android:textSize="20sp"
+        android:minLines="2"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        android:text="You have no active cable plans" />
 
     <LinearLayout
         android:id="@+id/main_layout"

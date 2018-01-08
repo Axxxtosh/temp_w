@@ -138,6 +138,7 @@ public class PaymentHistory extends Fragment {
 
 
             } catch (JSONException e) {
+                home_dialog.dismiss();
                 e.printStackTrace();
             }
         }

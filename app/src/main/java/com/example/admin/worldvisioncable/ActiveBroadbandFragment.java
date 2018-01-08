@@ -1,17 +1,15 @@
 package com.example.admin.worldvisioncable;
 
 
-
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 
 
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,16 +55,14 @@ import java.util.Locale;
 import dmax.dialog.SpotsDialog;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class ActiveBroadbandFragment extends SampleFragment {
 
     View v;
     private SpotsDialog home_dialog;
     private int mSeries1Index;
-    LinearLayout dataLayout;
-    TextView dataUsage;
+    LinearLayout dataLayout, mainFragment;
+    TextView dataUsage, error;
     Button btnRenewBroadband,changePlan;
     int wheel=0;
 
@@ -88,6 +84,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
         // Inflate the layout for this fragment
         v= inflater.inflate(R.layout.fragment_active_broadband, container, false);
 
+        error = v.findViewById(R.id.error);
         txtDue_date= v.findViewById(R.id.due_date);
         txtPackageName= v.findViewById(R.id.planname);
         txtPrice= v.findViewById(R.id.price);
@@ -96,6 +93,11 @@ public class ActiveBroadbandFragment extends SampleFragment {
         changePlan= v.findViewById(R.id.recommendedPlans);
         daysRemaining= v.findViewById(R.id.daysRemaining);
         btnRenewBroadband= v.findViewById(R.id.renewBroadbandplan);
+
+        mainFragment = v.findViewById(R.id.main_layout);
+        mainFragment.setVisibility(View.GONE);
+
+
 
         btnRenewBroadband.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +108,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
                 UsedObject.setCurBBPlanPrice(Total);
                 UsedObject.setCurBBPlanValidity(Validity);
                 UsedObject.setCurBBPlanProvider(Provider_name);
-                UsedObject.setCurBBPlanId(PackageId);
+                UsedObject.setCurBBPlanId("1");
 
                 Log.d("Renew Pack name","S"+ UsedObject.getCurBBPlanName());
 
@@ -128,7 +130,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
         home_dialog = new SpotsDialog(getActivity(), R.style.Custom);
         home_dialog.getWindow().setBackgroundDrawableResource(
                 R.color.transparent);
-        home_dialog.show();
+        // home_dialog.show();
 
         Log.d("User Id","S"+ UsedObject.getId());
 
@@ -238,6 +240,10 @@ public class ActiveBroadbandFragment extends SampleFragment {
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
+                if (response.equalsIgnoreCase("202")) {
+
+                    error.setVisibility(View.VISIBLE);
+                }
 
                 if(response.equalsIgnoreCase("200"))
 
@@ -303,12 +309,13 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         wheel=days;
                         calculateAngle(wheel);
                         setupEvents();
-                        home_dialog.dismiss();
+                        mainFragment.setVisibility(View.VISIBLE);
+                        // home_dialog.dismiss();
 
 
                     } catch (ParseException e) {
                         e.printStackTrace();
-                        home_dialog.dismiss();
+                        // home_dialog.dismiss();
 
                     }
 
@@ -320,6 +327,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
                  home_dialog.dismiss();
 
              }
+            home_dialog.dismiss();
 
             }
         }
