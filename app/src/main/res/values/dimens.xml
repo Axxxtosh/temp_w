@@ -1,7 +1,7 @@
 <resources>
 
     //For Login Page
-    <dimen name="login_title">15sp</dimen>
+    <dimen name="login_title">30sp</dimen>
 
     //For Home Page
     <dimen name="main_button_text">20sp</dimen>

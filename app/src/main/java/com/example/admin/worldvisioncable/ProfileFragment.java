@@ -113,10 +113,10 @@ public class ProfileFragment extends Fragment {
         userCardNo=prefs.getString(KEY_CARDNO,"");
         userMobile=prefs.getString(KEY_MOBILE,"");
         userID=prefs.getString(KEY_USERID,"");
-        String add=prefs.getString(KEY_ADDRESS,"");
-        String[] data = add.split(",");
+        userAddress = prefs.getString(KEY_ADDRESS, "");
+        // String[] data = add.split(",");
 
-        userAddress=data[0]+data[1]+",\n"+data[2]+",\n"+prefs.getString(KEY_CITYNAME,"")+","+
+        //userAddress=data[0]+data[1]+",\n"+data[2]+",\n"+prefs.getString(KEY_CITYNAME,"")+","+
         prefs.getString(KEY_COUNTRYNAME,"");
     }
 
