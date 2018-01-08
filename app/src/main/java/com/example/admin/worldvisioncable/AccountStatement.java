@@ -4,10 +4,12 @@ package com.example.admin.worldvisioncable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +41,7 @@ public class AccountStatement extends Fragment {
 
     View v;
     private SpotsDialog home_dialog;
+    CardView main;
 
     TextView txtLatestActivePlan,txtLatestBillGeneratedOn,txtLatestTransactionId,txtLatestPaymentType,txtLatestBillFor,txtDescription;
     @Override
@@ -52,12 +55,14 @@ public class AccountStatement extends Fragment {
                 R.color.transparent);
         home_dialog.show();
 
+        main = (CardView) v.findViewById(R.id.main);
         txtLatestActivePlan=(TextView)v.findViewById(R.id.latestactivePlan);
         txtLatestBillGeneratedOn=(TextView)v.findViewById(R.id.latestbillgenerateOn);
         txtLatestTransactionId=(TextView)v.findViewById(R.id.latestTransactionId);
         txtLatestPaymentType=(TextView)v.findViewById(R.id.latestPaymentType);
         txtLatestBillFor=(TextView)v.findViewById(R.id.billFor);
         txtDescription=(TextView)v.findViewById(R.id.billDesc);
+        main.setVisibility(View.GONE);
 
         new AccountStatementTask().execute(UsedObject.getId());
 
@@ -81,8 +86,11 @@ public class AccountStatement extends Fragment {
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
-                Log.d("Bills Log",result);
-                JSONArray arr=jsonObject.getJSONArray("items");
+
+
+                Log.d("Bills Log", result);
+                JSONArray arr = jsonObject.getJSONArray("items");
+
 
 
                     JSONObject complaints = arr.getJSONObject(0);
@@ -100,21 +108,27 @@ public class AccountStatement extends Fragment {
                     txtLatestBillGeneratedOn.setText(complaints.getString("Paid_on"));
                     txtLatestTransactionId.setText(complaints.getString("transaction_id"));
                     txtLatestPaymentType.setText(complaints.getString("Type"));
-                    txtLatestBillFor.setText("Rs."+complaints.getString("Amount"));
+                txtLatestBillFor.setText("Rs." + complaints.getString("Amount"));
                     txtDescription.setText(complaints.getString("desc"));
 
 
-
                 home_dialog.dismiss();
+                main.setVisibility(View.VISIBLE);
             }
+
+
             catch(JSONException e){
                 e.printStackTrace();
                 home_dialog.dismiss();
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
+
             }
+
             home_dialog.dismiss();
 
+
         }
+
     }
 
     public String activePlan(String[] valuse) {
