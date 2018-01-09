@@ -174,6 +174,8 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         }
         if(id==R.id.nav_contactus)
         {
+
+            finish();
             Intent i=new Intent(HomePageActivity.this,ContactUsActivity.class);
             startActivity(i);
         }
