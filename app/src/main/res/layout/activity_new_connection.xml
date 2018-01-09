@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.admin.worldvisioncable.NewConnectionActivity">
+    tools:context="com.uriah.admin.worldvisioncable.NewConnectionActivity">
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_cable"
         android:layout_width="match_parent"

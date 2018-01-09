@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/grad_tool"
-    tools:context="com.example.admin.worldvisioncable.CableTvFragment">
+    tools:context="com.uriah.admin.worldvisioncable.CableTvFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

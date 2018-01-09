@@ -9,7 +9,7 @@
     android:orientation="vertical"
 
 
-    tools:context="com.example.admin.worldvisioncable.LoginActivity">
+    tools:context="com.uriah.admin.worldvisioncable.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

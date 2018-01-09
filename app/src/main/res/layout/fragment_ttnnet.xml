@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grad_tool"
-    tools:context="com.example.admin.worldvisioncable.TTNNetFragment">
+    tools:context="com.uriah.admin.worldvisioncable.TTNNetFragment">
 
 
     <android.support.v7.widget.RecyclerView
