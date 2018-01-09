@@ -70,6 +70,8 @@ public class ProfileFragment extends Fragment {
         btn_user_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                getActivity().finish();
                 Intent i=new Intent(getActivity(),EditUserProfile.class);
                 startActivity(i);
             }

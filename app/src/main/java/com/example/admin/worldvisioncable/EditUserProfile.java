@@ -1,6 +1,7 @@
 package com.example.admin.worldvisioncable;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
@@ -102,7 +103,7 @@ public class EditUserProfile extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Edit Profile");
         toolbar.setTitleTextColor(getResources().getColor(R.color.grey));
-        final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
+        final Drawable upArrow = this.getDrawable(R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(getResources().getColor(R.color.grey), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
 
@@ -158,6 +159,7 @@ public class EditUserProfile extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             String res=ChangePassword(params);
+            loaddialog.show();
 
             return res;
         }
@@ -197,9 +199,11 @@ public class EditUserProfile extends AppCompatActivity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
+                loaddialog.dismiss();
+
             }
 
-            dialog_register.dismiss();
+            loaddialog.dismiss();
             Log.d("LogCheck",result);
         }
 
@@ -226,8 +230,9 @@ public class EditUserProfile extends AppCompatActivity {
             HttpEntity httpEntity=httpResponse.getEntity();
             s= readResponseGmailRegistraion(httpResponse);
 
+        } catch (Exception exception) {
+            loaddialog.dismiss();
         }
-        catch(Exception exception)  {}
         return s;
 
 
@@ -275,6 +280,8 @@ public class EditUserProfile extends AppCompatActivity {
                                         ft.replace(R.id.content_main, homeFragment, "HomeFragment");
                                         ft.commit();*/
                                         finish();
+                                        Intent i = new Intent(EditUserProfile.this, HomePageActivity.class);
+                                        startActivity(i);
 
                                     }
                                 });
@@ -308,11 +315,14 @@ public class EditUserProfile extends AppCompatActivity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
+                loaddialog.dismiss();
             }
 
 
             Log.d("LogCheck",result);
+            loaddialog.dismiss();
         }
+
 
     }
 
@@ -341,8 +351,9 @@ public class EditUserProfile extends AppCompatActivity {
             HttpEntity httpEntity=httpResponse.getEntity();
             s= readResponseGmailRegistraion(httpResponse);
 
+        } catch (Exception exception) {
+            loaddialog.dismiss();
         }
-        catch(Exception exception)  {}
         return s;
 
 
@@ -375,7 +386,10 @@ public class EditUserProfile extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // handle arrow click here
         if (item.getItemId() == android.R.id.home) {
-            finish(); // close this activity and return to preview activity (if there is any)
+            finish();
+            Intent i = new Intent(EditUserProfile.this, HomePageActivity.class);
+            startActivity(i);
+
         }
 
         return super.onOptionsItemSelected(item);
