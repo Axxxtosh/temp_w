@@ -17,7 +17,7 @@
         android:minLines="2"
         android:textColor="@color/white"
         android:layout_gravity="center"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:text="You have no active cable plans" />
 
     <LinearLayout
