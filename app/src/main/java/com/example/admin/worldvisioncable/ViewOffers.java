@@ -2,6 +2,7 @@ package com.example.admin.worldvisioncable;
 
 import android.annotation.SuppressLint;
 
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 
+import android.view.View;
 import android.widget.ImageView;
 
 import com.example.admin.worldvisioncable.Models.SliderDataModel;
@@ -58,9 +60,9 @@ public class ViewOffers extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("View Offers");
-        toolbar.setTitleTextColor(getResources().getColor(R.color.grey));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
-        upArrow.setColorFilter(getResources().getColor(R.color.grey), PorterDuff.Mode.SRC_ATOP);
+        upArrow.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
 
         // add back arrow to toolbar
@@ -69,6 +71,30 @@ public class ViewOffers extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+        slide1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                Intent i = new Intent(ViewOffers.this, LoginActivity.class);
+                startActivity(i);
+            }
+        });
+        slide2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                Intent i = new Intent(ViewOffers.this, LoginActivity.class);
+                startActivity(i);
+            }
+        });
+        slide2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                Intent i = new Intent(ViewOffers.this, LoginActivity.class);
+                startActivity(i);
+            }
+        });
 
 
 
@@ -160,18 +186,21 @@ public class ViewOffers extends AppCompatActivity {
                 slide1.setScaleType(ImageView.ScaleType.FIT_XY);
                 Picasso.with(getApplicationContext())
                         .load(al_slider.get(0).getSliderImage())
+                        .resize(600, 200)
                         .placeholder(R.color.white) // optional
                         .error(R.color.white)         // optional
                         .into(slide1);
                 slide2.setScaleType(ImageView.ScaleType.FIT_XY);
                 Picasso.with(getApplicationContext())
                         .load(al_slider.get(1).getSliderImage())
+                        .resize(600, 200)
                         .placeholder(R.color.white) // optional
                         .error(R.color.white)         // optional
                         .into(slide2);
                 slide3.setScaleType(ImageView.ScaleType.FIT_XY);
                 Picasso.with(getApplicationContext())
                         .load(al_slider.get(2).getSliderImage())
+                        .resize(600, 200)
                         .placeholder(R.color.white) // optional
                         .error(R.color.white)         // optional
                         .into(slide3);

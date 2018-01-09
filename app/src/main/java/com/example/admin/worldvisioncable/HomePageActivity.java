@@ -168,6 +168,8 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         }
         if(id==R.id.nav_logout)
         {
+
+            finish();
             sessionManager.logoutUser();
         }
         if(id==R.id.nav_contactus)

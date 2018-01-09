@@ -130,7 +130,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
         home_dialog = new SpotsDialog(getActivity(), R.style.Custom);
         home_dialog.getWindow().setBackgroundDrawableResource(
                 R.color.transparent);
-        // home_dialog.show();
+
 
         Log.d("User Id","S"+ UsedObject.getId());
 
@@ -161,6 +161,12 @@ public class ActiveBroadbandFragment extends SampleFragment {
         });
 
         return v;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        home_dialog.show();
     }
 
     @Override
@@ -294,6 +300,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         Log.d("Days Remaining","D"+days);
 
 
+
                         if (days < 0) {
                             daysRemaining.setText("Your plan has been expired");
                             dataUsage.setText("Expired");
@@ -310,17 +317,18 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         calculateAngle(wheel);
                         setupEvents();
                         mainFragment.setVisibility(View.VISIBLE);
-                        // home_dialog.dismiss();
+                        home_dialog.dismiss();
 
 
                     } catch (ParseException e) {
                         e.printStackTrace();
-                        // home_dialog.dismiss();
+                        home_dialog.dismiss();
 
                     }
 
 
                 }
+
             }
              catch(JSONException e){
                     e.printStackTrace();
