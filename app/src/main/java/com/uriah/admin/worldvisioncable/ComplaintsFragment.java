@@ -40,6 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dmax.dialog.SpotsDialog;
+import es.dmoral.toasty.Toasty;
 
 public class ComplaintsFragment extends Fragment {
 
@@ -148,17 +149,20 @@ public class ComplaintsFragment extends Fragment {
             super.onPreExecute();
             loading.setVisibility(View.VISIBLE);
 
+
         }
         @Override
         protected String doInBackground(String... params) {
 
             String res=newConnection(params);
 
+
             return res;
         }
 
         @Override
         protected void onPostExecute(String result) {
+
 
             //Toast.makeText(getApplicationContext(), "Result:"+result, Toast.LENGTH_SHORT).show();
 
@@ -171,24 +175,29 @@ public class ComplaintsFragment extends Fragment {
 
                     case "200" :
 
+                        Toasty.success(getActivity(), "Your request has been sent.", Toast.LENGTH_SHORT, true).show();
 
-                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+/*
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                         builder.setMessage("Your Complaints Sent, Provider will contact you soon.")
                                 .setCancelable(false)
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         //do things
-                                        NewHomeFragment homeFragment = new NewHomeFragment();
+                                        CustomerSupport customerSupport = new CustomerSupport();
                                         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                                         // ft.addToBackStack(null);
-                                        ft.setCustomAnimations(R.anim.enter_left, R.anim.exit_right, R.anim.enter_right, R.anim.exit_left);
-                                        ft.replace(R.id.content_main, homeFragment, "HomeFragment");
+                                        ft.disallowAddToBackStack();
+                                       // ft.setCustomAnimations(R.anim.enter_left, R.anim.exit_right, R.anim.enter_right, R.anim.exit_left);
+                                        ft.add(R.id.content_main, customerSupport, "HomeFragment");
                                         ft.commit();
+
 
                                     }
                                 });
                         AlertDialog alert = builder.create();
-                        alert.show();
+                        alert.show();*/
                         // Toast.makeText(getApplicationContext(), "Your Request Sent", Toast.LENGTH_LONG).show();
 
 
@@ -196,7 +205,7 @@ public class ComplaintsFragment extends Fragment {
                         break;
 
                     default:
-                        loading.setVisibility(View.GONE);
+
                        /* AlertDialog.Builder buildererr = new AlertDialog.Builder(getApplicationContext());
                         buildererr.setMessage("Some Problem Occur with Server, Please try again Later")
                                 .setCancelable(false)
@@ -253,10 +262,11 @@ public class ComplaintsFragment extends Fragment {
 
             HttpEntity httpEntity=httpResponse.getEntity();
             s= readResponseGmailRegistraion(httpResponse);
-            loading.setVisibility(View.GONE);
+
 
         } catch (Exception exception) {
             loading.setVisibility(View.GONE);
+
         }
         return s;
 
