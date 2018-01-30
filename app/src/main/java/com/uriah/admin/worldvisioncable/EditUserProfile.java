@@ -44,7 +44,7 @@ import static com.uriah.admin.worldvisioncable.Session.UserSessionManager.KEY_AD
 public class EditUserProfile extends AppCompatActivity {
     EditText et_user_edit_name,et_user_edit_mobile,et_user_edit_email,et_user_edit_address;
     Button btn_user_edit_save,editProfile_changePassword;
-    private SpotsDialog loaddialog;
+
     android.support.v7.app.AlertDialog dialog_register;
     EditText currentPassword,newPassword,newConfirmPassword;
     Button ChangePassword,Cancel;
@@ -54,10 +54,7 @@ public class EditUserProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_user_profile);
 
-        loaddialog=new SpotsDialog(this);
 
-        loaddialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
 
         et_user_edit_name=(EditText)findViewById(R.id.et_user_edit_name);
         et_user_edit_mobile=(EditText)findViewById(R.id.et_user_edit_mobile);
@@ -76,7 +73,7 @@ public class EditUserProfile extends AppCompatActivity {
         btn_user_edit_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loaddialog.show();
+
                 Log.d("ID", UsedObject.getId());
                 Log.d("ID",et_user_edit_name.getText().toString());
                 Log.d("ID",et_user_edit_email.getText().toString());
@@ -100,9 +97,9 @@ public class EditUserProfile extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Edit Profile");
-        toolbar.setTitleTextColor(getResources().getColor(R.color.grey));
-        final Drawable upArrow = this.getDrawable(R.drawable.abc_ic_ab_back_material);
-        upArrow.setColorFilter(getResources().getColor(R.color.grey), PorterDuff.Mode.SRC_ATOP);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        final Drawable upArrow = this.getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
+        upArrow.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
 
         // add back arrow to toolbar
@@ -157,7 +154,7 @@ public class EditUserProfile extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             String res=ChangePassword(params);
-            loaddialog.show();
+
 
             return res;
         }
@@ -197,11 +194,11 @@ public class EditUserProfile extends AppCompatActivity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
-                loaddialog.dismiss();
+
 
             }
 
-            loaddialog.dismiss();
+
             Log.d("LogCheck",result);
         }
 
@@ -229,7 +226,7 @@ public class EditUserProfile extends AppCompatActivity {
             s= readResponseGmailRegistraion(httpResponse);
 
         } catch (Exception exception) {
-            loaddialog.dismiss();
+
         }
         return s;
 
@@ -241,7 +238,7 @@ public class EditUserProfile extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            loaddialog.show();
+
         }
         @Override
         protected String doInBackground(String... params) {
@@ -286,7 +283,6 @@ public class EditUserProfile extends AppCompatActivity {
                         android.support.v7.app.AlertDialog alert = builder.create();
                         alert.show();
                         // Toast.makeText(getApplicationContext(), "Your Request Sent", Toast.LENGTH_LONG).show();
-                        loaddialog.dismiss();
 
 
                         break;
@@ -304,7 +300,7 @@ public class EditUserProfile extends AppCompatActivity {
                         AlertDialog alerterr = buildererr.create();
                         alerterr.show();
 */
-                        loaddialog.dismiss();
+
                         Toast.makeText(EditUserProfile.this, "Some Problem Occur with Server", Toast.LENGTH_LONG).show();
                         break;
 
@@ -313,12 +309,12 @@ public class EditUserProfile extends AppCompatActivity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
-                loaddialog.dismiss();
+
             }
 
 
             Log.d("LogCheck",result);
-            loaddialog.dismiss();
+
         }
 
 
@@ -350,7 +346,7 @@ public class EditUserProfile extends AppCompatActivity {
             s= readResponseGmailRegistraion(httpResponse);
 
         } catch (Exception exception) {
-            loaddialog.dismiss();
+
         }
         return s;
 
