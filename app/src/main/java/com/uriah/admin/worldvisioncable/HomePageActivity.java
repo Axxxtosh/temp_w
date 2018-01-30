@@ -199,7 +199,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         {
 
             finish();
-            Intent i=new Intent(HomePageActivity.this,ContactUsActivity.class);
+            Intent i = new Intent(HomePageActivity.this, ContactUsinside.class);
             startActivity(i);
         }
 

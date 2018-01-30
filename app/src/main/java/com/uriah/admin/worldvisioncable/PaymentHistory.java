@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.android.volley.toolbox.ImageLoader;
@@ -42,7 +41,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import dmax.dialog.SpotsDialog;
+
 
 
 /**
@@ -53,6 +52,7 @@ public class PaymentHistory extends Fragment {
     List<PaymentHistoryModel> paymentHistoryList;
 
     String id,image;
+
     LinearLayout loading;
 
     View v;
@@ -114,6 +114,7 @@ public class PaymentHistory extends Fragment {
             //Toast.makeText(getApplicationContext(), "Result:"+result, Toast.LENGTH_SHORT).show();
 
             try {
+                loading.setVisibility(View.GONE);
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
                 Log.d("Bills Log",result);
@@ -141,8 +142,6 @@ public class PaymentHistory extends Fragment {
 
 
                 adapter1.notifyDataSetChanged();
-                loading.setVisibility(View.GONE);
-
 
 
             } catch (JSONException e) {
@@ -169,11 +168,8 @@ public class PaymentHistory extends Fragment {
 
                 HttpEntity httpEntity=httpResponse.getEntity();
                 s= readResponseLogin(httpResponse);
-                loading.setVisibility(View.GONE);
 
             } catch (Exception exception) {
-
-                loading.setVisibility(View.GONE);
             }
             return s;
         }

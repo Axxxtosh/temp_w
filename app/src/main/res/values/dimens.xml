@@ -12,6 +12,9 @@
     <dimen name="days">30sp</dimen>
 
     <dimen name="btn_text">15sp</dimen>
+    //ring
+
+    <dimen name="ring">150dp</dimen>
 
 
     //Payment history

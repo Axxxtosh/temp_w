@@ -2,8 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/grad_tool"
-    android:weightSum="10">
+    android:background="@drawable/grad_tool">
 
     <include layout="@layout/progress_bar" />
 

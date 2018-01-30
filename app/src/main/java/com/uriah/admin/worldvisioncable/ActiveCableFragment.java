@@ -186,19 +186,19 @@ public class ActiveCableFragment extends SampleFragment {
         decoView.addSeries(new SeriesItem.Builder(Color.argb(255, 64, 255, 64), Color.argb(255, 255, 0, 0))
                 .setRange(0, seriesMax, seriesMax)
                 .setInitialVisibility(false)
-                .setLineWidth(getDimension(15f))
+                .setLineWidth(getDimension(12f))
                 .build());
 
         decoView.addSeries(new SeriesItem.Builder(Color.argb(255, 0, 0, 0))
                 .setRange(0, seriesMax, seriesMax)
                 .setInitialVisibility(false)
-                .setLineWidth(getDimension(15f))
+                .setLineWidth(getDimension(12f))
                 .build());
 
         SeriesItem seriesItem1 = new SeriesItem.Builder(Color.argb(255, 64, 255, 64), Color.argb(255, 255, 0, 0))
                 .setRange(0, seriesMax, 0)
                 .setInitialVisibility(false)
-                .setLineWidth(getDimension(15f))
+                .setLineWidth(getDimension(12f))
                 .setCapRounded(true)
                 .setShowPointWhenEmpty(true)
                 .build();

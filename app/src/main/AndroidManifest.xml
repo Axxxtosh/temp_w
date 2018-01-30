@@ -34,7 +34,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChangePlan.BroadbandPlanChangeActivity"
             android:screenOrientation="portrait" />
@@ -76,14 +76,15 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ContactUsActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".EditUserProfile"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ViewOffers"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Utils.NoInternetActivity"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name=".Utils.NoInternetActivity" />
+        <activity android:name=".ContactUsinside"></activity>
     </application>
 
 </manifest>

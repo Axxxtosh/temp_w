@@ -162,7 +162,7 @@ public class WebContent extends AppCompatActivity {
             Intent returnIntent = new Intent();
             returnIntent.putExtra("Result", reponseText);
             setResult(RESULT_OK, returnIntent);
-            Toast.makeText(mContext, "in Web content", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mContext, "in Web content", Toast.LENGTH_SHORT).show();
             Log.d("Payment",reponseText);
             //Response From Payment gateway
             String[] parts = reponseText.split(",");

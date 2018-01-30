@@ -19,8 +19,8 @@ public final class R {
     public static final class dimen {
         public static final int progress_margin = 0x7f06009b;
         public static final int progress_width = 0x7f06009c;
-        public static final int spot_size = 0x7f06009d;
-        public static final int title_margin = 0x7f06009f;
+        public static final int spot_size = 0x7f06009e;
+        public static final int title_margin = 0x7f0600a0;
     }
     public static final class drawable {
         public static final int spot = 0x7f0700a5;
@@ -30,7 +30,7 @@ public final class R {
         public static final int title = 0x7f090130;
     }
     public static final class layout {
-        public static final int dialog = 0x7f0b0044;
+        public static final int dialog = 0x7f0b0045;
     }
     public static final class style {
         public static final int SpotsDialogDefault = 0x7f0f00d1;

@@ -6,7 +6,7 @@ android {
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.uriah.admin.worldvisioncable"
-        minSdkVersion 19
+        minSdkVersion 16
         targetSdkVersion 27
         versionCode 2
         versionName "1.1"
@@ -56,5 +56,6 @@ dependencies {
 
 
 }
+
 
 

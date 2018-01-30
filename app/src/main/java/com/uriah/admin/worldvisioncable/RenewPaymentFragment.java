@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.uriah.admin.worldvisioncable.Models.UsedObject;
@@ -35,9 +36,10 @@ import dmax.dialog.SpotsDialog;
 public class RenewPaymentFragment extends AppCompatActivity {
     Button paymentCallAction;
     String vVenderURL;
-    private SpotsDialog dialog;
+
     View v;
 
+    LinearLayout loading;
     TextView username,accountid,billno;
     TextView renewpackname,renewvalidity,renewduedate;
     TextView previous_due,current_invoice,totalpayment;
@@ -52,6 +54,9 @@ public class RenewPaymentFragment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_renew_payment);
+
+        loading = findViewById(R.id.loading);
+
 
         username= findViewById(R.id.username);
         accountid= findViewById(R.id.accountid);
@@ -92,10 +97,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
         billno.setText("WVC"+time);
 
 
-        dialog = new SpotsDialog(this, R.style.Custom);
 
-        dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
 
         paymentCallAction= findViewById(R.id.paymentCallAction);
 
@@ -190,90 +192,96 @@ public class RenewPaymentFragment extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            String CurrDateTime = sdf.format(new Date()).toString();
-           // vVenderURL = "https://paynetzuat.atomtech.in/paynetz/epi/fts?login=mt=1&14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&atxncurr=INR&txnscamt=0&clientcode=bGlzYXMwMDk0MA==&txnid=wv_123456789&date=27/11/2017&custacc=123456789&udf1=Customer&udf2=rajtufan@gmail.com&udf3=8485835654&udf4=pune&ru=http://example.webservice/response.aspx?";
 
-           String TotalPrice=UsedObject.getCurBBPlanPrice();
-            //TotalPrice="51";
-            long time= System.currentTimeMillis();
-            String TaxId="WVC"+String.valueOf(time);
-            String username= UsedObject.getUserName();
-            String email= UsedObject.getUserEmail();
-            String mobile= UsedObject.getUserMobile();
-            String userid= UsedObject.getId();
-            String packageid=UsedObject.getCurBBPlanId();
-            username = username.replaceAll("\\s+", "");
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                String CurrDateTime = sdf.format(new Date()).toString();
+                // vVenderURL = "https://paynetzuat.atomtech.in/paynetz/epi/fts?login=mt=1&14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&atxncurr=INR&txnscamt=0&clientcode=bGlzYXMwMDk0MA==&txnid=wv_123456789&date=27/11/2017&custacc=123456789&udf1=Customer&udf2=rajtufan@gmail.com&udf3=8485835654&udf4=pune&ru=http://example.webservice/response.aspx?";
 
-            Log.d(TAG+"userid",userid);
-            Log.d(TAG + "userid", packageid);
+                String TotalPrice=UsedObject.getCurBBPlanPrice();
+                //TotalPrice="51";
+                long time= System.currentTimeMillis();
+                String TaxId="WVC"+String.valueOf(time);
+                String username= UsedObject.getUserName();
+                String email= UsedObject.getUserEmail();
+                String mobile= UsedObject.getUserMobile();
+                String userid= UsedObject.getId();
+                String packageid=UsedObject.getCurBBPlanId();
+                username = username.replaceAll("\\s+", "");
 
-
-
-            //vVenderURL = "https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt="+TotalPrice+"&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"";
-
-            //vVenderURL = "https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt=51&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"&udf9={\"+user_id\":\"+3119\",\"package_type\":\"1\",\"package_id\":\"11\"}";
-            vVenderURL="https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt="+TotalPrice+"&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"&udf9=:"+userid+";package_type:1;package_id:"+packageid;
+                Log.d(TAG+"userid",userid);
+                Log.d(TAG + "userid", packageid);
 
 
-            Log.d("Vvendor URL", vVenderURL);
+                //vVenderURL = "https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt="+TotalPrice+"&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"";
+
+                //vVenderURL = "https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt=51&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"&udf9={\"+user_id\":\"+3119\",\"package_type\":\"1\",\"package_id\":\"11\"}";
+                vVenderURL="https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt="+TotalPrice+"&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"&udf9=:"+userid+";package_type:1;package_id:"+packageid;
 
 
-            XMLParser parser = new XMLParser();
-            String xml = parser.getXmlFromUrl(vVenderURL);     // getting XML
-            Document doc = parser.getDomElement(xml);         // getting DOM element
-            NodeList nList = doc.getElementsByTagName("RESPONSE");
-            String xmlURL ="";
-            String xmlttype ="";
-            String xmltoken="";
-            String xmltxnStage="";
-            String xmltempTxnId="";
-            for (int tempN = 0; tempN < nList.getLength(); tempN++) {
-                Node nNode = nList.item(tempN);
-                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                    Element eElement = (Element) nNode;
-                    System.out.println("URL : " + eElement.getElementsByTagName("url").item(0).getChildNodes().item(0).getNodeValue());
-                    xmlURL = eElement.getElementsByTagName("url").item(0).getChildNodes().item(0).getNodeValue();
+                Log.d("Vvendor URL", vVenderURL);
 
-                    NodeList aList = eElement.getElementsByTagName("param");
-                    String vParamName;
-                    for (int atrCnt = 0; atrCnt < aList.getLength(); atrCnt++) {
-                        vParamName = aList.item(atrCnt).getAttributes().getNamedItem("name").getNodeValue();
-                        System.out.println("<br>paramName : : " + vParamName);
 
-                        if (vParamName.equals("ttype")) {
-                            xmlttype = aList.item(atrCnt).getChildNodes().item(0).getNodeValue();
-                        } else if (vParamName.equals("tempTxnId")) {
-                            xmltempTxnId = aList.item(atrCnt).getChildNodes().item(0).getNodeValue();
-                        } else if (vParamName.equals("token")) {
-                            xmltoken = aList.item(atrCnt).getChildNodes().item(0).getNodeValue();
-                        } else if (vParamName.equals("txnStage")) {
-                            xmltxnStage = aList.item(atrCnt).getChildNodes().item(0).getNodeValue();
+                XMLParser parser = new XMLParser();
+                String xml = parser.getXmlFromUrl(vVenderURL);     // getting XML
+                Document doc = parser.getDomElement(xml);         // getting DOM element
+                NodeList nList = doc.getElementsByTagName("RESPONSE");
+                String xmlURL ="";
+                String xmlttype ="";
+                String xmltoken="";
+                String xmltxnStage="";
+                String xmltempTxnId="";
+                for (int tempN = 0; tempN < nList.getLength(); tempN++) {
+                    Node nNode = nList.item(tempN);
+                    if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                        Element eElement = (Element) nNode;
+                        System.out.println("URL : " + eElement.getElementsByTagName("url").item(0).getChildNodes().item(0).getNodeValue());
+                        xmlURL = eElement.getElementsByTagName("url").item(0).getChildNodes().item(0).getNodeValue();
+
+                        NodeList aList = eElement.getElementsByTagName("param");
+                        String vParamName;
+                        for (int atrCnt = 0; atrCnt < aList.getLength(); atrCnt++) {
+                            vParamName = aList.item(atrCnt).getAttributes().getNamedItem("name").getNodeValue();
+                            System.out.println("<br>paramName : : " + vParamName);
+
+                            if (vParamName.equals("ttype")) {
+                                xmlttype = aList.item(atrCnt).getChildNodes().item(0).getNodeValue();
+                            } else if (vParamName.equals("tempTxnId")) {
+                                xmltempTxnId = aList.item(atrCnt).getChildNodes().item(0).getNodeValue();
+                            } else if (vParamName.equals("token")) {
+                                xmltoken = aList.item(atrCnt).getChildNodes().item(0).getNodeValue();
+                            } else if (vParamName.equals("txnStage")) {
+                                xmltxnStage = aList.item(atrCnt).getChildNodes().item(0).getNodeValue();
+                            }
                         }
+                        Log.d("XML URL", xmlURL);
+                        Log.d("XML TRANS TYPE", xmlttype);
+                        Log.d("tempTxnId :", xmltempTxnId);
+                        Log.d("param :token     :", xmltoken);
+                        Log.d("param :txnStage  : ", xmltxnStage);
                     }
-                    Log.d("XML URL", xmlURL);
-                    Log.d("XML TRANS TYPE", xmlttype);
-                    Log.d("tempTxnId :", xmltempTxnId);
-                    Log.d("param :token     :", xmltoken);
-                    Log.d("param :txnStage  : ", xmltxnStage);
                 }
-            }
 
-            Atom2Request = xmlURL + "?ttype=" + xmlttype + "&tempTxnId=" + xmltempTxnId + "&token=" + xmltoken + "&txnStage=" + xmltxnStage;
-            Atom2Request = Atom2Request.replace(" ", "%20");
-            Log.d(TAG+"ATOM 2nd Request URl", Atom2Request);
+                Atom2Request = xmlURL + "?ttype=" + xmlttype + "&tempTxnId=" + xmltempTxnId + "&token=" + xmltoken + "&txnStage=" + xmltxnStage;
+                Atom2Request = Atom2Request.replace(" ", "%20");
+                Log.d(TAG+"ATOM 2nd Request URl", Atom2Request);
+
+            } catch (Exception e) {
+
+                loading.setVisibility(View.GONE);
+            }
             return Atom2Request;
         }
 
         @Override
         protected void onPostExecute(String result) {
-            if (dialog != null) {
-                dialog.dismiss();
+
+            loading.setVisibility(View.GONE);
                 Intent intent = new Intent(RenewPaymentFragment.this, WebContent.class);
                 intent.putExtra("Keyatomrequest", result);
                 startActivity(intent);
                 finish();
-            }
+
 
         }
 
@@ -284,8 +292,9 @@ public class RenewPaymentFragment extends AppCompatActivity {
             // dialog.setMessage("Processing Request...");
             // dialog.setIndeterminate(false);
             //dialog.setCancelable(false);
-            dialog.show();
+
             super.onPreExecute();
+            loading.setVisibility(View.VISIBLE);
         }
 
 

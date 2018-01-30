@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-89:12
-INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-89:12
-INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-89:12
-INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-89:12
+ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-90:12
+INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-90:12
+INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-90:12
+INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-90:12
 MERGED from [com.roughike:bottom-bar:2.1.1] /root/.gradle/caches/transforms-1/files-1.1/bottom-bar-2.1.1.aar/433ed0d6ec2c266158e74d6545707276/AndroidManifest.xml:2:1-12:12
 MERGED from [com.github.bmarrdev:android-DecoView-charting:v1.2] /root/.gradle/caches/transforms-1/files-1.1/android-DecoView-charting-v1.2.aar/3c9ca40bd48df854dc083ffdd48354a1/AndroidManifest.xml:2:1-14:12
 MERGED from [com.github.GrenderG:Toasty:1.2.8] /root/.gradle/caches/transforms-1/files-1.1/Toasty-1.2.8.aar/d50330f93e0576188bdfe5276caec08c/AndroidManifest.xml:2:1-12:12
@@ -26,22 +26,22 @@ MERGED from [com.android.support:support-core-ui:27.0.2] /root/.gradle/caches/tr
 MERGED from [com.android.support:support-media-compat:27.0.2] /root/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/9fe67cff34d008d1864733c450f2bcc1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.0.2] /root/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/ecdf12c133cdb42433c342f286ec1770/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /root/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/29b4fa4a0bf6dacc8ac2604ec5303287/AndroidManifest.xml:17:1-24:12
-INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-89:12
-INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-89:12
-INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-89:12
+INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-90:12
+INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-90:12
+INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-90:12
 	package
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:4:5-47
 		INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml
 		INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml
-		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-89:12
+		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-90:12
 		INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml
-		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-89:12
+		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:1-90:12
 		INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:2:11-69
@@ -70,7 +70,7 @@ ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/
 	android:name
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:11:22-78
 application
-ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:15:5-87:19
+ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:15:5-88:19
 MERGED from [com.github.bmarrdev:android-DecoView-charting:v1.2] /root/.gradle/caches/transforms-1/files-1.1/android-DecoView-charting-v1.2.aar/3c9ca40bd48df854dc083ffdd48354a1/AndroidManifest.xml:11:5-12:19
 MERGED from [com.github.bmarrdev:android-DecoView-charting:v1.2] /root/.gradle/caches/transforms-1/files-1.1/android-DecoView-charting-v1.2.aar/3c9ca40bd48df854dc083ffdd48354a1/AndroidManifest.xml:11:5-12:19
 MERGED from [com.android.support:design:25.1.0] /root/.gradle/caches/transforms-1/files-1.1/design-25.1.0.aar/c434560d47efcda0e0d8f2f663037950/AndroidManifest.xml:25:5-20
@@ -122,7 +122,7 @@ ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/
 	android:name
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:32:27-74
 activity#com.uriah.admin.worldvisioncable.MainActivity
-ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:35:9-37:61
+ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:35:9-37:52
 	android:screenOrientation
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:37:13-49
 	android:name
@@ -206,27 +206,31 @@ ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/
 	android:name
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:75:13-42
 activity#com.uriah.admin.worldvisioncable.ContactUsActivity
-ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:77:9-79:61
+ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:77:9-79:52
 	android:screenOrientation
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:79:13-49
 	android:name
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:78:13-46
 activity#com.uriah.admin.worldvisioncable.EditUserProfile
-ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:80:9-82:61
+ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:80:9-82:52
 	android:screenOrientation
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:82:13-49
 	android:name
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:81:13-44
 activity#com.uriah.admin.worldvisioncable.ViewOffers
-ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:83:9-85:61
+ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:83:9-85:52
 	android:screenOrientation
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:85:13-49
 	android:name
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:84:13-39
 activity#com.uriah.admin.worldvisioncable.Utils.NoInternetActivity
-ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:86:9-71
+ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:86:9-62
 	android:name
 		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:86:19-59
+activity#com.uriah.admin.worldvisioncable.ContactUsinside
+ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:87:9-62
+	android:name
+		ADDED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml:87:19-50
 uses-sdk
 INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/AndroidManifest.xml
