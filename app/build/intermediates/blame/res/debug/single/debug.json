@@ -664,6 +664,10 @@
         "source": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/res/layout/activity_broadband_change_plan.xml"
     },
     {
+        "merged": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/res/merged/debug/layout_activity_contact_usinside.xml.flat",
+        "source": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/res/layout/activity_contact_usinside.xml"
+    },
+    {
         "merged": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/res/merged/debug/layout_activity_no_internet.xml.flat",
         "source": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/res/layout/activity_no_internet.xml"
     },
@@ -674,10 +678,6 @@
     {
         "merged": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/res/merged/debug/font_roboto_black_italic.ttf.flat",
         "source": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/res/font/roboto_black_italic.ttf"
-    },
-    {
-        "merged": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/res/merged/debug/layout_activity_contact_usinside.xml.flat",
-        "source": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/res/layout/activity_contact_usinside.xml"
     },
     {
         "merged": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/res/merged/debug/drawable_abc_btn_colored_material.xml.flat",
@@ -1350,6 +1350,10 @@
     {
         "merged": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/5bdcced8fd36563a505d1d83f3151be1/res/drawable-mdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/res/merged/debug/layout-small_fragment_new.xml.flat",
+        "source": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/res/layout-small/fragment_new.xml"
     },
     {
         "merged": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_custom.xml.flat",
@@ -2086,6 +2090,10 @@
     {
         "merged": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/res/merged/debug/color-v23_abc_btn_colored_text_material.xml.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/5bdcced8fd36563a505d1d83f3151be1/res/color-v23/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/res/merged/debug/layout-normal_fragment_new.xml.flat",
+        "source": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/res/layout-normal/fragment_new.xml"
     },
     {
         "merged": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/res/merged/debug/layout_bb_bottom_bar_item_fixed.xml.flat",

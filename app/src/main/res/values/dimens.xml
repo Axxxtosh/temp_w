@@ -1,23 +1,5 @@
 <resources>
 
-    //For Login Page
-    <dimen name="login_title">30sp</dimen>
-
-    //For Home Page
-    <dimen name="main_button_text">20sp</dimen>
-
-
-    //Contactus toolbar
-
-    <dimen name="days">30sp</dimen>
-
-    <dimen name="btn_text">15sp</dimen>
-    //ring
-
-    <dimen name="ring">150dp</dimen>
-
-
-    //Payment history
 
 
 </resources>

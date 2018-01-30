@@ -15,7 +15,7 @@
     <dimen name="days">12sp</dimen>
     <dimen name="text1">12sp</dimen>
 
-    <dimen name="ring">120dp</dimen>
+    <dimen name="ring">100dp</dimen>
 
 
 </resources>

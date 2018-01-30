@@ -14,7 +14,17 @@
     <dimen name="btn_text">15sp</dimen>
     <dimen name="days">18sp</dimen>
     <dimen name="text1">15sp</dimen>
+    <dimen name="ring">170dp</dimen>
 
-    <dimen name="ring">160dp</dimen>
+
+    //For Home Page
+
+
+    //Contactus toolbar
+
+
+    //ring
+
+
 
 </resources>

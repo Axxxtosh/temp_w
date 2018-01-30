@@ -6,11 +6,11 @@
                 {
                     "source": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/res/values-small/dimens.xml",
                     "from": {
-                        "startLines": "-1,-1,-1,-1,17,-1",
-                        "startColumns": "-1,-1,-1,-1,4,-1",
-                        "startOffsets": "-1,-1,-1,-1,314,-1",
-                        "endColumns": "-1,-1,-1,-1,36,-1",
-                        "endOffsets": "-1,-1,-1,-1,346,-1"
+                        "startLines": "13,14,3,6,17,15",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "200,240,38,102,314,276",
+                        "endColumns": "39,35,42,47,36,36",
+                        "endOffsets": "235,271,76,145,346,308"
                     },
                     "to": {
                         "startLines": "2,3,4,5,6,7",
