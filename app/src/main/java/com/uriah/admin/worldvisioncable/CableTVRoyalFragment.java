@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -42,6 +43,7 @@ public class CableTVRoyalFragment extends Fragment {
     List<ChannelModel> royalchannelList;
     List<CablePacksModel> primechannelTitleList;
     List<CablePacksModel> royalchannelTitleList;
+    LinearLayout loading;
     //  SubCategories_AdsAdapter adsAdapter;
     String API_URL="https://www.worldvisioncable.in/api/cable_packs.php";
     String id,image;
@@ -51,7 +53,7 @@ public class CableTVRoyalFragment extends Fragment {
     private RecyclerView recyclerView;
     View v;
     TextView royalcablePlanName,royalcablePlanPrice,royalcablePlanchannelCount;
-    SpotsDialog dialog;
+
     int channelcount;
     public CableTVRoyalFragment() {
         // Required empty public constructor
@@ -72,11 +74,11 @@ public class CableTVRoyalFragment extends Fragment {
         royalchannelList = new ArrayList<>();
 
         royalchannelTitleList = new ArrayList<>();
+        loading = v.findViewById(R.id.loading);
 
-        dialog = new SpotsDialog(getActivity(), R.style.Custom);
-        dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        dialog.show();
+        loading.setVisibility(View.VISIBLE);
+
+
         getData();
         recyclerView = (RecyclerView)v.findViewById(R.id.recyclerView_cabletv);
         recyclerView.setHasFixedSize(true);
@@ -105,7 +107,8 @@ public class CableTVRoyalFragment extends Fragment {
 
             @Override
             public void onResponse(JSONObject response) {
-                dialog.dismiss();
+                loading.setVisibility(View.GONE);
+
 
                 Log.d("Log",response+"");
                 parseData(response);
@@ -114,6 +117,7 @@ public class CableTVRoyalFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                loading.setVisibility(View.GONE);
 
             }
         });
@@ -175,7 +179,8 @@ public class CableTVRoyalFragment extends Fragment {
                 snapAdapter.addSnap(new SnapChannelModel(Gravity.START, channelTitle, royalchannelList,getActivity()));
             }
             snapAdapter.notifyDataSetChanged();
-            dialog.dismiss();
+            loading.setVisibility(View.GONE);
+
 /*
             String count=String.valueOf(channelcount);
             Log.d("Channel count",""+count);*/
@@ -184,6 +189,8 @@ public class CableTVRoyalFragment extends Fragment {
             //adapter1.notifyDataSetChanged();
         } catch (JSONException e) {
             e.printStackTrace();
+            loading.setVisibility(View.GONE);
+
         }
 
     }

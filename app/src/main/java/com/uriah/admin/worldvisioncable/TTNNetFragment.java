@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -43,12 +44,13 @@ public class TTNNetFragment extends Fragment {
     String id,image;
     SimpleAdapter madapter;
     View v;
+    LinearLayout loading;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter1;
     private RecyclerView recyclerView;
     String finalUrl;
 
-    SpotsDialog loading;
+
 
     public TTNNetFragment() {
         // Required empty public constructor
@@ -62,10 +64,10 @@ public class TTNNetFragment extends Fragment {
         v= inflater.inflate(R.layout.fragment_ttnnet, container, false);
         internetPacksList = new ArrayList<>();
 
-        loading = new SpotsDialog(getActivity(), R.style.Custom);
-        loading.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        loading.show();
+        loading = v.findViewById(R.id.loading);
+        loading.setVisibility(View.VISIBLE);
+
+
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_subCategory);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
@@ -89,7 +91,8 @@ public class TTNNetFragment extends Fragment {
 
             @Override
             public void onResponse(JSONObject response) {
-                loading.dismiss();
+
+                loading.setVisibility(View.GONE);
 
                 Log.d("Log",response+"");
                 parseData(response);
@@ -98,6 +101,7 @@ public class TTNNetFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                loading.setVisibility(View.GONE);
 
             }
         });
@@ -135,13 +139,15 @@ public class TTNNetFragment extends Fragment {
 
 
                 internetPacksList.add(data);
-                loading.dismiss();
+
 
             }
             adapter1.notifyDataSetChanged();
-            loading.dismiss();
+            loading.setVisibility(View.GONE);
+
         } catch (JSONException e) {
             e.printStackTrace();
+            loading.setVisibility(View.GONE);
         }
 
     }

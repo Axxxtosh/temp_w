@@ -3,7 +3,8 @@
     android:id="@+id/loading"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4C636363"
+    android:background="@drawable/grad_tool"
+
     android:gravity="center"
     android:visibility="gone"
     android:elevation="20dp"

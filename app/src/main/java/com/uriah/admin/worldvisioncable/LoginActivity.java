@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.uriah.admin.worldvisioncable.Models.UsedObject;
@@ -39,17 +40,18 @@ public class LoginActivity extends AppCompatActivity {
     UserSessionManager sessionManager;
     String userName,emailId,MobileNo,Address;
     String CardNo,CityName,StateName,CountryName,id,userid;
-    private SpotsDialog loaddialog;
+    LinearLayout loading;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        loaddialog=new SpotsDialog(this);
+        loading = findViewById(R.id.loading);
 
-        loaddialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
 
         btnLogin=(Button)findViewById(R.id.btnLogin);
         btnLoginClose=(Button)findViewById(R.id.closeLogin);
@@ -79,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                     String password = edtPassword.getText().toString();
                     MainActivity.fa.finish();
 
-                    loaddialog.show();
+
                     //  Toast.makeText(getApplicationContext(),"Clicked correct",Toast.LENGTH_SHORT).show();
                     new LoginAsync().execute(username, password);
 
@@ -97,17 +99,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btnForgetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-
-            }
-        });
 
     }
     class LoginAsync extends AsyncTask<String, Integer, String>
     {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            loading.setVisibility(View.VISIBLE);
+        }
+
         @Override
         protected String doInBackground(String... params) {
 
@@ -122,6 +124,7 @@ public class LoginActivity extends AppCompatActivity {
             //Toast.makeText(getApplicationContext(), "Result:"+result, Toast.LENGTH_SHORT).show();
 
             try {
+                loading.setVisibility(View.GONE);
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
                 Log.d("LogLogin",result);
@@ -131,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
                     case "200" :
                         Log.d("Response",response);
 
-                        loaddialog.dismiss();
+
                         userName = jsonObject.getString("full_name");
                         emailId = jsonObject.getString("email");
                         MobileNo = jsonObject.getString("phone");
@@ -172,22 +175,23 @@ public class LoginActivity extends AppCompatActivity {
                         break;
                     case "202":
                         Toast.makeText(getApplicationContext(), "Password not matched with the given Email", Toast.LENGTH_LONG).show();
-                        loaddialog.dismiss();
+
                         break;
                     case "204":
                         Toast.makeText(getApplicationContext(), "Invalid Data", Toast.LENGTH_LONG).show();
-                        loaddialog.dismiss();
+
                         break;
 
                     default:
                         Toast.makeText(getApplicationContext(), "Some Problem Occur with Server", Toast.LENGTH_LONG).show();
-                        loaddialog.dismiss();
+
                         break;
 
                 }
 
             } catch (JSONException e) {
                 e.printStackTrace();
+                loading.setVisibility(View.GONE);
             }
         }
 
@@ -210,8 +214,9 @@ public class LoginActivity extends AppCompatActivity {
                 HttpEntity httpEntity=httpResponse.getEntity();
                 s= readResponseLogin(httpResponse);
 
+            } catch (Exception exception) {
+                loading.setVisibility(View.GONE);
             }
-            catch(Exception exception)  {}
             return s;
         }
 

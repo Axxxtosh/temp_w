@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -43,7 +44,9 @@ import dmax.dialog.SpotsDialog;
 public class ComplaintsFragment extends Fragment {
 
     Button complaints_submit;
-    private SpotsDialog loaddialog;
+
+    LinearLayout loading;
+
     ArrayList<String> natureofcomplaints;
     String sendcomplaints;
     Spinner selectcomplaint;
@@ -59,11 +62,8 @@ public class ComplaintsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v= inflater.inflate(R.layout.fragment_complaints, container, false);
+        loading = v.findViewById(R.id.loading);
 
-        loaddialog=new SpotsDialog(getActivity());
-
-        loaddialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
 
         complaints_submit=(Button)v.findViewById(R.id.complaints_submit);
         selectcomplaint=(Spinner)v.findViewById(R.id.spn_natureofcomplaints);
@@ -123,7 +123,7 @@ public class ComplaintsFragment extends Fragment {
                 }
                 else {
 
-                    loaddialog.show();
+
 
                     String name=complaints_name.getText().toString();
                     String email=complaints_emailid.getText().toString();
@@ -146,7 +146,8 @@ public class ComplaintsFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            loaddialog.show();
+            loading.setVisibility(View.VISIBLE);
+
         }
         @Override
         protected String doInBackground(String... params) {
@@ -162,12 +163,14 @@ public class ComplaintsFragment extends Fragment {
             //Toast.makeText(getApplicationContext(), "Result:"+result, Toast.LENGTH_SHORT).show();
 
             try {
+                loading.setVisibility(View.GONE);
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
 
                 switch (response) {
 
                     case "200" :
+
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                         builder.setMessage("Your Complaints Sent, Provider will contact you soon.")
@@ -187,12 +190,13 @@ public class ComplaintsFragment extends Fragment {
                         AlertDialog alert = builder.create();
                         alert.show();
                         // Toast.makeText(getApplicationContext(), "Your Request Sent", Toast.LENGTH_LONG).show();
-                        loaddialog.dismiss();
+
 
 
                         break;
 
                     default:
+                        loading.setVisibility(View.GONE);
                        /* AlertDialog.Builder buildererr = new AlertDialog.Builder(getApplicationContext());
                         buildererr.setMessage("Some Problem Occur with Server, Please try again Later")
                                 .setCancelable(false)
@@ -205,7 +209,7 @@ public class ComplaintsFragment extends Fragment {
                         AlertDialog alerterr = buildererr.create();
                         alerterr.show();
 */
-                        loaddialog.dismiss();
+
                         Toast.makeText(getActivity(), "Some Problem Occur with Server", Toast.LENGTH_LONG).show();
                         break;
 
@@ -214,6 +218,7 @@ public class ComplaintsFragment extends Fragment {
 
             } catch (JSONException e) {
                 e.printStackTrace();
+                loading.setVisibility(View.GONE);
             }
 
 
@@ -248,9 +253,11 @@ public class ComplaintsFragment extends Fragment {
 
             HttpEntity httpEntity=httpResponse.getEntity();
             s= readResponseGmailRegistraion(httpResponse);
+            loading.setVisibility(View.GONE);
 
+        } catch (Exception exception) {
+            loading.setVisibility(View.GONE);
         }
-        catch(Exception exception)  {}
         return s;
 
 

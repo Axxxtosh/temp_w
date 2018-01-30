@@ -59,9 +59,9 @@ import dmax.dialog.SpotsDialog;
 public class ActiveBroadbandFragment extends SampleFragment {
 
     View v;
-    private SpotsDialog home_dialog;
+
     private int mSeries1Index;
-    LinearLayout dataLayout, mainFragment;
+    LinearLayout dataLayout, mainFragment, loading;
     TextView dataUsage, error;
     Button btnRenewBroadband,changePlan;
     int wheel=0;
@@ -83,6 +83,8 @@ public class ActiveBroadbandFragment extends SampleFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v= inflater.inflate(R.layout.fragment_active_broadband, container, false);
+        //Loading
+        loading = v.findViewById(R.id.loading);
 
         error = v.findViewById(R.id.error);
         txtDue_date= v.findViewById(R.id.due_date);
@@ -127,9 +129,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
 
         // dataLayout.setVisibility(View.GONE);
 
-        home_dialog = new SpotsDialog(getActivity(), R.style.Custom);
-        home_dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
+
 
 
         Log.d("User Id","S"+ UsedObject.getId());
@@ -166,7 +166,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
     @Override
     public void onResume() {
         super.onResume();
-        home_dialog.show();
+
     }
 
     @Override
@@ -231,6 +231,13 @@ public class ActiveBroadbandFragment extends SampleFragment {
 
     public class ActiveBroadBandTask extends AsyncTask<String,Void,String>
     {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            loading.setVisibility(View.VISIBLE);
+        }
+
         @Override
         protected String doInBackground(String... params) {
 
@@ -248,12 +255,16 @@ public class ActiveBroadbandFragment extends SampleFragment {
                 String response = jsonObject.getString("response");
                 if (response.equalsIgnoreCase("202")) {
 
+                    loading.setVisibility(View.GONE);
+
                     error.setVisibility(View.VISIBLE);
                 }
 
                 if(response.equalsIgnoreCase("200"))
 
                 {
+
+                    loading.setVisibility(View.GONE);
 
                     PackageId = jsonObject.getString("packageId");
                     due_date = jsonObject.getString("due_date");
@@ -317,12 +328,11 @@ public class ActiveBroadbandFragment extends SampleFragment {
                         calculateAngle(wheel);
                         setupEvents();
                         mainFragment.setVisibility(View.VISIBLE);
-                        home_dialog.dismiss();
 
 
                     } catch (ParseException e) {
                         e.printStackTrace();
-                        home_dialog.dismiss();
+
 
                     }
 
@@ -331,13 +341,14 @@ public class ActiveBroadbandFragment extends SampleFragment {
 
             }
              catch(JSONException e){
+                 loading.setVisibility(View.GONE);
                     e.printStackTrace();
-                 home_dialog.dismiss();
+
 
              }
-            home_dialog.dismiss();
 
-            }
+
+        }
         }
 
     private void calculateAngle(int angel) {

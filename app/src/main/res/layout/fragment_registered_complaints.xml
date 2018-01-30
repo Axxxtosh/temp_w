@@ -4,9 +4,15 @@
     android:orientation="vertical"
     android:background="@drawable/grad_tool"
     android:weightSum="10">
+
+    <include layout="@layout/progress_bar" />
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView_subCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15sp"></android.support.v7.widget.RecyclerView>
+        android:layout_marginTop="15sp">
+
+    </android.support.v7.widget.RecyclerView>
 </LinearLayout>

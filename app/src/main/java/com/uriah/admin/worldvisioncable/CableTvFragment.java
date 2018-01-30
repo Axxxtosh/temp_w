@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,9 +58,10 @@ public class CableTvFragment extends Fragment {
     SnapChannelAdapter snapAdapter;
     private RecyclerView recyclerView;
     View v;
+    LinearLayout loading;
     int channelcount;
 
-    SpotsDialog dialog;
+
     public CableTvFragment() {
         // Required empty public constructor
     }
@@ -79,11 +81,9 @@ public class CableTvFragment extends Fragment {
         royalchannelList = new ArrayList<>();
 
         royalchannelTitleList = new ArrayList<>();
+        loading = v.findViewById(R.id.loading);
+        loading.setVisibility(View.VISIBLE);
 
-        dialog = new SpotsDialog(getActivity(), R.style.Custom);
-        dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        dialog.show();
         getData();
         recyclerView = (RecyclerView)v.findViewById(R.id.recyclerView_cabletv);
         recyclerView.setHasFixedSize(true);
@@ -111,7 +111,8 @@ public class CableTvFragment extends Fragment {
 
             @Override
             public void onResponse(JSONObject response) {
-                dialog.dismiss();
+                loading.setVisibility(View.GONE);
+
 
                 Log.d("Log",response+"");
                 parseData(response);
@@ -120,7 +121,8 @@ public class CableTvFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                dialog.dismiss();
+                loading.setVisibility(View.GONE);
+
                 Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
 
             }
@@ -187,6 +189,7 @@ public class CableTvFragment extends Fragment {
                 snapAdapter.addSnap(new SnapChannelModel(Gravity.START, channelTitle, primechannelList,getActivity()));
             }
             snapAdapter.notifyDataSetChanged();
+            loading.setVisibility(View.GONE);
 
             /*String count=String.valueOf(channelcount);
             Log.d("Channel count",""+count);*/
@@ -195,6 +198,7 @@ public class CableTvFragment extends Fragment {
             //adapter1.notifyDataSetChanged();
         } catch (JSONException e) {
             e.printStackTrace();
+            loading.setVisibility(View.GONE);
         }
 
     }

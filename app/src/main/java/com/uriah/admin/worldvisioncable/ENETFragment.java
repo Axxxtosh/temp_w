@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -46,12 +47,13 @@ public class ENETFragment extends Fragment {
     String API_URL="https://www.worldvisioncable.in/api/internet_packs.php";
     String id,image;
     SimpleAdapter madapter;
+    LinearLayout loading;
     View v;
 
     private RecyclerView.Adapter adapter1;
     private RecyclerView recyclerView;
     String finalUrl;
-    SpotsDialog dialog;
+
 
 
     private RecyclerView.LayoutManager layoutManager;
@@ -69,10 +71,10 @@ public class ENETFragment extends Fragment {
 
         internetPacksList = new ArrayList<>();
 
-        dialog = new SpotsDialog(getActivity(), R.style.Custom);
-        dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        dialog.show();
+        loading = v.findViewById(R.id.loading);
+
+        loading.setVisibility(View.VISIBLE);
+
 
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_subCategory);
         recyclerView.setHasFixedSize(true);
@@ -99,7 +101,7 @@ public class ENETFragment extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                // loading.dismiss();
-                dialog.dismiss();
+                loading.setVisibility(View.GONE);
 
                 Log.d("Log",response+"");
                 parseData(response);
@@ -108,6 +110,8 @@ public class ENETFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+
+                loading.setVisibility(View.GONE);
 
             }
         });
@@ -144,12 +148,14 @@ public class ENETFragment extends Fragment {
                 data.setValidity(json.getString("Validity"));
 
                 internetPacksList.add(data);
-                dialog.dismiss();
+
             }
             adapter1.notifyDataSetChanged();
-            dialog.dismiss();
+            loading.setVisibility(View.GONE);
+
         } catch (JSONException e) {
             e.printStackTrace();
+            loading.setVisibility(View.GONE);
         }
 
     }

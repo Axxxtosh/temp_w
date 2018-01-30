@@ -13,7 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.android.volley.toolbox.ImageLoader;
@@ -51,9 +53,10 @@ public class PaymentHistory extends Fragment {
     List<PaymentHistoryModel> paymentHistoryList;
 
     String id,image;
+    LinearLayout loading;
 
     View v;
-    private SpotsDialog home_dialog;
+
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter1;
     private RecyclerView recyclerView;
@@ -71,11 +74,7 @@ public class PaymentHistory extends Fragment {
         // Inflate the layout for this fragment
         v= inflater.inflate(R.layout.fragment_payment_history, container, false);
         paymentHistoryList = new ArrayList<>();
-
-        home_dialog = new SpotsDialog(getActivity(), R.style.Custom);
-        home_dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        home_dialog.show();
+        loading = v.findViewById(R.id.loading);
 
 
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_Paymenthistory);
@@ -94,6 +93,13 @@ public class PaymentHistory extends Fragment {
 
     public class ViewBillsAsync extends AsyncTask<String, Integer, String>
     {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            loading.setVisibility(View.VISIBLE);
+        }
+
         @Override
         protected String doInBackground(String... params) {
 
@@ -133,12 +139,14 @@ public class PaymentHistory extends Fragment {
                 }
 
 
-                home_dialog.dismiss();
+
                 adapter1.notifyDataSetChanged();
+                loading.setVisibility(View.GONE);
+
 
 
             } catch (JSONException e) {
-                home_dialog.dismiss();
+                loading.setVisibility(View.GONE);
                 e.printStackTrace();
             }
         }
@@ -161,9 +169,12 @@ public class PaymentHistory extends Fragment {
 
                 HttpEntity httpEntity=httpResponse.getEntity();
                 s= readResponseLogin(httpResponse);
+                loading.setVisibility(View.GONE);
 
+            } catch (Exception exception) {
+
+                loading.setVisibility(View.GONE);
             }
-            catch(Exception exception)  {}
             return s;
         }
 

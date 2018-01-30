@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,8 +40,9 @@ import dmax.dialog.SpotsDialog;
 public class AccountStatement extends Fragment {
 
     View v;
-    private SpotsDialog home_dialog;
+
     CardView main;
+    LinearLayout loading;
 
     TextView txtLatestActivePlan,txtLatestBillGeneratedOn,txtLatestTransactionId,txtLatestPaymentType,txtLatestBillFor,txtDescription;
     @Override
@@ -49,10 +51,9 @@ public class AccountStatement extends Fragment {
         // Inflate the layout for this fragment
         v= inflater.inflate(R.layout.fragment_account_statement, container, false);
 
-        home_dialog = new SpotsDialog(getActivity(), R.style.Custom);
-        home_dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        home_dialog.show();
+        loading = v.findViewById(R.id.loading);
+
+
 
         main = (CardView) v.findViewById(R.id.main);
         txtLatestActivePlan=(TextView)v.findViewById(R.id.latestactivePlan);
@@ -70,6 +71,13 @@ public class AccountStatement extends Fragment {
 
     public class AccountStatementTask extends AsyncTask<String,Void,String>
     {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            loading.setVisibility(View.VISIBLE);
+        }
+
         @Override
         protected String doInBackground(String... params) {
 
@@ -90,8 +98,6 @@ public class AccountStatement extends Fragment {
                 Log.d("Bills Log", result);
                 JSONArray arr = jsonObject.getJSONArray("items");
 
-
-
                     JSONObject complaints = arr.getJSONObject(0);
                     String id = complaints.getString("id");
                     PaymentHistoryModel data = new PaymentHistoryModel();
@@ -111,19 +117,19 @@ public class AccountStatement extends Fragment {
                     txtDescription.setText(complaints.getString("desc"));
 
 
-                home_dialog.dismiss();
+
                 main.setVisibility(View.VISIBLE);
+                loading.setVisibility(View.GONE);
             }
 
 
             catch(JSONException e){
                 e.printStackTrace();
-                home_dialog.dismiss();
+                loading.setVisibility(View.GONE);
+
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
 
             }
-
-            home_dialog.dismiss();
 
 
         }

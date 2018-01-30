@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -48,11 +49,15 @@ import java.util.List;
 public class RegisteredComplaints extends Fragment {
 
     List<ComplaintsModel> complaintsModelList;
+
+
     //  SubCategories_AdsAdapter adsAdapter;
    // String API_URL="https://www.worldvisioncable.in/api/account/view_complaints.php?userid=2635";
     String id,image;
     SimpleAdapter madapter;
     View v;
+
+    LinearLayout loading;
 
     private RecyclerView.Adapter adapter1;
     private RecyclerView recyclerView;
@@ -71,6 +76,7 @@ public class RegisteredComplaints extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v= inflater.inflate(R.layout.fragment_registered_complaints, container, false);
+        loading = v.findViewById(R.id.loading);
 
         complaintsModelList = new ArrayList<>();
 
@@ -94,9 +100,17 @@ public class RegisteredComplaints extends Fragment {
     public class ViewComplaintsAsync extends AsyncTask<String, Integer, String>
     {
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            loading.setVisibility(View.VISIBLE);
+        }
+
+        @Override
         protected String doInBackground(String... params) {
 
+
             String res=login(params);
+
 
             return res;
         }
@@ -107,6 +121,7 @@ public class RegisteredComplaints extends Fragment {
             //Toast.makeText(getApplicationContext(), "Result:"+result, Toast.LENGTH_SHORT).show();
 
             try {
+                loading.setVisibility(View.GONE);
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
                 Log.d("Complaints Log",result);
@@ -153,6 +168,7 @@ public class RegisteredComplaints extends Fragment {
 
             } catch (JSONException e) {
                 e.printStackTrace();
+                loading.setVisibility(View.GONE);
             }
         }
 
@@ -175,8 +191,9 @@ public class RegisteredComplaints extends Fragment {
                 HttpEntity httpEntity=httpResponse.getEntity();
                 s= readResponseLogin(httpResponse);
 
+            } catch (Exception exception) {
+                loading.setVisibility(View.GONE);
             }
-            catch(Exception exception)  {}
             return s;
         }
 

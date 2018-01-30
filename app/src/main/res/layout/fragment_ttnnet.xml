@@ -5,6 +5,8 @@
     android:background="@drawable/grad_tool"
     tools:context="com.uriah.admin.worldvisioncable.TTNNetFragment">
 
+    <include layout="@layout/progress_bar" />
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView_subCategory"
