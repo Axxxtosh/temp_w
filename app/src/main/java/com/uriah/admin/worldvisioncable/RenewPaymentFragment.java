@@ -102,7 +102,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
         paymentCallAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.show();
+
                 //launchactivity();
 
                 new StartPayment().execute();
@@ -187,6 +187,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
     private class StartPayment extends AsyncTask<String, Void, String> {
         String Atom2Request;
 
+
         @Override
         protected String doInBackground(String... params) {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -202,8 +203,11 @@ public class RenewPaymentFragment extends AppCompatActivity {
             String mobile= UsedObject.getUserMobile();
             String userid= UsedObject.getId();
             String packageid=UsedObject.getCurBBPlanId();
+            username = username.replaceAll("\\s+", "");
 
             Log.d(TAG+"userid",userid);
+            Log.d(TAG + "userid", packageid);
+
 
 
             //vVenderURL = "https://payment.atomtech.in/paynetz/epi/fts?login=14334&pass=WORLD@123&ttype=NBFundTransfer&prodid=WORLD&amt="+TotalPrice+"&txncurr=INR&txnscamt=0&ru=https://www.worldvisioncable.in/payment-success&clientcode=lisas00940&txnid="+TaxId+"&date="+CurrDateTime+"&udf1="+username+"&udf2="+email+"&udf3="+mobile+"&udf4=Bangalore&custacc="+userid+"";

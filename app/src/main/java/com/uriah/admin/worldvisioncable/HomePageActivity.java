@@ -1,8 +1,11 @@
 package com.uriah.admin.worldvisioncable;
 
 
+import android.content.BroadcastReceiver;
 import android.content.Intent;
 
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
 
@@ -21,6 +24,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.uriah.admin.worldvisioncable.Session.UserSessionManager;
+import com.uriah.admin.worldvisioncable.Utils.NetworkChangeReceiver;
 
 public class HomePageActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -28,6 +32,8 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
     static NavigationView navigationView;
     static Toolbar toolbar;
     UserSessionManager sessionManager;
+
+    BroadcastReceiver br = new NetworkChangeReceiver();
 
     View navHeader;
     boolean doubleBackToExitPressedOnce = false;
@@ -93,6 +99,23 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(br, intentFilter);
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(br);
+
 
     }
 

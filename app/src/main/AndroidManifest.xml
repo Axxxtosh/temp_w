@@ -9,25 +9,22 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
-        android:name="com.uriah.admin.worldvisioncable.MyApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_square"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@drawable/ic_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label,android:theme">
-
-
         <activity
-            android:name="com.uriah.admin.worldvisioncable.SplashScreen"
+            android:name=".SplashScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,65 +33,57 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.uriah.admin.worldvisioncable.MainActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.uriah.admin.worldvisioncable.ChangePlan.BroadbandPlanChangeActivity"
+            android:name=".ChangePlan.BroadbandPlanChangeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.InternetPacksActivity"
+            android:name=".InternetPacksActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.CableTVActivity"
+            android:name=".CableTVActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.NewConnectionActivity"
+            android:name=".NewConnectionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.LoginActivity"
+            android:name=".LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.HomePageActivity"
+            android:name=".HomePageActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.WebContent"
+            android:name=".WebContent"
             android:label="@string/title_activity_web_content"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.TryAgainActivity"
+            android:name=".TryAgainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.RenewPaymentFragment"
+            android:name=".RenewPaymentFragment"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.ChangePlan.ActiveCableTVChangeActivity"
+            android:name=".ChangePlan.ActiveCableTVChangeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.CablePlansActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="com.uriah.admin.worldvisioncable.PaymentStatus"
+            android:name=".CablePlansActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.ContactUsActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:name=".PaymentStatus"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.uriah.admin.worldvisioncable.EditUserProfile"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:name=".ContactUsActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.uriah.admin.worldvisioncable.ViewOffers"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:name=".EditUserProfile"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ViewOffers"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".Utils.NoInternetActivity"></activity>
     </application>
 
 </manifest>

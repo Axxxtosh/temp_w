@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context="com.uriah.admin.worldvisioncable.Utils.NoInternetActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="125dp"
+            android:src="@drawable/nowifi" />
+
+        <Button
+            android:id="@+id/btn_try"
+            android:layout_width="match_parent"
+            android:background="@drawable/btn_renew"
+            android:textColor="@color/white"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Try Again" />
+
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
