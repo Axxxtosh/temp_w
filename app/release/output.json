@@ -6,13 +6,13 @@
     "apkInfo": {
       "type": "MAIN",
       "splits": [],
-      "versionCode": 2
+      "versionCode": 3
     },
     "path": "app-release.apk",
     "properties": {
       "packageId": "com.uriah.admin.worldvisioncable",
       "split": "",
-      "minSdkVersion": "21"
+      "minSdkVersion": "19"
     }
   }
 ]
