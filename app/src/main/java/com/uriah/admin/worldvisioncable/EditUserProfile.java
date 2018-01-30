@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.uriah.admin.worldvisioncable.Models.UsedObject;
@@ -44,7 +45,7 @@ import static com.uriah.admin.worldvisioncable.Session.UserSessionManager.KEY_AD
 public class EditUserProfile extends AppCompatActivity {
     EditText et_user_edit_name,et_user_edit_mobile,et_user_edit_email,et_user_edit_address;
     Button btn_user_edit_save,editProfile_changePassword;
-
+    LinearLayout loading;
     android.support.v7.app.AlertDialog dialog_register;
     EditText currentPassword,newPassword,newConfirmPassword;
     Button ChangePassword,Cancel;
@@ -53,6 +54,8 @@ public class EditUserProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_user_profile);
+        loading = findViewById(R.id.loading);
+
 
 
 
@@ -125,6 +128,7 @@ public class EditUserProfile extends AppCompatActivity {
                 String userid= UsedObject.getId();
                 String currentPswd=currentPassword.getText().toString();
                 String newPswd=newPassword.getText().toString();
+                dialog_register.dismiss();
                 new ChangePasswordAsync().execute(userid,currentPswd,newPswd);
             }
         });
@@ -151,6 +155,12 @@ public class EditUserProfile extends AppCompatActivity {
     class ChangePasswordAsync extends AsyncTask<String, Integer, String>
     {
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            loading.setVisibility(View.VISIBLE);
+        }
+
+        @Override
         protected String doInBackground(String... params) {
 
             String res=ChangePassword(params);
@@ -165,6 +175,7 @@ public class EditUserProfile extends AppCompatActivity {
             //Toast.makeText(getApplicationContext(), "Result:"+result, Toast.LENGTH_SHORT).show();
 
             try {
+                loading.setVisibility(View.GONE);
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
 
@@ -194,6 +205,7 @@ public class EditUserProfile extends AppCompatActivity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
+                loading.setVisibility(View.GONE);
 
 
             }
@@ -226,7 +238,7 @@ public class EditUserProfile extends AppCompatActivity {
             s= readResponseGmailRegistraion(httpResponse);
 
         } catch (Exception exception) {
-
+            loading.setVisibility(View.GONE);
         }
         return s;
 
@@ -238,6 +250,7 @@ public class EditUserProfile extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            loading.setVisibility(View.VISIBLE);
 
         }
         @Override
@@ -254,6 +267,7 @@ public class EditUserProfile extends AppCompatActivity {
             //Toast.makeText(getApplicationContext(), "Result:"+result, Toast.LENGTH_SHORT).show();
 
             try {
+                loading.setVisibility(View.GONE);
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
 
@@ -274,9 +288,9 @@ public class EditUserProfile extends AppCompatActivity {
                                         ft.setCustomAnimations(R.anim.enter_left, R.anim.exit_right, R.anim.enter_right, R.anim.exit_left);
                                         ft.replace(R.id.content_main, homeFragment, "HomeFragment");
                                         ft.commit();*/
-                                        finish();
+                                        /*finish();
                                         Intent i = new Intent(EditUserProfile.this, HomePageActivity.class);
-                                        startActivity(i);
+                                        startActivity(i);*/
 
                                     }
                                 });
@@ -309,6 +323,7 @@ public class EditUserProfile extends AppCompatActivity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
+                loading.setVisibility(View.GONE);
 
             }
 
@@ -346,6 +361,7 @@ public class EditUserProfile extends AppCompatActivity {
             s= readResponseGmailRegistraion(httpResponse);
 
         } catch (Exception exception) {
+            loading.setVisibility(View.GONE);
 
         }
         return s;

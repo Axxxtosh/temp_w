@@ -26,6 +26,8 @@ import android.widget.Toast;
 import com.uriah.admin.worldvisioncable.Session.UserSessionManager;
 import com.uriah.admin.worldvisioncable.Utils.NetworkChangeReceiver;
 
+import es.dmoral.toasty.Toasty;
+
 public class HomePageActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
 
@@ -257,7 +259,8 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
                 return;
             }
             this.doubleBackToExitPressedOnce = true;
-            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+            Toasty.success(this, "Please click BACK again to exit", Toast.LENGTH_SHORT, false).show();
+
 
             new Handler().postDelayed(new Runnable() {
 
