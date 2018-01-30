@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
-    api-level="27"
-    build-mode="COLD"
-    density="xhdpi"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="26"
+    build-mode="FULL"
+    density="420dpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1517310863459"
+    timestamp="1517311589745"
     token="7826834176521483155"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
@@ -18,19 +18,58 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="403" />
     <task
         name="verifier"
         duration="0" />
 
     <artifact
+        location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
+    <artifact
         location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/outputs/apk/debug/app-debug.apk"
         type="SPLIT_MAIN" />
+    <artifact
+        location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1517310540297"
+        timestamp="1517311589745"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
         <artifact
             location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/outputs/apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
@@ -47,13 +86,7 @@
             location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-            type="SPLIT" />
-        <artifact
             location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
             location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
@@ -67,14 +100,6 @@
         <artifact
             location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1517310863459"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/outputs/apk/debug/app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>
