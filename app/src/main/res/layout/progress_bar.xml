@@ -1,6 +1,6 @@
 <LinearLayout
 
-    android:id="@+id/ll_prog"
+    android:id="@+id/loading"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4C636363"

@@ -65,9 +65,9 @@ public class ActiveCableFragment extends SampleFragment {
 
     View v;
 
-    private SpotsDialog home_dialog;
+
     private int mSeries1Index;
-    LinearLayout dataLayout, mainLayout;
+    LinearLayout dataLayout, mainLayout, loading;
 
     TextView dataUsage, error;
     Button btnRenewBroadband,changePlan;
@@ -92,6 +92,9 @@ public class ActiveCableFragment extends SampleFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_new, container, false);
+        //Loading
+
+        loading = v.findViewById(R.id.loading);
 
         txtDue_date= v.findViewById(R.id.due_date);
         txtPackageName= v.findViewById(R.id.planname);
@@ -135,10 +138,6 @@ public class ActiveCableFragment extends SampleFragment {
 
         //  dataLayout.setVisibility(View.GONE);
 
-        home_dialog = new SpotsDialog(getActivity(), R.style.Custom);
-        home_dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        home_dialog.show();
 
         Log.d("User Id","S"+ UsedObject.getId());
         new ActiveBroadBandTask().execute(UsedObject.getId());
@@ -232,6 +231,14 @@ public class ActiveCableFragment extends SampleFragment {
 
     public class ActiveBroadBandTask extends AsyncTask<String,Void,String>
     {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            loading.setVisibility(View.VISIBLE);
+
+        }
+
         @Override
         protected String doInBackground(String... params) {
 
@@ -247,12 +254,15 @@ public class ActiveCableFragment extends SampleFragment {
                 String response = jsonObject.getString("response");
                 Log.d(TAG,result);
                 if (response.equalsIgnoreCase("202")) {
+                    loading.setVisibility(View.GONE);
 
                     error.setVisibility(View.VISIBLE);
                 }
                 if(response.equalsIgnoreCase("200"))
 
                 {
+
+                    loading.setVisibility(View.GONE);
 
                     PackageId = jsonObject.getString("packageId");
                     due_date = jsonObject.getString("due_date");
@@ -302,13 +312,13 @@ public class ActiveCableFragment extends SampleFragment {
                         wheel=days;
                         calculateAngle(wheel);
                         setupEvents();
-                        home_dialog.dismiss();
+
                         mainLayout.setVisibility(View.VISIBLE);
 
 
                     } catch (ParseException e) {
                         e.printStackTrace();
-                        home_dialog.dismiss();
+
                         mainLayout.setVisibility(View.VISIBLE);
                     }
 
@@ -317,10 +327,11 @@ public class ActiveCableFragment extends SampleFragment {
             }
             catch(JSONException e){
                 e.printStackTrace();
-                home_dialog.dismiss();
+                loading.setVisibility(View.GONE);
+
                 Log.d("activecable","JSOn error");
             }
-            home_dialog.dismiss();
+
 
         }
 
@@ -365,7 +376,7 @@ public class ActiveCableFragment extends SampleFragment {
             s= readResponseLogin(httpResponse);
 
         } catch (Exception exception) {
-            home_dialog.dismiss();
+
             Toast.makeText(getActivity(), "Something went wrong!", Toast.LENGTH_SHORT).show();
         }
         return s;
@@ -391,7 +402,6 @@ public class ActiveCableFragment extends SampleFragment {
         return return_text;
 
     }
-
 
 
 }
