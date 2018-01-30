@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -39,7 +40,7 @@ import dmax.dialog.SpotsDialog;
 public class NewConnectionActivity extends AppCompatActivity {
 
     Button sendRequest, back;
-    private SpotsDialog loaddialog;
+    LinearLayout loading;
     ArrayList<String> services,city;
     Spinner selectService,selectCity;
     String sendservices,sendcity;
@@ -57,11 +58,9 @@ public class NewConnectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_connection);
 
+        loading = findViewById(R.id.loading);
 
-        loaddialog=new SpotsDialog(this);
 
-        loaddialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
 
 
         back = (Button) findViewById(R.id.backAction);
@@ -99,6 +98,7 @@ public class NewConnectionActivity extends AppCompatActivity {
         });
 
        selectService.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,services));
+
        selectCity.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,city));
 
         selectService.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -164,7 +164,7 @@ public class NewConnectionActivity extends AppCompatActivity {
                             (!edt_mobileno.getText().toString().trim().equals(""))&&
                             (!edt_pincode.getText().toString().equals(""))&&(!edt_emailid.getText().toString().trim().equals(""))&&
                             (!edt_address.getText().toString().trim().equals(""))&&(!sendservices.equalsIgnoreCase("Select Services")) && (!sendcity.equalsIgnoreCase("Select City"))) {
-                        loaddialog.show();
+
 
                         String fullname = edt_fullname.getText().toString();
                         String email = edt_emailid.getText().toString();
@@ -198,7 +198,8 @@ public class NewConnectionActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            loaddialog.show();
+            loading.setVisibility(View.VISIBLE);
+
         }
         @Override
         protected String doInBackground(String... params) {
@@ -214,6 +215,7 @@ public class NewConnectionActivity extends AppCompatActivity {
             //Toast.makeText(getApplicationContext(), "Result:"+result, Toast.LENGTH_SHORT).show();
 
             try {
+                loading.setVisibility(View.GONE);
                 JSONObject jsonObject = new JSONObject(result);
                 String response = jsonObject.getString("response");
 
@@ -233,7 +235,6 @@ public class NewConnectionActivity extends AppCompatActivity {
                         AlertDialog alert = builder.create();
                         alert.show();
                        // Toast.makeText(getApplicationContext(), "Your Request Sent", Toast.LENGTH_LONG).show();
-                        loaddialog.dismiss();
 
 
                         break;
@@ -251,7 +252,7 @@ public class NewConnectionActivity extends AppCompatActivity {
                         AlertDialog alerterr = buildererr.create();
                         alerterr.show();
 */
-                        loaddialog.dismiss();
+
                         Toast.makeText(getApplicationContext(), "Some Problem Occur with Server", Toast.LENGTH_LONG).show();
                         break;
 
@@ -260,6 +261,7 @@ public class NewConnectionActivity extends AppCompatActivity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
+                loading.setVisibility(View.GONE);
             }
 
 
@@ -296,8 +298,9 @@ public class NewConnectionActivity extends AppCompatActivity {
             HttpEntity httpEntity=httpResponse.getEntity();
             s= readResponseGmailRegistraion(httpResponse);
 
+        } catch (Exception exception) {
+            loading.setVisibility(View.GONE);
         }
-        catch(Exception exception)  {}
         return s;
 
 

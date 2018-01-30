@@ -36,8 +36,7 @@ public class ContactUsActivity extends AppCompatActivity {
         // handle arrow click here
         if (item.getItemId() == android.R.id.home) {
             finish();
-            Intent i = new Intent(this, HomePageActivity.class);
-            startActivity(i);// close this activity and return to preview activity (if there is any)
+
         }
 
         return super.onOptionsItemSelected(item);

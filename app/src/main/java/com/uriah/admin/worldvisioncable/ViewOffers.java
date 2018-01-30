@@ -19,6 +19,7 @@ import android.view.MenuItem;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.uriah.admin.worldvisioncable.Models.SliderDataModel;
 import com.squareup.picasso.Picasso;
@@ -42,14 +43,18 @@ public class ViewOffers extends AppCompatActivity {
 
     ArrayList<SliderDataModel> al_slider;
 
-    private SpotsDialog home_dialog;
+
     CardView card1,card2,card3;
     ImageView slide1,slide2,slide3;
+    LinearLayout loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_offers);
+
+        loading = findViewById(R.id.loading);
+
         card1= findViewById(R.id.card1);
         card2= findViewById(R.id.card2);
         card3= findViewById(R.id.card3);
@@ -100,10 +105,7 @@ public class ViewOffers extends AppCompatActivity {
 
 
 
-        home_dialog = new SpotsDialog(this, R.style.Custom);
-        home_dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        home_dialog.show();
+
         al_slider = new ArrayList<>();
         String SLIDER_URL = "https://www.worldvisioncable.in/api/slider-api.php";
         new SliderTask().execute(SLIDER_URL);
@@ -120,6 +122,12 @@ public class ViewOffers extends AppCompatActivity {
     @SuppressLint("StaticFieldLeak")
     private class SliderTask extends AsyncTask<String,Void,String>
     {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            loading.setVisibility(View.VISIBLE);
+        }
+
         @Override
         protected String doInBackground(String... strings) {
 
@@ -145,8 +153,10 @@ public class ViewOffers extends AppCompatActivity {
                 return sb.toString();
 
             } catch (MalformedURLException e) {
+                loading.setVisibility(View.GONE);
                 e.printStackTrace();
             } catch (IOException e) {
+                loading.setVisibility(View.GONE);
                 e.printStackTrace();
             }
 
@@ -157,9 +167,9 @@ public class ViewOffers extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
 
-            home_dialog.dismiss();
 
             try {
+                loading.setVisibility(View.GONE);
                 JSONObject mainObject = new JSONObject(s);
                 JSONArray mainArray= mainObject.getJSONArray("result");
 
@@ -210,6 +220,7 @@ public class ViewOffers extends AppCompatActivity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
+                loading.setVisibility(View.GONE);
             }
 
         }

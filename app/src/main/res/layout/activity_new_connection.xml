@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.uriah.admin.worldvisioncable.NewConnectionActivity">
+
+    <include layout="@layout/progress_bar" />
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_cable"
         android:layout_width="match_parent"
@@ -104,10 +107,12 @@
                             android:id="@+id/spn_chooseServices"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@color/grey"
                             android:cursorVisible="true"
+                            android:background="@drawable/bg_spinner"
                             android:padding="10dp"
-
+                            android:popupBackground="@color/white_greyish"
+                            android:theme="@style/ThemeOverlay.AppCompat.Light"
+                            android:spinnerMode="dropdown"
                             android:layout_margin="7dp"
                             android:singleLine="true"
                             android:textIsSelectable="true"
@@ -206,8 +211,9 @@
                             android:id="@+id/spn_chooseCity"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
+                            android:popupBackground="@color/white_greyish"
 
-                            android:background="@color/white_greyish"
+                            android:background="@drawable/bg_spinner"
                             android:cursorVisible="true"
                             android:padding="10dp"
                             android:layout_margin="7dp"
@@ -287,11 +293,10 @@
                             android:id="@+id/newConnection_message"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
-                            android:background="@drawable/border"
+                            android:background="@color/grey"
                             android:padding="10dp"
                             android:inputType="text"
                             android:textColor="@color/white"
-
                             android:layout_margin="7dp"
                             android:textSize="17dp" />
                     </LinearLayout>
@@ -307,7 +312,7 @@
                             android:textSize="20dp"
                             android:textColor="@color/white"
                             android:text="Send Request"
-                            android:background="@drawable/buttonround"/>
+                            android:background="@drawable/btn_renew" />
                     </LinearLayout>
 
                 </LinearLayout>

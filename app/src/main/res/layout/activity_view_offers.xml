@@ -5,6 +5,8 @@
     android:background="@drawable/grad_tool"
     android:weightSum="6"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include layout="@layout/progress_bar" />
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_cable"
         android:layout_width="match_parent"
