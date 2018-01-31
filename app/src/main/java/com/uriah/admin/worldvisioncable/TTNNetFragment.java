@@ -147,7 +147,7 @@ public class TTNNetFragment extends Fragment {
 
         } catch (JSONException e) {
             e.printStackTrace();
-            loading.setVisibility(View.GONE);
+
         }
 
     }

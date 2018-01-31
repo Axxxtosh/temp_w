@@ -215,7 +215,7 @@ public class LoginActivity extends AppCompatActivity {
                 s= readResponseLogin(httpResponse);
 
             } catch (Exception exception) {
-                loading.setVisibility(View.GONE);
+
             }
             return s;
         }

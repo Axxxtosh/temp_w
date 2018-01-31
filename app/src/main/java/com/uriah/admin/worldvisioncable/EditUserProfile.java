@@ -238,7 +238,7 @@ public class EditUserProfile extends AppCompatActivity {
             s= readResponseGmailRegistraion(httpResponse);
 
         } catch (Exception exception) {
-            loading.setVisibility(View.GONE);
+
         }
         return s;
 

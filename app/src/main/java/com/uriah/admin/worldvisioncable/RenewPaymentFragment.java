@@ -268,7 +268,7 @@ public class RenewPaymentFragment extends AppCompatActivity {
 
             } catch (Exception e) {
 
-                loading.setVisibility(View.GONE);
+                finish();
             }
             return Atom2Request;
         }

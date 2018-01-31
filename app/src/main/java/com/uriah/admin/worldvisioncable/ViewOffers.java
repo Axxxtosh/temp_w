@@ -153,10 +153,10 @@ public class ViewOffers extends AppCompatActivity {
                 return sb.toString();
 
             } catch (MalformedURLException e) {
-                loading.setVisibility(View.GONE);
+
                 e.printStackTrace();
             } catch (IOException e) {
-                loading.setVisibility(View.GONE);
+
                 e.printStackTrace();
             }
 

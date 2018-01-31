@@ -265,7 +265,7 @@ public class ComplaintsFragment extends Fragment {
 
 
         } catch (Exception exception) {
-            loading.setVisibility(View.GONE);
+
 
         }
         return s;
