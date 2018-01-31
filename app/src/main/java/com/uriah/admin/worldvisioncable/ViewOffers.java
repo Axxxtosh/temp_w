@@ -37,7 +37,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import dmax.dialog.SpotsDialog;
+
 
 public class ViewOffers extends AppCompatActivity {
 
@@ -66,9 +66,9 @@ public class ViewOffers extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("View Offers");
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
+       /* final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
-        getSupportActionBar().setHomeAsUpIndicator(upArrow);
+        getSupportActionBar().setHomeAsUpIndicator(upArrow);*/
 
         // add back arrow to toolbar
         if (getSupportActionBar() != null){

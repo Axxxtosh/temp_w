@@ -33,8 +33,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import dmax.dialog.SpotsDialog;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,7 +50,6 @@ public class ENETChangeFragment extends Fragment {
     private RecyclerView.Adapter adapter1;
     private RecyclerView recyclerView;
     String finalUrl;
-    SpotsDialog dialog;
 
 
     private RecyclerView.LayoutManager layoutManager;
@@ -70,10 +67,6 @@ public class ENETChangeFragment extends Fragment {
 
         internetPacksList = new ArrayList<>();
 
-        dialog = new SpotsDialog(getActivity(), R.style.Custom);
-        dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        dialog.show();
 
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_subCategory);
         recyclerView.setHasFixedSize(true);
@@ -100,7 +93,7 @@ public class ENETChangeFragment extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                // loading.dismiss();
-                dialog.dismiss();
+
 
                 Log.d("Log",response+"");
                 parseData(response);
@@ -145,7 +138,7 @@ public class ENETChangeFragment extends Fragment {
                 data.setValidity(json.getString("Validity"));
 
                 internetPacksList.add(data);
-                dialog.dismiss();
+
             }
             adapter1.notifyDataSetChanged();
         } catch (JSONException e) {

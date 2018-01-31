@@ -35,7 +35,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import dmax.dialog.SpotsDialog;
 
 public class NewConnectionActivity extends AppCompatActivity {
 

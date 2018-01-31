@@ -29,8 +29,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import dmax.dialog.SpotsDialog;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,7 +48,6 @@ public class MetroNetFragment extends Fragment {
     String finalUrl;
     private RecyclerView.LayoutManager layoutManager;
 
-    SpotsDialog dialog;
 
     public MetroNetFragment() {
         // Required empty public constructor
@@ -64,11 +61,6 @@ public class MetroNetFragment extends Fragment {
         v= inflater.inflate(R.layout.fragment_metro_net, container, false);
 
         internetPacksList = new ArrayList<>();
-
-        dialog = new SpotsDialog(getActivity(), R.style.Custom);
-        dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        dialog.show();
 
 
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_subCategory);
@@ -95,7 +87,7 @@ public class MetroNetFragment extends Fragment {
 
             @Override
             public void onResponse(JSONObject response) {
-                dialog.dismiss();
+
 
                 Log.d("Log",response+"");
                 parseData(response);
@@ -141,11 +133,11 @@ public class MetroNetFragment extends Fragment {
 
 
                 internetPacksList.add(data);
-                dialog.dismiss();
+
 
             }
             adapter1.notifyDataSetChanged();
-            dialog.dismiss();
+
         } catch (JSONException e) {
             e.printStackTrace();
         }

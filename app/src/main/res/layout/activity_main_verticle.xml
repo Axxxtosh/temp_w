@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2.2"
             android:layout_marginLeft="8dp"
-            android:src="@drawable/logo_plain"/>
+            app:srcCompat="@drawable/logo_plain" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,15 +57,20 @@
 
                 android:layout_weight="1"
                 >
-                <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+                <android.support.v7.widget.CardView
+
+                    xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/hathway"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:cardCornerRadius="40dp"
-                    app:cardBackgroundColor="#ab47bc"
+                    app:cardBackgroundColor="#b954af"
+
                     android:layout_margin="10dp"
                     android:clickable="true"
-                    android:foreground="@drawable/card_foreground"
+
+
                     android:elevation="4dp">
                     <LinearLayout
 
@@ -74,11 +79,11 @@
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:orientation="vertical">
                         <ImageView
+                            app:srcCompat="@drawable/i_wifi"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_marginTop="20dp"
-                            android:layout_gravity="center_vertical|center_horizontal"
-                            android:src="@drawable/i_wifi" />
+                            android:layout_gravity="center_vertical|center_horizontal" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -107,10 +112,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:cardCornerRadius="40dp"
-                    app:cardBackgroundColor="#8bc34a"
+                    app:cardBackgroundColor="#99c763"
+
                     android:layout_margin="10dp"
                     android:clickable="true"
-                    android:foreground="@drawable/card_foreground"
+
                     android:elevation="4dp">
                     <LinearLayout
 
@@ -123,7 +129,7 @@
                             android:layout_height="60dp"
                             android:layout_marginTop="20dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/i_tv" />
+                            app:srcCompat="@drawable/i_tv" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -159,7 +165,7 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 app:cardBackgroundColor="#0082c8"
-                android:foreground="@drawable/card_foreground"
+
                 android:elevation="4dp">
                 <LinearLayout
 
@@ -171,7 +177,7 @@
                         android:layout_height="50dp"
                         android:layout_marginTop="50dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/icc_connection"/>
+                        app:srcCompat="@drawable/icc_connection" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -228,7 +234,7 @@
                 app:cardBackgroundColor="#ff9800"
                 android:layout_margin="10dp"
                 android:clickable="true"
-                android:foreground="@drawable/card_foreground"
+
                 android:elevation="4dp">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -241,7 +247,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_gravity="center_horizontal"
                         android:tint="@color/white"
-                        android:src="@drawable/icc_contact"/>
+                        app:srcCompat="@drawable/icc_contact" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -267,7 +273,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:clickable="true"
-                android:foreground="@drawable/card_foreground"
+
                 android:elevation="4dp">
                 <LinearLayout
 
@@ -281,7 +287,7 @@
                         android:layout_marginTop="20dp"
                         android:tint="@color/white"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/icc_login"/>
+                        app:srcCompat="@drawable/icc_login" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

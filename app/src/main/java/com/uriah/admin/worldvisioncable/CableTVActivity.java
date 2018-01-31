@@ -36,7 +36,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import dmax.dialog.SpotsDialog;
 
 public class CableTVActivity extends AppCompatActivity {
 
@@ -53,8 +52,6 @@ public class CableTVActivity extends AppCompatActivity {
     SnapChannelAdapter snapAdapter;
     private RecyclerView recyclerView;
     Button login;
-
-    SpotsDialog dialog;
 
 
     @Override
@@ -76,10 +73,6 @@ public class CableTVActivity extends AppCompatActivity {
             }
         });
 
-        dialog = new SpotsDialog(this, R.style.Custom);
-        dialog.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        dialog.show();
 
         royalchannelTitleList = new ArrayList<>();
 
@@ -109,7 +102,7 @@ public class CableTVActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(JSONObject response) {
-                dialog.dismiss();
+
 
                 Log.d("Log",response+"");
                 parseData(response);
@@ -172,7 +165,7 @@ public class CableTVActivity extends AppCompatActivity {
                 snapAdapter.addSnap(new SnapChannelModel(Gravity.START, channelTitle, primechannelList,this));
             }
             snapAdapter.notifyDataSetChanged();
-            dialog.dismiss();
+
 
             //adapter1.notifyDataSetChanged();
         } catch (JSONException e) {

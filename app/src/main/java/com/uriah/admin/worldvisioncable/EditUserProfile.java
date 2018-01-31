@@ -38,7 +38,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import dmax.dialog.SpotsDialog;
+
 
 import static com.uriah.admin.worldvisioncable.Session.UserSessionManager.KEY_ADDRESS;
 
@@ -101,9 +101,9 @@ public class EditUserProfile extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Edit Profile");
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        final Drawable upArrow = this.getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
+       /* final Drawable upArrow = this.getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
-        getSupportActionBar().setHomeAsUpIndicator(upArrow);
+        getSupportActionBar().setHomeAsUpIndicator(upArrow);*/
 
         // add back arrow to toolbar
         if (getSupportActionBar() != null){

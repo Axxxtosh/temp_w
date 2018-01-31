@@ -27,8 +27,6 @@ import java.text.SimpleDateFormat;
 
 import java.util.Date;
 
-import dmax.dialog.SpotsDialog;
-
 
 /**
  * A simple {@link Fragment} subclass.

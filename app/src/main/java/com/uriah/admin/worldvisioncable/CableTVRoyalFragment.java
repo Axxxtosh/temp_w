@@ -33,8 +33,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import dmax.dialog.SpotsDialog;
-
 
 public class CableTVRoyalFragment extends Fragment {
 

@@ -22,7 +22,6 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 
-import dmax.dialog.SpotsDialog;
 
 public class WebContent extends AppCompatActivity {
 
@@ -32,7 +31,7 @@ public class WebContent extends AppCompatActivity {
     public static final String KEY_ATOM2REQUEST = "Atom2Request";
     String Atom2Request;
     Intent intent;
-    private SpotsDialog home_dialog;
+
     boolean loadingFinished = true;
     boolean redirect = false;
     Button backPayment,closeView;

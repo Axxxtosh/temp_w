@@ -33,8 +33,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import dmax.dialog.SpotsDialog;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,7 +50,6 @@ public class TTNNetChangeFragment extends Fragment {
     private RecyclerView recyclerView;
     String finalUrl;
 
-    SpotsDialog loading;
 
     public TTNNetChangeFragment() {
         // Required empty public constructor
@@ -66,10 +63,7 @@ public class TTNNetChangeFragment extends Fragment {
         v= inflater.inflate(R.layout.fragment_ttnnet, container, false);
         internetPacksList = new ArrayList<>();
 
-        loading = new SpotsDialog(getActivity(), R.style.Custom);
-        loading.getWindow().setBackgroundDrawableResource(
-                R.color.transparent);
-        loading.show();
+
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_subCategory);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
@@ -93,7 +87,7 @@ public class TTNNetChangeFragment extends Fragment {
 
             @Override
             public void onResponse(JSONObject response) {
-                loading.dismiss();
+
 
                 Log.d("Log",response+"");
                 parseData(response);
@@ -139,7 +133,7 @@ public class TTNNetChangeFragment extends Fragment {
 
 
                 internetPacksList.add(data);
-                loading.dismiss();
+
 
             }
             adapter1.notifyDataSetChanged();

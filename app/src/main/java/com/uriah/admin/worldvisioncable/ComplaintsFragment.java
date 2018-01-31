@@ -39,7 +39,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import dmax.dialog.SpotsDialog;
+
 import es.dmoral.toasty.Toasty;
 
 public class ComplaintsFragment extends Fragment {
