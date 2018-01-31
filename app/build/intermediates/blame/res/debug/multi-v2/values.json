@@ -42,12 +42,12 @@
                 {
                     "source": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/res/values/styles.xml",
                     "from": {
-                        "startLines": "3,18,23,13,28",
+                        "startLines": "3,18,21,13,26",
                         "startColumns": "4,4,4,4,4",
-                        "startOffsets": "155,814,909,610,1039",
-                        "endLines": "11,18,26,16,36",
+                        "startOffsets": "155,814,907,610,1037",
+                        "endLines": "11,18,24,16,34",
                         "endColumns": "12,90,12,12,12",
-                        "endOffsets": "604,900,1033,808,1560"
+                        "endOffsets": "604,900,1031,808,1558"
                     },
                     "to": {
                         "startLines": "826,835,1924,1928,2184",

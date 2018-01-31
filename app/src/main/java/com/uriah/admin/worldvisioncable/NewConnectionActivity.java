@@ -16,24 +16,28 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import javax.net.ssl.HttpsURLConnection;
 
 
 public class NewConnectionActivity extends AppCompatActivity {
@@ -44,6 +48,9 @@ public class NewConnectionActivity extends AppCompatActivity {
     Spinner selectService,selectCity;
     String sendservices,sendcity;
     EditText edt_fullname,edt_mobileno,edt_address,edt_message,edt_pincode,edt_emailid;
+
+    HashMap<String, String> hm = new HashMap<String, String>();
+
 
     Pattern email_pattern = Pattern.compile("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
             "\\@" +
@@ -268,16 +275,7 @@ public class NewConnectionActivity extends AppCompatActivity {
         }
 
     }
-
-    public String newConnection(String[] valuse) {
-        String s="";
-        try
-        {
-            HttpClient httpClient=new DefaultHttpClient();
-            // HttpPost httpPost=new HttpPost("http://www.42estate.in/api/register-api.php");
-            //https://www.worldvisioncable.in/api/new_connection_api.php?userid=2635&name=Rajakumar A&email=rjkumar856@gmail.com&phone=9092310791&service_type=Cable&address=asdasdas&city=Bangalore&pincode=560100&message=Testing
-            //
-            HttpPost httpPost=new HttpPost("https://www.worldvisioncable.in/api/new_connection_api.php?");
+    /*HttpPost httpPost=new HttpPost("https://www.worldvisioncable.in/api/new_connection_api.php?");
             List<NameValuePair> list=new ArrayList<NameValuePair>();
 
             list.add(new BasicNameValuePair("name",valuse[0]));
@@ -287,45 +285,78 @@ public class NewConnectionActivity extends AppCompatActivity {
             list.add(new BasicNameValuePair("address",valuse[4]));
             list.add(new BasicNameValuePair("city",valuse[5]));
             list.add(new BasicNameValuePair("pincode",valuse[6]));
-            list.add(new BasicNameValuePair("message",valuse[7]));
+            list.add(new BasicNameValuePair("message",valuse[7]));*/
 
 
+    public String newConnection(String[] valuse) {
 
-            httpPost.setEntity(new UrlEncodedFormEntity(list));
-            HttpResponse httpResponse=  httpClient.execute(httpPost);
-
-            HttpEntity httpEntity=httpResponse.getEntity();
-            s= readResponseGmailRegistraion(httpResponse);
-
-        } catch (Exception exception) {
-
-        }
-        return s;
-
-
-    }
-
-
-    public String readResponseGmailRegistraion(HttpResponse res) {
-        InputStream is=null;
-        String return_text="";
+        hm.put("name", valuse[0]);
+        hm.put("email", valuse[1]);
+        hm.put("phone", valuse[2]);
+        hm.put("service_type", valuse[3]);
+        hm.put("address", valuse[4]);
+        hm.put("city", valuse[5]);
+        hm.put("pincode", valuse[6]);
+        hm.put("message", valuse[7]);
+        String s = "";
+        URL url;
+        String response = "";
         try {
-            is=res.getEntity().getContent();
-            BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(is));
-            String line="";
-            StringBuffer sb=new StringBuffer();
-            while ((line=bufferedReader.readLine())!=null)
-            {
-                sb.append(line);
-            }
-            return_text=sb.toString();
-        } catch (Exception e)
-        {
+            url = new URL("https://www.worldvisioncable.in/api/new_connection_api.php?");
 
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setReadTimeout(15000);
+            conn.setConnectTimeout(15000);
+            conn.setRequestMethod("POST");
+            conn.setDoInput(true);
+            conn.setDoOutput(true);
+
+
+            OutputStream os = conn.getOutputStream();
+            BufferedWriter writer = new BufferedWriter(
+                    new OutputStreamWriter(os, "UTF-8"));
+            writer.write(getPostDataString(hm));
+
+            writer.flush();
+            writer.close();
+            os.close();
+            int responseCode = conn.getResponseCode();
+
+            if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    response += line;
+                }
+            } else {
+                response = "";
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return return_text;
+
+        return response;
 
     }
+
+    private String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
+        StringBuilder result = new StringBuilder();
+        boolean first = true;
+        for (Map.Entry<String, String> entry : params.entrySet()) {
+            if (first)
+                first = false;
+            else
+                result.append("&");
+
+            result.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
+            result.append("=");
+            result.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
+        }
+
+        return result.toString();
+    }
+
 
 
 

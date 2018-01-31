@@ -27,15 +27,6 @@ import com.hookedonplay.decoviewlib.charts.SeriesItem;
 import com.hookedonplay.decoviewlib.events.DecoEvent;
 
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -443,26 +434,7 @@ public class ActiveBroadbandFragment extends SampleFragment {
         return result.toString();
     }
 
-    public String readResponseLogin(HttpResponse res) {
-        InputStream is=null;
-        String return_text="";
-        try {
-            is=res.getEntity().getContent();
-            BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(is));
-            String line="";
-            StringBuffer sb=new StringBuffer();
-            while ((line=bufferedReader.readLine())!=null)
-            {
-                sb.append(line);
-            }
-            return_text=sb.toString();
-        } catch (Exception e)
-        {
 
-        }
-        return return_text;
-
-    }
 
 
 }

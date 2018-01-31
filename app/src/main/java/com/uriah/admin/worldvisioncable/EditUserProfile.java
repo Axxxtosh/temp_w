@@ -19,26 +19,30 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.android.volley.toolbox.HttpResponse;
 import com.uriah.admin.worldvisioncable.Models.UsedObject;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
+import javax.net.ssl.HttpsURLConnection;
 
 import static com.uriah.admin.worldvisioncable.Session.UserSessionManager.KEY_ADDRESS;
 
@@ -50,6 +54,9 @@ public class EditUserProfile extends AppCompatActivity {
     EditText currentPassword,newPassword,newConfirmPassword;
     Button ChangePassword,Cancel;
     private static final String PREFER_NAME = "UserSession";
+    HashMap<String, String> hm = new HashMap<String, String>();
+    HashMap<String, String> hm2 = new HashMap<String, String>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -215,35 +222,62 @@ public class EditUserProfile extends AppCompatActivity {
         }
 
     }
-
-
-    public String ChangePassword(String[] valuse) {
-        String s="";
-        try
-        {
-            HttpClient httpClient=new DefaultHttpClient();
+    /*HttpClient httpClient=new DefaultHttpClient();
             HttpPost httpPost=new HttpPost("https://www.worldvisioncable.in/api/account/change_password_api.php");
             List<NameValuePair> list=new ArrayList<NameValuePair>();
 
             list.add(new BasicNameValuePair("userid",valuse[0]));
             list.add(new BasicNameValuePair("old_password",valuse[1]));
-            list.add(new BasicNameValuePair("new_password",valuse[2]));
+            list.add(new BasicNameValuePair("new_password",valuse[2]));*/
+
+    public String ChangePassword(String[] valuse) {
+
+        //https://www.worldvisioncable.in/api/account/view_bills.php userid
+        hm2.put("userid", valuse[0]);
+        hm2.put("old_password", valuse[1]);
+        hm2.put("new_password", valuse[2]);
 
 
+        URL url;
+        String response = "";
+        try {
+            url = new URL("https://www.worldvisioncable.in/api/account/change_password_api.php");
 
-            httpPost.setEntity(new UrlEncodedFormEntity(list));
-            HttpResponse httpResponse=  httpClient.execute(httpPost);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setReadTimeout(15000);
+            conn.setConnectTimeout(15000);
+            conn.setRequestMethod("POST");
+            conn.setDoInput(true);
+            conn.setDoOutput(true);
 
-            HttpEntity httpEntity=httpResponse.getEntity();
-            s= readResponseGmailRegistraion(httpResponse);
 
-        } catch (Exception exception) {
+            OutputStream os = conn.getOutputStream();
+            BufferedWriter writer = new BufferedWriter(
+                    new OutputStreamWriter(os, "UTF-8"));
+            writer.write(getPostDataString(hm2));
 
+            writer.flush();
+            writer.close();
+            os.close();
+            int responseCode = conn.getResponseCode();
+
+            if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    response += line;
+                }
+            } else {
+                response = "";
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return s;
 
-
+        return response;
     }
+
 
     class UpdateProfileAsynTask extends AsyncTask<String, Integer, String>
     {
@@ -334,62 +368,84 @@ public class EditUserProfile extends AppCompatActivity {
 
 
     }
-
-    public String newConnection(String[] valuse) {
-        String s="";
-        try
-        {
-            HttpClient httpClient=new DefaultHttpClient();
-            // HttpPost httpPost=new HttpPost("http://www.42estate.in/api/register-api.php");
-            //https://www.worldvisioncable.in/api/new_connection_api.php?userid=2635&name=Rajakumar A&email=rjkumar856@gmail.com&phone=9092310791&service_type=Cable&address=asdasdas&city=Bangalore&pincode=560100&message=Testing
-            //
-            HttpPost httpPost=new HttpPost("https://www.worldvisioncable.in/api/account/update_user_details.php");
-            List<NameValuePair> list=new ArrayList<NameValuePair>();
+  /*  HttpPost httpPost=new HttpPost("https://www.worldvisioncable.in/api/account/update_user_details.php");
+    List<NameValuePair> list=new ArrayList<NameValuePair>();
 
             list.add(new BasicNameValuePair("userid",valuse[0]));
             list.add(new BasicNameValuePair("full_name",valuse[1]));
             list.add(new BasicNameValuePair("email",valuse[2]));
             list.add(new BasicNameValuePair("mobile",valuse[3]));
-            list.add(new BasicNameValuePair("address",valuse[4]));
+            list.add(new BasicNameValuePair("address",valuse[4]));*/
+
+    public String newConnection(String[] valuse) {
+        String s = "";
+        //https://www.worldvisioncable.in/api/account/view_bills.php userid
+        hm.put("userid", valuse[0]);
+        hm.put("full_name", valuse[1]);
+        hm.put("email", valuse[2]);
+        hm.put("mobile", valuse[3]);
+        hm.put("address", valuse[4]);
 
 
-
-            httpPost.setEntity(new UrlEncodedFormEntity(list));
-            HttpResponse httpResponse=  httpClient.execute(httpPost);
-
-            HttpEntity httpEntity=httpResponse.getEntity();
-            s= readResponseGmailRegistraion(httpResponse);
-
-        } catch (Exception exception) {
-            loading.setVisibility(View.GONE);
-
-        }
-        return s;
-
-
-    }
-
-
-    public String readResponseGmailRegistraion(HttpResponse res) {
-        InputStream is=null;
-        String return_text="";
+        URL url;
+        String response = "";
         try {
-            is=res.getEntity().getContent();
-            BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(is));
-            String line="";
-            StringBuffer sb=new StringBuffer();
-            while ((line=bufferedReader.readLine())!=null)
-            {
-                sb.append(line);
+            url = new URL("https://www.worldvisioncable.in/api/account/update_user_details.php");
+
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setReadTimeout(15000);
+            conn.setConnectTimeout(15000);
+            conn.setRequestMethod("POST");
+            conn.setDoInput(true);
+            conn.setDoOutput(true);
+
+
+            OutputStream os = conn.getOutputStream();
+            BufferedWriter writer = new BufferedWriter(
+                    new OutputStreamWriter(os, "UTF-8"));
+            writer.write(getPostDataString(hm));
+
+            writer.flush();
+            writer.close();
+            os.close();
+            int responseCode = conn.getResponseCode();
+
+            if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    response += line;
+                }
+            } else {
+                response = "";
+
             }
-            return_text=sb.toString();
-        } catch (Exception e)
-        {
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return return_text;
 
+        return response;
     }
+
+    private String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
+        StringBuilder result = new StringBuilder();
+        boolean first = true;
+        for (Map.Entry<String, String> entry : params.entrySet()) {
+            if (first)
+                first = false;
+            else
+                result.append("&");
+
+            result.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
+            result.append("=");
+            result.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
+        }
+
+        return result.toString();
+    }
+
+
+
 
 
     @Override
