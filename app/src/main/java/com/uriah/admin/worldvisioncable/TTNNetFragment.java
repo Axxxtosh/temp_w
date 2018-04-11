@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -100,6 +101,7 @@ public class TTNNetFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 loading.setVisibility(View.GONE);
+                Toast.makeText(getActivity(), "Something went wrong!", Toast.LENGTH_SHORT).show();
 
             }
         });

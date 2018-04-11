@@ -130,7 +130,7 @@ public class AccountStatement extends Fragment {
                 e.printStackTrace();
                 loading.setVisibility(View.GONE);
 
-                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Something went wrong!", Toast.LENGTH_SHORT).show();
 
             }
 

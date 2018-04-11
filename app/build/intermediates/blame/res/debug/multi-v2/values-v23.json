@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "E:\\Android\\WorldVision\\WorldVisionCable-Customer\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "/root/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/0266adfe6a4cba3f29b84c9cbdd8af96/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\Developer\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-27.0.2.aar\\45273590c1706c6dc497c09416d4b459\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/bfa25170218717e7140a615693ddd581/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\Developer\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\179194e82340176a1acc0f577873815b\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

@@ -117,6 +117,7 @@ public class CableTVRoyalFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 loading.setVisibility(View.GONE);
 
+
             }
         });
 

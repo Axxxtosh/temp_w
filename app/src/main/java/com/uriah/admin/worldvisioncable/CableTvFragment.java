@@ -121,7 +121,7 @@ public class CableTvFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 loading.setVisibility(View.GONE);
 
-                Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Something went wrong!", Toast.LENGTH_SHORT).show();
 
             }
         });

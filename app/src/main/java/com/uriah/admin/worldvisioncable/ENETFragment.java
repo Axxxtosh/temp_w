@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -110,6 +111,7 @@ public class ENETFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
 
                 loading.setVisibility(View.GONE);
+                Toast.makeText(getActivity(), "Something went wrong!", Toast.LENGTH_SHORT).show();
 
             }
         });

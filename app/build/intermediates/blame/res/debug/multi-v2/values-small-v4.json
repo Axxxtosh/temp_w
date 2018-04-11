@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
+            "outputFile": "E:\\Android\\WorldVision\\WorldVisionCable-Customer\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
             "map": [
                 {
-                    "source": "/root/Ashutosh/BAckups/Dee/WorldVisionCable/WorldVisionCable/app/src/main/res/values-small/dimens.xml",
+                    "source": "E:\\Android\\WorldVision\\WorldVisionCable-Customer\\app\\src\\main\\res\\values-small\\dimens.xml",
                     "from": {
                         "startLines": "13,14,3,6,17,15",
                         "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "200,240,38,102,314,276",
+                        "startOffsets": "213,254,41,108,331,291",
                         "endColumns": "39,35,42,47,36,36",
-                        "endOffsets": "235,271,76,145,346,308"
+                        "endOffsets": "248,285,79,151,363,323"
                     },
                     "to": {
                         "startLines": "2,3,4,5,6,7",

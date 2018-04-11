@@ -167,7 +167,7 @@ public class ViewOffers extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
 
-
+            if(s!=null){
             try {
                 loading.setVisibility(View.GONE);
                 JSONObject mainObject = new JSONObject(s);
@@ -223,6 +223,10 @@ public class ViewOffers extends AppCompatActivity {
                 loading.setVisibility(View.GONE);
             }
 
+        }else {
+                loading.setVisibility(View.GONE);
+
+            }
         }
     }
    /* private class ImagePageAdapter extends PagerAdapter {
