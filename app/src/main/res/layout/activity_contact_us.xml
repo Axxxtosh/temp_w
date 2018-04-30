@@ -116,7 +116,7 @@
                     android:autoLink="phone"
                     android:textSize="20sp"
                     android:textColor="@color/white"
-                    android:text="+(91)-9900249945"/>
+                    android:text="+(91)-80-25534744"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

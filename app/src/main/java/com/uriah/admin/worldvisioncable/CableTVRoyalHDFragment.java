@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CableTVRoyalFragment extends Fragment {
+public class CableTVRoyalHDFragment extends Fragment {
 
     Context context;
     List<ChannelModel> primechannelList;
@@ -53,7 +53,7 @@ public class CableTVRoyalFragment extends Fragment {
     TextView royalcablePlanName,royalcablePlanPrice,royalcablePlanchannelCount;
 
     int channelcount;
-    public CableTVRoyalFragment() {
+    public CableTVRoyalHDFragment() {
         // Required empty public constructor
     }
 
@@ -66,7 +66,7 @@ public class CableTVRoyalFragment extends Fragment {
 
         royalcablePlanName=(TextView)v.findViewById(R.id.royalcablePlan);
         royalcablePlanPrice=(TextView)v.findViewById(R.id.royalcablePrice);
-      //  royalcablePlanchannelCount=(TextView)v.findViewById(R.id.royalcableChannelList);
+        //  royalcablePlanchannelCount=(TextView)v.findViewById(R.id.royalcableChannelList);
 
         primechannelList = new ArrayList<>();
         royalchannelList = new ArrayList<>();
@@ -135,7 +135,7 @@ public class CableTVRoyalFragment extends Fragment {
 
 
         try {
-            JSONObject array1 = array.getJSONObject("Royal");
+            JSONObject array1 = array.getJSONObject("Royal HD");
 
             Log.d("Royal Array:",array1.length()+"");
 
@@ -146,7 +146,7 @@ public class CableTVRoyalFragment extends Fragment {
             royalcablePlanPrice.setText("Rs."+price+" / Month");
 
 
-            for(int i = 3; i<array1.length(); i++) {
+            for(int i = 2; i<array1.length(); i++) {
 
 
                 royalchannelList = new ArrayList<>();
@@ -158,9 +158,9 @@ public class CableTVRoyalFragment extends Fragment {
                 JSONObject channelArray = array1.getJSONObject(channelTitle);
 
                 Log.d("channelArray Length",channelArray.length()+"");
-               // channelcount+=channelArray.length();
+                // channelcount+=channelArray.length();
 
-                for(int k=1;k<channelArray.length()-2;k++)
+                for(int k=0;k<channelArray.length()-2;k++)
                 {
                     String index=String.valueOf(k);
                     JSONObject channels=channelArray.getJSONObject(index);

@@ -114,6 +114,7 @@ public class CableMainFragment extends Fragment implements TabHost.OnTabChangeLi
         List<Fragment> fragments = new Vector<Fragment>();
         fragments.add(Fragment.instantiate(getActivity(), CableTvFragment.class.getName()));
         fragments.add(Fragment.instantiate(getActivity(), CableTVRoyalFragment.class.getName()));
+        fragments.add(Fragment.instantiate(getActivity(), CableTVRoyalHDFragment.class.getName()));
         this.mPagerAdapter  = new Pager(super.getActivity().getSupportFragmentManager(), fragments);
         //
         this.mViewPager = (ViewPager)v.findViewById(R.id.viewpager);
@@ -136,6 +137,8 @@ public class CableMainFragment extends Fragment implements TabHost.OnTabChangeLi
         this.mapTabInfo.put(tabInfo.tag, tabInfo);
 
         AddTab(this, this.mTabHost, this.mTabHost.newTabSpec("Royal").setIndicator("Royal"), ( tabInfo = new TabInfo("Royal", CableTVRoyalFragment.class, args)));
+        this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        AddTab(this, this.mTabHost, this.mTabHost.newTabSpec("Royal HD").setIndicator("Royal HD"), ( tabInfo = new TabInfo("Royal", CableTVRoyalFragment.class, args)));
         this.mapTabInfo.put(tabInfo.tag, tabInfo);
 
         // Default to first tab
